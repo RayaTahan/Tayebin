@@ -1,0 +1,1 @@
+﻿Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\data\database.mdf;Integrated Security=True;Connect Timeout=10
