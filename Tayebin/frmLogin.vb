@@ -4,6 +4,7 @@
         If Val(SQL.RunCommandScaler("select count(*) from tKarbari")) <= 0 Then
             Me.Close()
         End If
+        PictureBox1.Image = IMGcache.img("data\app\icon\padlock67.png")
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
