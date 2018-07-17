@@ -26,12 +26,12 @@ Partial Class frmMadrak
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New Tayebin2.ucTextBox()
+        Me.TextBox2 = New Tayebin.ucTextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.UcTextBox1 = New Tayebin2.ucTextBox()
+        Me.UcTextBox1 = New Tayebin.ucTextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
@@ -177,11 +177,11 @@ Partial Class frmMadrak
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox2 As Tayebin2.ucTextBox
+    Friend WithEvents TextBox2 As Tayebin.ucTextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
     Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
-    Friend WithEvents UcTextBox1 As Tayebin2.ucTextBox
+    Friend WithEvents UcTextBox1 As Tayebin.ucTextBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
 End Class

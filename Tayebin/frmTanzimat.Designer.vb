@@ -25,21 +25,21 @@ Partial Class frmTanzimat
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtKanunNam = New Tayebin2.ucTextBox()
-        Me.Button6 = New System.Windows.Forms.Button()
-        Me.Button7 = New System.Windows.Forms.Button()
+        Me.txtKanunNam = New Tayebin.ucTextBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.lblKarbariTozih = New System.Windows.Forms.Label()
-        Me.txtUser = New Tayebin2.ucTextBox()
-        Me.txtPass1 = New Tayebin2.ucTextBox()
-        Me.txtPass3 = New Tayebin2.ucTextBox()
-        Me.txtPass2 = New Tayebin2.ucTextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txtPass3 = New Tayebin.ucTextBox()
+        Me.txtPass2 = New Tayebin.ucTextBox()
+        Me.txtPass1 = New Tayebin.ucTextBox()
+        Me.txtUser = New Tayebin.ucTextBox()
+        Me.lblKarbariTozih = New System.Windows.Forms.Label()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.Button7 = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -92,27 +92,6 @@ Partial Class frmTanzimat
         Me.txtKanunNam.Size = New System.Drawing.Size(350, 29)
         Me.txtKanunNam.TabIndex = 0
         '
-        'Button6
-        '
-        Me.Button6.Location = New System.Drawing.Point(152, 410)
-        Me.Button6.Margin = New System.Windows.Forms.Padding(3, 20, 3, 2)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(135, 40)
-        Me.Button6.TabIndex = 3
-        Me.Button6.Text = "ثبت"
-        Me.Button6.UseVisualStyleBackColor = True
-        '
-        'Button7
-        '
-        Me.Button7.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.Button7.Location = New System.Drawing.Point(12, 410)
-        Me.Button7.Margin = New System.Windows.Forms.Padding(3, 20, 3, 2)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(135, 40)
-        Me.Button7.TabIndex = 4
-        Me.Button7.Text = "انصراف"
-        Me.Button7.UseVisualStyleBackColor = True
-        '
         'TabPage2
         '
         Me.TabPage2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
@@ -133,36 +112,41 @@ Partial Class frmTanzimat
         Me.TabPage2.TabIndex = 4
         Me.TabPage2.Text = "اطلاعات ورود"
         '
-        'lblKarbariTozih
+        'Label5
         '
-        Me.lblKarbariTozih.Location = New System.Drawing.Point(13, 12)
-        Me.lblKarbariTozih.Margin = New System.Windows.Forms.Padding(10)
-        Me.lblKarbariTozih.Name = "lblKarbariTozih"
-        Me.lblKarbariTozih.Size = New System.Drawing.Size(518, 51)
-        Me.lblKarbariTozih.TabIndex = 0
-        Me.lblKarbariTozih.Text = "توضیحات"
-        Me.lblKarbariTozih.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(362, 186)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(141, 21)
+        Me.Label5.TabIndex = 8
+        Me.Label5.Text = "تکرار کلمه عبور جدید"
         '
-        'txtUser
+        'Label4
         '
-        Me.txtUser.BackColor = System.Drawing.Color.White
-        Me.txtUser.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.txtUser.Location = New System.Drawing.Point(6, 76)
-        Me.txtUser.Name = "txtUser"
-        Me.txtUser.Size = New System.Drawing.Size(350, 29)
-        Me.txtUser.TabIndex = 1
-        Me.txtUser.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(362, 151)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(107, 21)
+        Me.Label4.TabIndex = 7
+        Me.Label4.Text = "کلمه عبور جدید"
         '
-        'txtPass1
+        'Label3
         '
-        Me.txtPass1.BackColor = System.Drawing.Color.White
-        Me.txtPass1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.txtPass1.Location = New System.Drawing.Point(6, 111)
-        Me.txtPass1.Name = "txtPass1"
-        Me.txtPass1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(215)
-        Me.txtPass1.Size = New System.Drawing.Size(350, 29)
-        Me.txtPass1.TabIndex = 2
-        Me.txtPass1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(362, 116)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(112, 21)
+        Me.Label3.TabIndex = 6
+        Me.Label3.Text = "کلمه عبور فعلی"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(362, 81)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(74, 21)
+        Me.Label2.TabIndex = 5
+        Me.Label2.Text = "نام کاربری"
         '
         'txtPass3
         '
@@ -186,41 +170,36 @@ Partial Class frmTanzimat
         Me.txtPass2.TabIndex = 3
         Me.txtPass2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Label2
+        'txtPass1
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(362, 81)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(74, 21)
-        Me.Label2.TabIndex = 5
-        Me.Label2.Text = "نام کاربری"
+        Me.txtPass1.BackColor = System.Drawing.Color.White
+        Me.txtPass1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
+        Me.txtPass1.Location = New System.Drawing.Point(6, 111)
+        Me.txtPass1.Name = "txtPass1"
+        Me.txtPass1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(215)
+        Me.txtPass1.Size = New System.Drawing.Size(350, 29)
+        Me.txtPass1.TabIndex = 2
+        Me.txtPass1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Label3
+        'txtUser
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(362, 116)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(112, 21)
-        Me.Label3.TabIndex = 6
-        Me.Label3.Text = "کلمه عبور فعلی"
+        Me.txtUser.BackColor = System.Drawing.Color.White
+        Me.txtUser.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
+        Me.txtUser.Location = New System.Drawing.Point(6, 76)
+        Me.txtUser.Name = "txtUser"
+        Me.txtUser.Size = New System.Drawing.Size(350, 29)
+        Me.txtUser.TabIndex = 1
+        Me.txtUser.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Label4
+        'lblKarbariTozih
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(362, 151)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(107, 21)
-        Me.Label4.TabIndex = 7
-        Me.Label4.Text = "کلمه عبور جدید"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(362, 186)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(141, 21)
-        Me.Label5.TabIndex = 8
-        Me.Label5.Text = "تکرار کلمه عبور جدید"
+        Me.lblKarbariTozih.Location = New System.Drawing.Point(13, 12)
+        Me.lblKarbariTozih.Margin = New System.Windows.Forms.Padding(10)
+        Me.lblKarbariTozih.Name = "lblKarbariTozih"
+        Me.lblKarbariTozih.Size = New System.Drawing.Size(518, 51)
+        Me.lblKarbariTozih.TabIndex = 0
+        Me.lblKarbariTozih.Text = "توضیحات"
+        Me.lblKarbariTozih.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'TabPage3
         '
@@ -237,7 +216,6 @@ Partial Class frmTanzimat
         '
         'WebBrowser1
         '
-        Me.WebBrowser1.AllowNavigation = False
         Me.WebBrowser1.AllowWebBrowserDrop = False
         Me.WebBrowser1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.WebBrowser1.IsWebBrowserContextMenuEnabled = False
@@ -249,6 +227,27 @@ Partial Class frmTanzimat
         Me.WebBrowser1.Size = New System.Drawing.Size(542, 330)
         Me.WebBrowser1.TabIndex = 0
         Me.WebBrowser1.WebBrowserShortcutsEnabled = False
+        '
+        'Button6
+        '
+        Me.Button6.Location = New System.Drawing.Point(152, 410)
+        Me.Button6.Margin = New System.Windows.Forms.Padding(3, 20, 3, 2)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(135, 40)
+        Me.Button6.TabIndex = 3
+        Me.Button6.Text = "ثبت"
+        Me.Button6.UseVisualStyleBackColor = True
+        '
+        'Button7
+        '
+        Me.Button7.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.Button7.Location = New System.Drawing.Point(12, 410)
+        Me.Button7.Margin = New System.Windows.Forms.Padding(3, 20, 3, 2)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(135, 40)
+        Me.Button7.TabIndex = 4
+        Me.Button7.Text = "انصراف"
+        Me.Button7.UseVisualStyleBackColor = True
         '
         'frmTanzimat
         '

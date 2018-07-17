@@ -23,6 +23,10 @@
         AboutHTML += "* {direction:rtl; font-family:tahoma; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;}"
         AboutHTML += "</style></head><body>"
 
+        AboutHTML += "<p>" & "بسم الله الرحمن الرحیم" & "</p>"
+        AboutHTML += "<p>" & "پروژه طیبین یک پروژه منبع باز است. شما نیز جهت مشارکت در پروژه می‌توانید به آدرس گیت هاب پروژه رجوع کنید." & "</p>"
+        AboutHTML += "<p><a href=""https://github.com/PurTahan/Tayebin"" >https://github.com/PurTahan/Tayebin</a></p>"
+        AboutHTML += "<p>" & "جهت تعجیل در امر فرج حضرت صاحب الزمان صلوات!" & "</p>"
         AboutHTML += "<p>" & "اللهم صل علی محمد و آل محمد و عجل فرجهم" & "</p>"
 
         AboutHTML += "</body></html>"
@@ -59,5 +63,13 @@
             Me.Close()
         End If
 
+    End Sub
+
+
+    Private Sub WebBrowser1_Navigating(sender As Object, e As WebBrowserNavigatingEventArgs) Handles WebBrowser1.Navigating
+        If e.Url.ToString.StartsWith("http") Then
+            e.Cancel = True 'Cancel the event to avoid default behavior
+            Process.Start(e.Url.ToString()) 'Open the link in the default browser
+        End If
     End Sub
 End Class

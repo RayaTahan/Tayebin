@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.Tayebin2.frmMain
+            Me.MainForm = Global.Tayebin.frmMain
         End Sub
     End Class
 End Namespace

@@ -24,8 +24,8 @@ Partial Class frmTaqvim
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmTaqvim))
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.cal = New Tayebin2.ucCal()
-        Me.txtMonasebat = New Tayebin2.ucTextBox()
+        Me.cal = New Tayebin.ucCal()
+        Me.txtMonasebat = New Tayebin.ucTextBox()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.SuspendLayout()
         '

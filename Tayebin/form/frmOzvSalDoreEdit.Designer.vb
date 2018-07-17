@@ -25,16 +25,16 @@ Partial Class frmOzvSalDoreEdit
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.UcTextBox1 = New Tayebin2.ucTextBox()
+        Me.UcTextBox1 = New Tayebin.ucTextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.UcTextBox2 = New Tayebin2.ucTextBox()
+        Me.UcTextBox2 = New Tayebin.ucTextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.UcTextBox3 = New Tayebin2.ucTextBox()
+        Me.UcTextBox3 = New Tayebin.ucTextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.ListView1 = New System.Windows.Forms.ListView()
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -251,16 +251,16 @@ Partial Class frmOzvSalDoreEdit
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents UcTextBox1 As Tayebin2.ucTextBox
+    Friend WithEvents UcTextBox1 As Tayebin.ucTextBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents ComboBox2 As System.Windows.Forms.ComboBox
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
-    Friend WithEvents UcTextBox2 As Tayebin2.ucTextBox
+    Friend WithEvents UcTextBox2 As Tayebin.ucTextBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents UcTextBox3 As Tayebin2.ucTextBox
+    Friend WithEvents UcTextBox3 As Tayebin.ucTextBox
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents ListView1 As ListView
     Friend WithEvents ColumnHeader1 As ColumnHeader

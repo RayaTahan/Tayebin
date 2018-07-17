@@ -28,7 +28,7 @@ Partial Class frmSplash
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.Tayebin2.My.Resources.Resources.LOGO
+        Me.BackgroundImage = Global.Tayebin.My.Resources.Resources.LOGO
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.ClientSize = New System.Drawing.Size(512, 512)
         Me.ControlBox = False

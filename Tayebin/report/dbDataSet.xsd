@@ -4,7 +4,7 @@
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Tayebin2.My.MySettings.GlobalReference.Default.ConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Tayebin.My.MySettings.GlobalReference.Default.ConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tDoreTableAdapter" GeneratorDataComponentClassName="tDoreTableAdapter" Name="tDore" UserDataComponentName="tDoreTableAdapter">
@@ -763,7 +763,7 @@ SELECT ID, Onvan, TarikhShoru FROM tSal WHERE (ID = @ID)</CommandText>
   <xs:element name="dbDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dbDataSet" msprop:Generator_UserDSName="dbDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="tDore" msprop:Generator_TableClassName="tDoreDataTable" msprop:Generator_TableVarName="tabletDore" msprop:Generator_TablePropName="tDore" msprop:Generator_RowDeletingName="tDoreRowDeleting" msprop:Generator_RowChangingName="tDoreRowChanging" msprop:Generator_RowEvHandlerName="tDoreRowChangeEventHandler" msprop:Generator_RowDeletedName="tDoreRowDeleted" msprop:Generator_UserTableName="tDore" msprop:Generator_RowChangedName="tDoreRowChanged" msprop:Generator_RowEvArgName="tDoreRowChangeEvent" msprop:Generator_RowClassName="tDoreRow">
+        <xs:element name="tDore" msprop:Generator_TableClassName="tDoreDataTable" msprop:Generator_TableVarName="tabletDore" msprop:Generator_RowChangedName="tDoreRowChanged" msprop:Generator_TablePropName="tDore" msprop:Generator_RowDeletingName="tDoreRowDeleting" msprop:Generator_RowChangingName="tDoreRowChanging" msprop:Generator_RowEvHandlerName="tDoreRowChangeEventHandler" msprop:Generator_RowDeletedName="tDoreRowDeleted" msprop:Generator_RowClassName="tDoreRow" msprop:Generator_UserTableName="tDore" msprop:Generator_RowEvArgName="tDoreRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -777,7 +777,7 @@ SELECT ID, Onvan, TarikhShoru FROM tSal WHERE (ID = @ID)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tSalDore" msprop:Generator_TableClassName="tSalDoreDataTable" msprop:Generator_TableVarName="tabletSalDore" msprop:Generator_TablePropName="tSalDore" msprop:Generator_RowDeletingName="tSalDoreRowDeleting" msprop:Generator_RowChangingName="tSalDoreRowChanging" msprop:Generator_RowEvHandlerName="tSalDoreRowChangeEventHandler" msprop:Generator_RowDeletedName="tSalDoreRowDeleted" msprop:Generator_UserTableName="tSalDore" msprop:Generator_RowChangedName="tSalDoreRowChanged" msprop:Generator_RowEvArgName="tSalDoreRowChangeEvent" msprop:Generator_RowClassName="tSalDoreRow">
+        <xs:element name="tSalDore" msprop:Generator_TableClassName="tSalDoreDataTable" msprop:Generator_TableVarName="tabletSalDore" msprop:Generator_RowChangedName="tSalDoreRowChanged" msprop:Generator_TablePropName="tSalDore" msprop:Generator_RowDeletingName="tSalDoreRowDeleting" msprop:Generator_RowChangingName="tSalDoreRowChanging" msprop:Generator_RowEvHandlerName="tSalDoreRowChangeEventHandler" msprop:Generator_RowDeletedName="tSalDoreRowDeleted" msprop:Generator_RowClassName="tSalDoreRow" msprop:Generator_UserTableName="tSalDore" msprop:Generator_RowEvArgName="tSalDoreRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -787,7 +787,7 @@ SELECT ID, Onvan, TarikhShoru FROM tSal WHERE (ID = @ID)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tKarname" msprop:Generator_TableClassName="tKarnameDataTable" msprop:Generator_TableVarName="tabletKarname" msprop:Generator_TablePropName="tKarname" msprop:Generator_RowDeletingName="tKarnameRowDeleting" msprop:Generator_RowChangingName="tKarnameRowChanging" msprop:Generator_RowEvHandlerName="tKarnameRowChangeEventHandler" msprop:Generator_RowDeletedName="tKarnameRowDeleted" msprop:Generator_UserTableName="tKarname" msprop:Generator_RowChangedName="tKarnameRowChanged" msprop:Generator_RowEvArgName="tKarnameRowChangeEvent" msprop:Generator_RowClassName="tKarnameRow">
+        <xs:element name="tKarname" msprop:Generator_TableClassName="tKarnameDataTable" msprop:Generator_TableVarName="tabletKarname" msprop:Generator_RowChangedName="tKarnameRowChanged" msprop:Generator_TablePropName="tKarname" msprop:Generator_RowDeletingName="tKarnameRowDeleting" msprop:Generator_RowChangingName="tKarnameRowChanging" msprop:Generator_RowEvHandlerName="tKarnameRowChangeEventHandler" msprop:Generator_RowDeletedName="tKarnameRowDeleted" msprop:Generator_RowClassName="tKarnameRow" msprop:Generator_UserTableName="tKarname" msprop:Generator_RowEvArgName="tKarnameRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -797,7 +797,7 @@ SELECT ID, Onvan, TarikhShoru FROM tSal WHERE (ID = @ID)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tMadrak" msprop:Generator_TableClassName="tMadrakDataTable" msprop:Generator_TableVarName="tabletMadrak" msprop:Generator_TablePropName="tMadrak" msprop:Generator_RowDeletingName="tMadrakRowDeleting" msprop:Generator_RowChangingName="tMadrakRowChanging" msprop:Generator_RowEvHandlerName="tMadrakRowChangeEventHandler" msprop:Generator_RowDeletedName="tMadrakRowDeleted" msprop:Generator_UserTableName="tMadrak" msprop:Generator_RowChangedName="tMadrakRowChanged" msprop:Generator_RowEvArgName="tMadrakRowChangeEvent" msprop:Generator_RowClassName="tMadrakRow">
+        <xs:element name="tMadrak" msprop:Generator_TableClassName="tMadrakDataTable" msprop:Generator_TableVarName="tabletMadrak" msprop:Generator_RowChangedName="tMadrakRowChanged" msprop:Generator_TablePropName="tMadrak" msprop:Generator_RowDeletingName="tMadrakRowDeleting" msprop:Generator_RowChangingName="tMadrakRowChanging" msprop:Generator_RowEvHandlerName="tMadrakRowChangeEventHandler" msprop:Generator_RowDeletedName="tMadrakRowDeleted" msprop:Generator_RowClassName="tMadrakRow" msprop:Generator_UserTableName="tMadrak" msprop:Generator_RowEvArgName="tMadrakRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -835,7 +835,7 @@ SELECT ID, Onvan, TarikhShoru FROM tSal WHERE (ID = @ID)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tMorabbi" msprop:Generator_TableClassName="tMorabbiDataTable" msprop:Generator_TableVarName="tabletMorabbi" msprop:Generator_TablePropName="tMorabbi" msprop:Generator_RowDeletingName="tMorabbiRowDeleting" msprop:Generator_RowChangingName="tMorabbiRowChanging" msprop:Generator_RowEvHandlerName="tMorabbiRowChangeEventHandler" msprop:Generator_RowDeletedName="tMorabbiRowDeleted" msprop:Generator_UserTableName="tMorabbi" msprop:Generator_RowChangedName="tMorabbiRowChanged" msprop:Generator_RowEvArgName="tMorabbiRowChangeEvent" msprop:Generator_RowClassName="tMorabbiRow">
+        <xs:element name="tMorabbi" msprop:Generator_TableClassName="tMorabbiDataTable" msprop:Generator_TableVarName="tabletMorabbi" msprop:Generator_RowChangedName="tMorabbiRowChanged" msprop:Generator_TablePropName="tMorabbi" msprop:Generator_RowDeletingName="tMorabbiRowDeleting" msprop:Generator_RowChangingName="tMorabbiRowChanging" msprop:Generator_RowEvHandlerName="tMorabbiRowChangeEventHandler" msprop:Generator_RowDeletedName="tMorabbiRowDeleted" msprop:Generator_RowClassName="tMorabbiRow" msprop:Generator_UserTableName="tMorabbi" msprop:Generator_RowEvArgName="tMorabbiRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -849,7 +849,7 @@ SELECT ID, Onvan, TarikhShoru FROM tSal WHERE (ID = @ID)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tNoMadrak" msprop:Generator_TableClassName="tNoMadrakDataTable" msprop:Generator_TableVarName="tabletNoMadrak" msprop:Generator_TablePropName="tNoMadrak" msprop:Generator_RowDeletingName="tNoMadrakRowDeleting" msprop:Generator_RowChangingName="tNoMadrakRowChanging" msprop:Generator_RowEvHandlerName="tNoMadrakRowChangeEventHandler" msprop:Generator_RowDeletedName="tNoMadrakRowDeleted" msprop:Generator_UserTableName="tNoMadrak" msprop:Generator_RowChangedName="tNoMadrakRowChanged" msprop:Generator_RowEvArgName="tNoMadrakRowChangeEvent" msprop:Generator_RowClassName="tNoMadrakRow">
+        <xs:element name="tNoMadrak" msprop:Generator_TableClassName="tNoMadrakDataTable" msprop:Generator_TableVarName="tabletNoMadrak" msprop:Generator_RowChangedName="tNoMadrakRowChanged" msprop:Generator_TablePropName="tNoMadrak" msprop:Generator_RowDeletingName="tNoMadrakRowDeleting" msprop:Generator_RowChangingName="tNoMadrakRowChanging" msprop:Generator_RowEvHandlerName="tNoMadrakRowChangeEventHandler" msprop:Generator_RowDeletedName="tNoMadrakRowDeleted" msprop:Generator_RowClassName="tNoMadrakRow" msprop:Generator_UserTableName="tNoMadrak" msprop:Generator_RowEvArgName="tNoMadrakRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -863,7 +863,7 @@ SELECT ID, Onvan, TarikhShoru FROM tSal WHERE (ID = @ID)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tOzv" msprop:Generator_TableClassName="tOzvDataTable" msprop:Generator_TableVarName="tabletOzv" msprop:Generator_TablePropName="tOzv" msprop:Generator_RowDeletingName="tOzvRowDeleting" msprop:Generator_RowChangingName="tOzvRowChanging" msprop:Generator_RowEvHandlerName="tOzvRowChangeEventHandler" msprop:Generator_RowDeletedName="tOzvRowDeleted" msprop:Generator_UserTableName="tOzv" msprop:Generator_RowChangedName="tOzvRowChanged" msprop:Generator_RowEvArgName="tOzvRowChangeEvent" msprop:Generator_RowClassName="tOzvRow">
+        <xs:element name="tOzv" msprop:Generator_TableClassName="tOzvDataTable" msprop:Generator_TableVarName="tabletOzv" msprop:Generator_RowChangedName="tOzvRowChanged" msprop:Generator_TablePropName="tOzv" msprop:Generator_RowDeletingName="tOzvRowDeleting" msprop:Generator_RowChangingName="tOzvRowChanging" msprop:Generator_RowEvHandlerName="tOzvRowChangeEventHandler" msprop:Generator_RowDeletedName="tOzvRowDeleted" msprop:Generator_RowClassName="tOzvRow" msprop:Generator_UserTableName="tOzv" msprop:Generator_RowEvArgName="tOzvRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -1033,7 +1033,7 @@ SELECT ID, Onvan, TarikhShoru FROM tSal WHERE (ID = @ID)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tOzvSalDore" msprop:Generator_TableClassName="tOzvSalDoreDataTable" msprop:Generator_TableVarName="tabletOzvSalDore" msprop:Generator_TablePropName="tOzvSalDore" msprop:Generator_RowDeletingName="tOzvSalDoreRowDeleting" msprop:Generator_RowChangingName="tOzvSalDoreRowChanging" msprop:Generator_RowEvHandlerName="tOzvSalDoreRowChangeEventHandler" msprop:Generator_RowDeletedName="tOzvSalDoreRowDeleted" msprop:Generator_UserTableName="tOzvSalDore" msprop:Generator_RowChangedName="tOzvSalDoreRowChanged" msprop:Generator_RowEvArgName="tOzvSalDoreRowChangeEvent" msprop:Generator_RowClassName="tOzvSalDoreRow">
+        <xs:element name="tOzvSalDore" msprop:Generator_TableClassName="tOzvSalDoreDataTable" msprop:Generator_TableVarName="tabletOzvSalDore" msprop:Generator_RowChangedName="tOzvSalDoreRowChanged" msprop:Generator_TablePropName="tOzvSalDore" msprop:Generator_RowDeletingName="tOzvSalDoreRowDeleting" msprop:Generator_RowChangingName="tOzvSalDoreRowChanging" msprop:Generator_RowEvHandlerName="tOzvSalDoreRowChangeEventHandler" msprop:Generator_RowDeletedName="tOzvSalDoreRowDeleted" msprop:Generator_RowClassName="tOzvSalDoreRow" msprop:Generator_UserTableName="tOzvSalDore" msprop:Generator_RowEvArgName="tOzvSalDoreRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -1056,7 +1056,7 @@ SELECT ID, Onvan, TarikhShoru FROM tSal WHERE (ID = @ID)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tRizKarname" msprop:Generator_TableClassName="tRizKarnameDataTable" msprop:Generator_TableVarName="tabletRizKarname" msprop:Generator_TablePropName="tRizKarname" msprop:Generator_RowDeletingName="tRizKarnameRowDeleting" msprop:Generator_RowChangingName="tRizKarnameRowChanging" msprop:Generator_RowEvHandlerName="tRizKarnameRowChangeEventHandler" msprop:Generator_RowDeletedName="tRizKarnameRowDeleted" msprop:Generator_UserTableName="tRizKarname" msprop:Generator_RowChangedName="tRizKarnameRowChanged" msprop:Generator_RowEvArgName="tRizKarnameRowChangeEvent" msprop:Generator_RowClassName="tRizKarnameRow">
+        <xs:element name="tRizKarname" msprop:Generator_TableClassName="tRizKarnameDataTable" msprop:Generator_TableVarName="tabletRizKarname" msprop:Generator_RowChangedName="tRizKarnameRowChanged" msprop:Generator_TablePropName="tRizKarname" msprop:Generator_RowDeletingName="tRizKarnameRowDeleting" msprop:Generator_RowChangingName="tRizKarnameRowChanging" msprop:Generator_RowEvHandlerName="tRizKarnameRowChangeEventHandler" msprop:Generator_RowDeletedName="tRizKarnameRowDeleted" msprop:Generator_RowClassName="tRizKarnameRow" msprop:Generator_UserTableName="tRizKarname" msprop:Generator_RowEvArgName="tRizKarnameRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -1070,7 +1070,7 @@ SELECT ID, Onvan, TarikhShoru FROM tSal WHERE (ID = @ID)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tSal" msprop:Generator_TableClassName="tSalDataTable" msprop:Generator_TableVarName="tabletSal" msprop:Generator_TablePropName="tSal" msprop:Generator_RowDeletingName="tSalRowDeleting" msprop:Generator_RowChangingName="tSalRowChanging" msprop:Generator_RowEvHandlerName="tSalRowChangeEventHandler" msprop:Generator_RowDeletedName="tSalRowDeleted" msprop:Generator_UserTableName="tSal" msprop:Generator_RowChangedName="tSalRowChanged" msprop:Generator_RowEvArgName="tSalRowChangeEvent" msprop:Generator_RowClassName="tSalRow">
+        <xs:element name="tSal" msprop:Generator_TableClassName="tSalDataTable" msprop:Generator_TableVarName="tabletSal" msprop:Generator_RowChangedName="tSalRowChanged" msprop:Generator_TablePropName="tSal" msprop:Generator_RowDeletingName="tSalRowDeleting" msprop:Generator_RowChangingName="tSalRowChanging" msprop:Generator_RowEvHandlerName="tSalRowChangeEventHandler" msprop:Generator_RowDeletedName="tSalRowDeleted" msprop:Generator_RowClassName="tSalRow" msprop:Generator_UserTableName="tSal" msprop:Generator_RowEvArgName="tSalRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -1091,7 +1091,7 @@ SELECT ID, Onvan, TarikhShoru FROM tSal WHERE (ID = @ID)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vKarname" msprop:Generator_TableClassName="vKarnameDataTable" msprop:Generator_TableVarName="tablevKarname" msprop:Generator_TablePropName="vKarname" msprop:Generator_RowDeletingName="vKarnameRowDeleting" msprop:Generator_RowChangingName="vKarnameRowChanging" msprop:Generator_RowEvHandlerName="vKarnameRowChangeEventHandler" msprop:Generator_RowDeletedName="vKarnameRowDeleted" msprop:Generator_UserTableName="vKarname" msprop:Generator_RowChangedName="vKarnameRowChanged" msprop:Generator_RowEvArgName="vKarnameRowChangeEvent" msprop:Generator_RowClassName="vKarnameRow">
+        <xs:element name="vKarname" msprop:Generator_TableClassName="vKarnameDataTable" msprop:Generator_TableVarName="tablevKarname" msprop:Generator_RowChangedName="vKarnameRowChanged" msprop:Generator_TablePropName="vKarname" msprop:Generator_RowDeletingName="vKarnameRowDeleting" msprop:Generator_RowChangingName="vKarnameRowChanging" msprop:Generator_RowEvHandlerName="vKarnameRowChangeEventHandler" msprop:Generator_RowDeletedName="vKarnameRowDeleted" msprop:Generator_RowClassName="vKarnameRow" msprop:Generator_UserTableName="vKarname" msprop:Generator_RowEvArgName="vKarnameRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -1108,7 +1108,7 @@ SELECT ID, Onvan, TarikhShoru FROM tSal WHERE (ID = @ID)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vSalDore" msprop:Generator_TableClassName="vSalDoreDataTable" msprop:Generator_TableVarName="tablevSalDore" msprop:Generator_TablePropName="vSalDore" msprop:Generator_RowDeletingName="vSalDoreRowDeleting" msprop:Generator_RowChangingName="vSalDoreRowChanging" msprop:Generator_RowEvHandlerName="vSalDoreRowChangeEventHandler" msprop:Generator_RowDeletedName="vSalDoreRowDeleted" msprop:Generator_UserTableName="vSalDore" msprop:Generator_RowChangedName="vSalDoreRowChanged" msprop:Generator_RowEvArgName="vSalDoreRowChangeEvent" msprop:Generator_RowClassName="vSalDoreRow">
+        <xs:element name="vSalDore" msprop:Generator_TableClassName="vSalDoreDataTable" msprop:Generator_TableVarName="tablevSalDore" msprop:Generator_RowChangedName="vSalDoreRowChanged" msprop:Generator_TablePropName="vSalDore" msprop:Generator_RowDeletingName="vSalDoreRowDeleting" msprop:Generator_RowChangingName="vSalDoreRowChanging" msprop:Generator_RowEvHandlerName="vSalDoreRowChangeEventHandler" msprop:Generator_RowDeletedName="vSalDoreRowDeleted" msprop:Generator_RowClassName="vSalDoreRow" msprop:Generator_UserTableName="vSalDore" msprop:Generator_RowEvArgName="vSalDoreRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="SalID" msprop:Generator_ColumnVarNameInTable="columnSalID" msprop:Generator_ColumnPropNameInRow="SalID" msprop:Generator_ColumnPropNameInTable="SalIDColumn" msprop:Generator_UserColumnName="SalID" type="xs:int" />
@@ -1139,7 +1139,7 @@ SELECT ID, Onvan, TarikhShoru FROM tSal WHERE (ID = @ID)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vOzvSalDore" msprop:Generator_TableClassName="vOzvSalDoreDataTable" msprop:Generator_TableVarName="tablevOzvSalDore" msprop:Generator_TablePropName="vOzvSalDore" msprop:Generator_RowDeletingName="vOzvSalDoreRowDeleting" msprop:Generator_RowChangingName="vOzvSalDoreRowChanging" msprop:Generator_RowEvHandlerName="vOzvSalDoreRowChangeEventHandler" msprop:Generator_RowDeletedName="vOzvSalDoreRowDeleted" msprop:Generator_UserTableName="vOzvSalDore" msprop:Generator_RowChangedName="vOzvSalDoreRowChanged" msprop:Generator_RowEvArgName="vOzvSalDoreRowChangeEvent" msprop:Generator_RowClassName="vOzvSalDoreRow">
+        <xs:element name="vOzvSalDore" msprop:Generator_TableClassName="vOzvSalDoreDataTable" msprop:Generator_TableVarName="tablevOzvSalDore" msprop:Generator_RowChangedName="vOzvSalDoreRowChanged" msprop:Generator_TablePropName="vOzvSalDore" msprop:Generator_RowDeletingName="vOzvSalDoreRowDeleting" msprop:Generator_RowChangingName="vOzvSalDoreRowChanging" msprop:Generator_RowEvHandlerName="vOzvSalDoreRowChangeEventHandler" msprop:Generator_RowDeletedName="vOzvSalDoreRowDeleted" msprop:Generator_RowClassName="vOzvSalDoreRow" msprop:Generator_UserTableName="vOzvSalDore" msprop:Generator_RowEvArgName="vOzvSalDoreRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -1187,7 +1187,7 @@ SELECT ID, Onvan, TarikhShoru FROM tSal WHERE (ID = @ID)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vMadrak" msprop:Generator_TableClassName="vMadrakDataTable" msprop:Generator_TableVarName="tablevMadrak" msprop:Generator_TablePropName="vMadrak" msprop:Generator_RowDeletingName="vMadrakRowDeleting" msprop:Generator_RowChangingName="vMadrakRowChanging" msprop:Generator_RowEvHandlerName="vMadrakRowChangeEventHandler" msprop:Generator_RowDeletedName="vMadrakRowDeleted" msprop:Generator_UserTableName="vMadrak" msprop:Generator_RowChangedName="vMadrakRowChanged" msprop:Generator_RowEvArgName="vMadrakRowChangeEvent" msprop:Generator_RowClassName="vMadrakRow">
+        <xs:element name="vMadrak" msprop:Generator_TableClassName="vMadrakDataTable" msprop:Generator_TableVarName="tablevMadrak" msprop:Generator_RowChangedName="vMadrakRowChanged" msprop:Generator_TablePropName="vMadrak" msprop:Generator_RowDeletingName="vMadrakRowDeleting" msprop:Generator_RowChangingName="vMadrakRowChanging" msprop:Generator_RowEvHandlerName="vMadrakRowChangeEventHandler" msprop:Generator_RowDeletedName="vMadrakRowDeleted" msprop:Generator_RowClassName="vMadrakRow" msprop:Generator_UserTableName="vMadrak" msprop:Generator_RowEvArgName="vMadrakRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="NoMadrakOnvan" msprop:Generator_ColumnVarNameInTable="columnNoMadrakOnvan" msprop:Generator_ColumnPropNameInRow="NoMadrakOnvan" msprop:Generator_ColumnPropNameInTable="NoMadrakOnvanColumn" msprop:Generator_UserColumnName="NoMadrakOnvan">

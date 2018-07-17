@@ -18,7 +18,7 @@ Imports System
 Imports System.ComponentModel
 
 
-Public Class rprtHozurQiabBe
+Public Class rprtHozurQiabJim
     Inherits ReportClass
     
     Public Sub New()
@@ -27,7 +27,7 @@ Public Class rprtHozurQiabBe
     
     Public Overrides Property ResourceName() As String
         Get
-            Return "rprtHozurQiabBe.rpt"
+            Return "rprtHozurQiabJim.rpt"
         End Get
         Set
             'Do nothing
@@ -45,7 +45,7 @@ Public Class rprtHozurQiabBe
     
     Public Overrides Property FullResourceName() As String
         Get
-            Return "Tayebin2.rprtHozurQiabBe.rpt"
+            Return "Tayebin.rprtHozurQiabJim.rpt"
         End Get
         Set
             'Do nothing
@@ -94,7 +94,7 @@ Public Class rprtHozurQiabBe
 End Class
 
 <System.Drawing.ToolboxBitmapAttribute(GetType(CrystalDecisions.[Shared].ExportOptions), "report.bmp")>  _
-Public Class CachedrprtHozurQiabBe
+Public Class CachedrprtHozurQiabJim
     Inherits Component
     Implements ICachedReport
     
@@ -136,7 +136,7 @@ Public Class CachedrprtHozurQiabBe
     End Property
     
     Public Overridable Function CreateReport() As CrystalDecisions.CrystalReports.Engine.ReportDocument Implements CrystalDecisions.ReportSource.ICachedReport.CreateReport
-        Dim rpt As rprtHozurQiabBe = New rprtHozurQiabBe()
+        Dim rpt As rprtHozurQiabJim = New rprtHozurQiabJim()
         rpt.Site = Me.Site
         Return rpt
     End Function

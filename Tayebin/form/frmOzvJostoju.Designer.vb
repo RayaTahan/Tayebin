@@ -26,7 +26,7 @@ Partial Class frmOzvJostoju
         Me.TreeView1 = New System.Windows.Forms.TreeView()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.UcTextBox1 = New Tayebin2.ucTextBox()
+        Me.UcTextBox1 = New Tayebin.ucTextBox()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
@@ -39,43 +39,43 @@ Partial Class frmOzvJostoju
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TarikhVafat = New FreeControls.PersianDateTimePicker()
         Me.Label20 = New System.Windows.Forms.Label()
-        Me.txtTozih = New Tayebin2.ucTextBox()
+        Me.txtTozih = New Tayebin.ucTextBox()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.txtTahsil = New Tayebin2.ucTextBox()
-        Me.txtMahalTahsil = New Tayebin2.ucTextBox()
-        Me.txtShoql = New Tayebin2.ucTextBox()
-        Me.txtMahalKar = New Tayebin2.ucTextBox()
-        Me.txtShoqlPedar = New Tayebin2.ucTextBox()
-        Me.txtShoqlMadar = New Tayebin2.ucTextBox()
+        Me.txtTahsil = New Tayebin.ucTextBox()
+        Me.txtMahalTahsil = New Tayebin.ucTextBox()
+        Me.txtShoql = New Tayebin.ucTextBox()
+        Me.txtMahalKar = New Tayebin.ucTextBox()
+        Me.txtShoqlPedar = New Tayebin.ucTextBox()
+        Me.txtShoqlMadar = New Tayebin.ucTextBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.txtTel = New Tayebin2.ucTextBox()
-        Me.txtMob = New Tayebin2.ucTextBox()
-        Me.txtMobPedar = New Tayebin2.ucTextBox()
-        Me.txtMobMadar = New Tayebin2.ucTextBox()
-        Me.txtAdres = New Tayebin2.ucTextBox()
+        Me.txtTel = New Tayebin.ucTextBox()
+        Me.txtMob = New Tayebin.ucTextBox()
+        Me.txtMobPedar = New Tayebin.ucTextBox()
+        Me.txtMobMadar = New Tayebin.ucTextBox()
+        Me.txtAdres = New Tayebin.ucTextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.txtNam = New Tayebin2.ucTextBox()
-        Me.txtFamil = New Tayebin2.ucTextBox()
-        Me.txtPedar = New Tayebin2.ucTextBox()
+        Me.txtNam = New Tayebin.ucTextBox()
+        Me.txtFamil = New Tayebin.ucTextBox()
+        Me.txtPedar = New Tayebin.ucTextBox()
         Me.TarikhTavalod = New FreeControls.PersianDateTimePicker()
-        Me.txtCodeMelli = New Tayebin2.ucTextBox()
+        Me.txtCodeMelli = New Tayebin.ucTextBox()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label19 = New System.Windows.Forms.Label()
-        Me.txtSalVorud = New Tayebin2.ucTextBox()
+        Me.txtSalVorud = New Tayebin.ucTextBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -731,41 +731,41 @@ Partial Class frmOzvJostoju
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents Button3 As System.Windows.Forms.Button
     Friend WithEvents Button4 As System.Windows.Forms.Button
-    Friend WithEvents UcTextBox1 As Tayebin2.ucTextBox
+    Friend WithEvents UcTextBox1 As Tayebin.ucTextBox
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents txtNam As Tayebin2.ucTextBox
-    Friend WithEvents txtFamil As Tayebin2.ucTextBox
-    Friend WithEvents txtPedar As Tayebin2.ucTextBox
+    Friend WithEvents txtNam As Tayebin.ucTextBox
+    Friend WithEvents txtFamil As Tayebin.ucTextBox
+    Friend WithEvents txtPedar As Tayebin.ucTextBox
     Friend WithEvents TarikhTavalod As FreeControls.PersianDateTimePicker
-    Friend WithEvents txtCodeMelli As Tayebin2.ucTextBox
+    Friend WithEvents txtCodeMelli As Tayebin.ucTextBox
     Friend WithEvents Label12 As System.Windows.Forms.Label
     Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents Label8 As System.Windows.Forms.Label
-    Friend WithEvents txtTel As Tayebin2.ucTextBox
-    Friend WithEvents txtMob As Tayebin2.ucTextBox
-    Friend WithEvents txtMobPedar As Tayebin2.ucTextBox
-    Friend WithEvents txtMobMadar As Tayebin2.ucTextBox
-    Friend WithEvents txtAdres As Tayebin2.ucTextBox
+    Friend WithEvents txtTel As Tayebin.ucTextBox
+    Friend WithEvents txtMob As Tayebin.ucTextBox
+    Friend WithEvents txtMobPedar As Tayebin.ucTextBox
+    Friend WithEvents txtMobMadar As Tayebin.ucTextBox
+    Friend WithEvents txtAdres As Tayebin.ucTextBox
     Friend WithEvents Label18 As System.Windows.Forms.Label
     Friend WithEvents Label17 As System.Windows.Forms.Label
     Friend WithEvents Label15 As System.Windows.Forms.Label
     Friend WithEvents Label16 As System.Windows.Forms.Label
     Friend WithEvents Label14 As System.Windows.Forms.Label
     Friend WithEvents Label13 As System.Windows.Forms.Label
-    Friend WithEvents txtTahsil As Tayebin2.ucTextBox
-    Friend WithEvents txtMahalTahsil As Tayebin2.ucTextBox
-    Friend WithEvents txtShoql As Tayebin2.ucTextBox
-    Friend WithEvents txtMahalKar As Tayebin2.ucTextBox
-    Friend WithEvents txtShoqlPedar As Tayebin2.ucTextBox
-    Friend WithEvents txtShoqlMadar As Tayebin2.ucTextBox
+    Friend WithEvents txtTahsil As Tayebin.ucTextBox
+    Friend WithEvents txtMahalTahsil As Tayebin.ucTextBox
+    Friend WithEvents txtShoql As Tayebin.ucTextBox
+    Friend WithEvents txtMahalKar As Tayebin.ucTextBox
+    Friend WithEvents txtShoqlPedar As Tayebin.ucTextBox
+    Friend WithEvents txtShoqlMadar As Tayebin.ucTextBox
     Friend WithEvents Label20 As System.Windows.Forms.Label
-    Friend WithEvents txtTozih As Tayebin2.ucTextBox
+    Friend WithEvents txtTozih As Tayebin.ucTextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents TarikhVafat As FreeControls.PersianDateTimePicker
     Friend WithEvents Label6 As System.Windows.Forms.Label

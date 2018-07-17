@@ -135,7 +135,7 @@
     <value>9, 21</value>
   </data>
   <data name="&gt;&gt;txtMonasebat.Type" xml:space="preserve">
-    <value>Tayebin2.ucTextBox, Tayebin, Version=2.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Tayebin.ucTextBox, Tayebin, Version=2.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>تقویم</value>
@@ -220,7 +220,7 @@
     <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="cal" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtMonasebat" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="Absolute,350,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="&gt;&gt;cal.Type" xml:space="preserve">
-    <value>Tayebin2.ucCal, Tayebin, Version=2.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Tayebin.ucCal, Tayebin, Version=2.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 5, 4, 5</value>

@@ -26,8 +26,8 @@ Partial Class frmLogin
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
-        Me.UcTextBox2 = New Tayebin2.ucTextBox()
-        Me.UcTextBox1 = New Tayebin2.ucTextBox()
+        Me.UcTextBox2 = New Tayebin.ucTextBox()
+        Me.UcTextBox1 = New Tayebin.ucTextBox()
         Me.SuspendLayout()
         '
         'Label1
@@ -129,8 +129,8 @@ Partial Class frmLogin
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents UcTextBox1 As Tayebin2.ucTextBox
-    Friend WithEvents UcTextBox2 As Tayebin2.ucTextBox
+    Friend WithEvents UcTextBox1 As Tayebin.ucTextBox
+    Friend WithEvents UcTextBox2 As Tayebin.ucTextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Button1 As System.Windows.Forms.Button

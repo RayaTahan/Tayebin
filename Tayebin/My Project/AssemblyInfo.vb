@@ -9,7 +9,7 @@ Imports System.Runtime.InteropServices
 ' Review the values of the assembly attributes
 
 <Assembly: AssemblyTitle("Tayebin")>
-<Assembly: AssemblyDescription("Tayebin2.2")>
+<Assembly: AssemblyDescription("Tayebin")>
 <Assembly: AssemblyCompany("PurTahan")>
 <Assembly: AssemblyProduct("طیبین")>
 <Assembly: AssemblyCopyright("کپی صلواتی")>
