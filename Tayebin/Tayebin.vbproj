@@ -812,7 +812,7 @@
       <DependentUpon>database.mdf</DependentUpon>
     </Content>
     <Content Include="icon.ico" />
-    <None Include="Resources\LOGO.png" />
+    <None Include="data\LOGO.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.1">
