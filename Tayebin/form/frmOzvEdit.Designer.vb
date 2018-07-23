@@ -25,6 +25,8 @@ Partial Class frmOzvEdit
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmOzvEdit))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.txtSalVorud = New System.Windows.Forms.NumericUpDown()
+        Me.Label23 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -75,14 +77,12 @@ Partial Class frmOzvEdit
         Me.txtTedadVirayesh = New Tayebin.ucTextBox()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.Label23 = New System.Windows.Forms.Label()
-        Me.txtSalVorud = New System.Windows.Forms.NumericUpDown()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
+        CType(Me.txtSalVorud, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
         Me.TabPage3.SuspendLayout()
         Me.TabPage4.SuspendLayout()
-        CType(Me.txtSalVorud, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -126,6 +126,22 @@ Partial Class frmOzvEdit
         Me.TabPage1.Size = New System.Drawing.Size(442, 288)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "فردی"
+        '
+        'txtSalVorud
+        '
+        Me.txtSalVorud.Location = New System.Drawing.Point(6, 232)
+        Me.txtSalVorud.Name = "txtSalVorud"
+        Me.txtSalVorud.Size = New System.Drawing.Size(246, 29)
+        Me.txtSalVorud.TabIndex = 22
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.Location = New System.Drawing.Point(259, 234)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(72, 21)
+        Me.Label23.TabIndex = 21
+        Me.Label23.Text = "سال ورود"
         '
         'Label7
         '
@@ -355,10 +371,12 @@ Partial Class frmOzvEdit
         '
         Me.txtTel.BackColor = System.Drawing.Color.White
         Me.txtTel.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.txtTel.isPhoneNumber = True
         Me.txtTel.Location = New System.Drawing.Point(5, 5)
         Me.txtTel.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtTel.MaxLength = 20
         Me.txtTel.Name = "txtTel"
+        Me.txtTel.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.txtTel.Size = New System.Drawing.Size(247, 29)
         Me.txtTel.TabIndex = 0
         Me.txtTel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -367,10 +385,12 @@ Partial Class frmOzvEdit
         '
         Me.txtMob.BackColor = System.Drawing.Color.White
         Me.txtMob.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.txtMob.isPhoneNumber = True
         Me.txtMob.Location = New System.Drawing.Point(5, 37)
         Me.txtMob.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtMob.MaxLength = 20
         Me.txtMob.Name = "txtMob"
+        Me.txtMob.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.txtMob.Size = New System.Drawing.Size(247, 29)
         Me.txtMob.TabIndex = 1
         Me.txtMob.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -379,10 +399,12 @@ Partial Class frmOzvEdit
         '
         Me.txtMobPedar.BackColor = System.Drawing.Color.White
         Me.txtMobPedar.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.txtMobPedar.isPhoneNumber = True
         Me.txtMobPedar.Location = New System.Drawing.Point(5, 69)
         Me.txtMobPedar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtMobPedar.MaxLength = 20
         Me.txtMobPedar.Name = "txtMobPedar"
+        Me.txtMobPedar.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.txtMobPedar.Size = New System.Drawing.Size(247, 29)
         Me.txtMobPedar.TabIndex = 2
         Me.txtMobPedar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -391,10 +413,12 @@ Partial Class frmOzvEdit
         '
         Me.txtMobMadar.BackColor = System.Drawing.Color.White
         Me.txtMobMadar.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.txtMobMadar.isPhoneNumber = True
         Me.txtMobMadar.Location = New System.Drawing.Point(5, 102)
         Me.txtMobMadar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtMobMadar.MaxLength = 20
         Me.txtMobMadar.Name = "txtMobMadar"
+        Me.txtMobMadar.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.txtMobMadar.Size = New System.Drawing.Size(247, 29)
         Me.txtMobMadar.TabIndex = 3
         Me.txtMobMadar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -699,22 +723,6 @@ Partial Class frmOzvEdit
         Me.Button1.Text = "ثبت"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'Label23
-        '
-        Me.Label23.AutoSize = True
-        Me.Label23.Location = New System.Drawing.Point(259, 234)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(72, 21)
-        Me.Label23.TabIndex = 21
-        Me.Label23.Text = "سال ورود"
-        '
-        'txtSalVorud
-        '
-        Me.txtSalVorud.Location = New System.Drawing.Point(6, 232)
-        Me.txtSalVorud.Name = "txtSalVorud"
-        Me.txtSalVorud.Size = New System.Drawing.Size(246, 29)
-        Me.txtSalVorud.TabIndex = 22
-        '
         'frmOzvEdit
         '
         Me.AcceptButton = Me.Button1
@@ -737,13 +745,13 @@ Partial Class frmOzvEdit
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
+        CType(Me.txtSalVorud, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
         Me.TabPage3.ResumeLayout(False)
         Me.TabPage3.PerformLayout()
         Me.TabPage4.ResumeLayout(False)
         Me.TabPage4.PerformLayout()
-        CType(Me.txtSalVorud, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

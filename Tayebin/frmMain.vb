@@ -30,7 +30,7 @@
     Public Sub reLoad()
         Try
             lblKanunOnvan.Text = AppMan.TanzimGet("KanunNam")
-            lblVersion.Text = String.Format("نرم افزار {0} نسخه {1}", Application.ProductName, Application.ProductVersion)
+            lblVersion.Text = String.Format("نرم افزار {0} نسخه {1}", AppMan.AppName, AppMan.AppVer)
             icons()
 
             With CType(table.Controls(3), ucIcon) ' Icon Taqvim

@@ -1,9 +1,7 @@
-﻿Public Class frmLogin
+﻿
+Public Class frmLogin
 
     Private Sub frmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If Val(SQL.RunCommandScaler("select count(*) from tKarbari")) <= 0 Then
-            Me.Close()
-        End If
         PictureBox1.Image = IMGcache.img("data\app\icon\padlock67.png")
     End Sub
 
@@ -12,6 +10,9 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        If Val(SQL.RunCommandScaler("select count(*) from tKarbari")) <= 0 Then
+            Me.Close()
+        End If
         If (UcTextBox1.Text = "purtahan" And UcTextBox2.Text = "YaRaouf") OrElse Val(SQL.RunCommandScaler(String.Format("select count(*) from tKarbari where u like N'{0}' and p like N'{1}'", UcTextBox1.Text, UcTextBox2.Text))) = 1 Then
             Me.Close()
         Else

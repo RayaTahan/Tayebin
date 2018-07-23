@@ -24,6 +24,24 @@
         End Get
     End Property
 
+    Public Shared ReadOnly Property AppVer As String
+        Get
+            Return Application.ProductVersion
+        End Get
+    End Property
+
+    Public Shared ReadOnly Property AppName As String
+        Get
+            Return Application.ProductName
+        End Get
+    End Property
+
+    Public Shared ReadOnly Property AppURL As String
+        Get
+            Return "http://Tayebin.blog.ir"
+        End Get
+    End Property
+
     Public Shared Function isDbUpToDate() As Boolean
         Try
             Dim dbCurrentVer As Integer = dbVer

@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmReport
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,43 +20,30 @@ Partial Class frmReport
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.Viewer = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
+        Me.viewer = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.SuspendLayout()
         '
-        'Viewer
+        'viewer
         '
-        Me.Viewer.ActiveViewIndex = -1
-        Me.Viewer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Viewer.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Viewer.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Viewer.Font = New System.Drawing.Font("B Roya", 14.25!)
-        Me.Viewer.Location = New System.Drawing.Point(0, 0)
-        Me.Viewer.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Viewer.Name = "Viewer"
-        Me.Viewer.ShowLogo = False
-        Me.Viewer.ShowParameterPanelButton = False
-        Me.Viewer.Size = New System.Drawing.Size(476, 422)
-        Me.Viewer.TabIndex = 0
-        Me.Viewer.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None
+        Me.viewer.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.viewer.Location = New System.Drawing.Point(0, 0)
+        Me.viewer.Name = "viewer"
+        Me.viewer.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.viewer.ServerReport.BearerToken = Nothing
+        Me.viewer.Size = New System.Drawing.Size(651, 418)
+        Me.viewer.TabIndex = 0
         '
         'frmReport
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 21.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(476, 422)
-        Me.Controls.Add(Me.Viewer)
-        Me.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.KeyPreview = True
-        Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ClientSize = New System.Drawing.Size(651, 418)
+        Me.Controls.Add(Me.viewer)
         Me.Name = "frmReport"
-        Me.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.ShowIcon = False
-        Me.Text = "گزارش"
-        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents Viewer As CrystalDecisions.Windows.Forms.CrystalReportViewer
+
+    Friend WithEvents viewer As Microsoft.Reporting.WinForms.ReportViewer
 End Class

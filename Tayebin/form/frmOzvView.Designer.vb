@@ -421,11 +421,13 @@ Partial Class frmOzvView
         '
         Me.txtTel.BackColor = System.Drawing.Color.White
         Me.txtTel.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.txtTel.isPhoneNumber = True
         Me.txtTel.Location = New System.Drawing.Point(5, 5)
         Me.txtTel.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtTel.MaxLength = 20
         Me.txtTel.Name = "txtTel"
         Me.txtTel.ReadOnly = True
+        Me.txtTel.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.txtTel.Size = New System.Drawing.Size(247, 29)
         Me.txtTel.TabIndex = 19
         Me.txtTel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -434,11 +436,13 @@ Partial Class frmOzvView
         '
         Me.txtMob.BackColor = System.Drawing.Color.White
         Me.txtMob.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.txtMob.isPhoneNumber = True
         Me.txtMob.Location = New System.Drawing.Point(5, 37)
         Me.txtMob.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtMob.MaxLength = 20
         Me.txtMob.Name = "txtMob"
         Me.txtMob.ReadOnly = True
+        Me.txtMob.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.txtMob.Size = New System.Drawing.Size(247, 29)
         Me.txtMob.TabIndex = 20
         Me.txtMob.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -447,11 +451,13 @@ Partial Class frmOzvView
         '
         Me.txtMobPedar.BackColor = System.Drawing.Color.White
         Me.txtMobPedar.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.txtMobPedar.isPhoneNumber = True
         Me.txtMobPedar.Location = New System.Drawing.Point(5, 69)
         Me.txtMobPedar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtMobPedar.MaxLength = 20
         Me.txtMobPedar.Name = "txtMobPedar"
         Me.txtMobPedar.ReadOnly = True
+        Me.txtMobPedar.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.txtMobPedar.Size = New System.Drawing.Size(247, 29)
         Me.txtMobPedar.TabIndex = 21
         Me.txtMobPedar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -460,11 +466,13 @@ Partial Class frmOzvView
         '
         Me.txtMobMadar.BackColor = System.Drawing.Color.White
         Me.txtMobMadar.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.txtMobMadar.isPhoneNumber = True
         Me.txtMobMadar.Location = New System.Drawing.Point(5, 102)
         Me.txtMobMadar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtMobMadar.MaxLength = 20
         Me.txtMobMadar.Name = "txtMobMadar"
         Me.txtMobMadar.ReadOnly = True
+        Me.txtMobMadar.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.txtMobMadar.Size = New System.Drawing.Size(247, 29)
         Me.txtMobMadar.TabIndex = 22
         Me.txtMobMadar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
