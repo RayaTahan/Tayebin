@@ -32,6 +32,12 @@ Partial Class frmReport
         Me.viewer.Name = "viewer"
         Me.viewer.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.viewer.ServerReport.BearerToken = Nothing
+        Me.viewer.ShowBackButton = False
+        Me.viewer.ShowCredentialPrompts = False
+        Me.viewer.ShowDocumentMapButton = False
+        Me.viewer.ShowFindControls = False
+        Me.viewer.ShowParameterPrompts = False
+        Me.viewer.ShowPromptAreaButton = False
         Me.viewer.Size = New System.Drawing.Size(651, 418)
         Me.viewer.TabIndex = 0
         '
@@ -39,6 +45,7 @@ Partial Class frmReport
         '
         Me.ClientSize = New System.Drawing.Size(651, 418)
         Me.Controls.Add(Me.viewer)
+        Me.KeyPreview = True
         Me.Name = "frmReport"
         Me.ShowIcon = False
         Me.ResumeLayout(False)

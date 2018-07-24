@@ -14,9 +14,7 @@
             TreeView1.Nodes.Add(nSal)
         Next
         Button2.Enabled = False
-        Button3.Enabled = False
-        Button4.Enabled = False
-        Button6.Enabled = False
+        Button7.Enabled = False
 
         Dim salHa As DataTable = SQL.Fill("select ID,Onvan from tSal")
         With comboHozur
@@ -40,39 +38,17 @@
 
         If TreeView1.SelectedNode IsNot Nothing AndAlso TreeView1.SelectedNode.Parent IsNot Nothing Then
             Button2.Enabled = True
-            Button3.Enabled = True
-            Button4.Enabled = True
-            Button6.Enabled = True
+            Button7.Enabled = True
         Else
             Button2.Enabled = False
-            Button3.Enabled = False
-            Button4.Enabled = False
-            Button6.Enabled = False
+            Button7.Enabled = False
         End If
-        
+
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Try
             Dim frm As New frmReport(frmReport.KodumGozaresh.SalDore, TreeView1.SelectedNode.Tag)
-            frm.Show()
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        End Try
-    End Sub
-
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        Try
-            Dim frm As New frmReport(frmReport.KodumGozaresh.HozurQiabAlef, TreeView1.SelectedNode.Tag)
-            frm.Show()
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        End Try
-    End Sub
-
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        Try
-            Dim frm As New frmReport(frmReport.KodumGozaresh.HozurQiabBe, TreeView1.SelectedNode.Tag)
             frm.Show()
         Catch ex As Exception
             MessageBox.Show(ex.Message)
@@ -92,9 +68,9 @@
 
     End Sub
 
-    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
         Try
-            Dim frm As New frmReport(frmReport.KodumGozaresh.HozurQiabJim, TreeView1.SelectedNode.Tag)
+            Dim frm As New frmReport(frmReport.KodumGozaresh.HozurQiabAlef, TreeView1.SelectedNode.Tag)
             frm.Show()
         Catch ex As Exception
             MessageBox.Show(ex.Message)

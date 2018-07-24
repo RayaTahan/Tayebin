@@ -31,12 +31,9 @@ Partial Class frmGozareshHa
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Button4 = New System.Windows.Forms.Button()
         Me.TreeView1 = New System.Windows.Forms.TreeView()
-        Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button6 = New System.Windows.Forms.Button()
+        Me.Button7 = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -127,11 +124,8 @@ Partial Class frmGozareshHa
         'TabPage2
         '
         Me.TabPage2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.TabPage2.Controls.Add(Me.Button6)
-        Me.TabPage2.Controls.Add(Me.Label1)
-        Me.TabPage2.Controls.Add(Me.Button4)
+        Me.TabPage2.Controls.Add(Me.Button7)
         Me.TabPage2.Controls.Add(Me.TreeView1)
-        Me.TabPage2.Controls.Add(Me.Button3)
         Me.TabPage2.Controls.Add(Me.Button2)
         Me.TabPage2.Location = New System.Drawing.Point(4, 30)
         Me.TabPage2.Name = "TabPage2"
@@ -139,25 +133,6 @@ Partial Class frmGozareshHa
         Me.TabPage2.Size = New System.Drawing.Size(418, 321)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "گزارش دوره"
-        '
-        'Label1
-        '
-        Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(172, 263)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(238, 50)
-        Me.Label1.TabIndex = 34
-        Me.Label1.Text = "فرم حضور و غیاب"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Button4
-        '
-        Me.Button4.Location = New System.Drawing.Point(64, 263)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(50, 50)
-        Me.Button4.TabIndex = 33
-        Me.Button4.Text = "ب"
-        Me.Button4.UseVisualStyleBackColor = True
         '
         'TreeView1
         '
@@ -169,32 +144,23 @@ Partial Class frmGozareshHa
         Me.TreeView1.Size = New System.Drawing.Size(402, 197)
         Me.TreeView1.TabIndex = 32
         '
-        'Button3
-        '
-        Me.Button3.Location = New System.Drawing.Point(120, 263)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(50, 50)
-        Me.Button3.TabIndex = 31
-        Me.Button3.Text = "الف"
-        Me.Button3.UseVisualStyleBackColor = True
-        '
         'Button2
         '
         Me.Button2.Location = New System.Drawing.Point(8, 207)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(402, 50)
         Me.Button2.TabIndex = 30
-        Me.Button2.Text = "گزارش اعضا"
+        Me.Button2.Text = "گزارش اعضا | R101"
         Me.Button2.UseVisualStyleBackColor = True
         '
-        'Button6
+        'Button7
         '
-        Me.Button6.Location = New System.Drawing.Point(8, 263)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(50, 50)
-        Me.Button6.TabIndex = 35
-        Me.Button6.Text = "ج"
-        Me.Button6.UseVisualStyleBackColor = True
+        Me.Button7.Location = New System.Drawing.Point(8, 263)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(402, 50)
+        Me.Button7.TabIndex = 36
+        Me.Button7.Text = "فرم حضور و غیاب | R102"
+        Me.Button7.UseVisualStyleBackColor = True
         '
         'frmGozareshHa
         '
@@ -223,15 +189,12 @@ Partial Class frmGozareshHa
     Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
     Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
     Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents Button3 As System.Windows.Forms.Button
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents TreeView1 As System.Windows.Forms.TreeView
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Button4 As System.Windows.Forms.Button
     Friend WithEvents Button5 As Button
     Friend WithEvents Label3 As Label
     Friend WithEvents comboAdamHozur As ComboBox
     Friend WithEvents Label2 As Label
     Friend WithEvents comboHozur As ComboBox
-    Friend WithEvents Button6 As Button
+    Friend WithEvents Button7 As Button
 End Class

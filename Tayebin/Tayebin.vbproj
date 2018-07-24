@@ -138,7 +138,6 @@
     <Compile Include="core\fun.vb" />
     <Compile Include="core\IMGcache.vb" />
     <Compile Include="core\Numbertools.vb" />
-    <Compile Include="core\rptFun.vb" />
     <Compile Include="core\SQL.vb" />
     <Compile Include="DataSet.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -308,7 +307,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="data\reports\rpt1.rdlc">
+    <EmbeddedResource Include="data\reports\R102.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="data\reports\R101.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="form\frmKarname.resx">

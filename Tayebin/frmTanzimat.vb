@@ -28,7 +28,7 @@
         AboutHTML += "<p><a href=""https://github.com/PurTahan/Tayebin"" >https://github.com/PurTahan/Tayebin</a></p>"
         AboutHTML += "<p>" & "جهت تعجیل در امر فرج حضرت صاحب الزمان صلوات!" & "</p>"
         AboutHTML += "<p>" & "اللهم صل علی محمد و آل محمد و عجل فرجهم" & "</p>"
-
+        AboutHTML += "<hr /><p style='text-align:center;'><a href=""" & AppMan.AppURL & """>" & String.Format("{0} | نرم افزار {1} نسخه {2}", AppMan.AppURL, AppMan.AppName, AppMan.AppVer) & "</a></p>"
         AboutHTML += "</body></html>"
 
         WebBrowser1.DocumentText = AboutHTML
