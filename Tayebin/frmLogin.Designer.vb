@@ -135,7 +135,8 @@ Partial Class frmLogin
         Me.MinimizeBox = False
         Me.Name = "frmLogin"
         Me.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.ShowIcon = False
+        Me.ShowIcon = True
+        Me.Icon = AppMan.Icon
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "ورود"

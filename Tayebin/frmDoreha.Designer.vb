@@ -375,12 +375,13 @@ Partial Class frmDoreha
         Me.ClientSize = New System.Drawing.Size(580, 324)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Controls.Add(Me.Panel1)
+        Me.Icon = AppMan.Icon
         Me.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.MinimumSize = New System.Drawing.Size(596, 363)
         Me.Name = "frmDoreha"
         Me.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.ShowIcon = False
+        Me.ShowIcon = True
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "مدیریت دوره ها"
         Me.Panel1.ResumeLayout(False)

@@ -735,6 +735,7 @@ Partial Class frmOzvEdit
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Button2)
+        Me.Icon = AppMan.Icon
         Me.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)

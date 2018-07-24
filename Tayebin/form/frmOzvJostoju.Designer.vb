@@ -706,6 +706,7 @@ Partial Class frmOzvJostoju
         Me.ControlBox = False
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.TreeView1)
+        Me.Icon = AppMan.Icon
         Me.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)

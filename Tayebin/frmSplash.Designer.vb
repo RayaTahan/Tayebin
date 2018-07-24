@@ -22,6 +22,7 @@ Partial Class frmSplash
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmSplash))
         Me.SuspendLayout()
         '
         'frmSplash
@@ -35,12 +36,12 @@ Partial Class frmSplash
         Me.DoubleBuffered = True
         Me.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(178, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(6)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "frmSplash"
         Me.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.ShowIcon = False
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "ورود"

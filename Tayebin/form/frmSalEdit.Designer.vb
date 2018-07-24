@@ -134,6 +134,7 @@ Partial Class frmSalEdit
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.PersianDateTimePicker1)
         Me.Controls.Add(Me.TextBox1)
+        Me.Icon = AppMan.Icon
         Me.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)

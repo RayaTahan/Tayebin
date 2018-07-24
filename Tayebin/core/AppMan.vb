@@ -104,4 +104,6 @@
 
         End Try
     End Sub
+
+    Public Shared Icon As Icon = CType((New System.Resources.ResourceManager(GetType(frmMain))).GetObject("$this.Icon"), System.Drawing.Icon)
 End Class

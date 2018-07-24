@@ -1,5 +1,10 @@
 ﻿Public Class frmOzvha
+    Public Sub New()
 
+        ' This call is required by the designer.
+        InitializeComponent()
+        ' Add any initialization after the InitializeComponent() call.
+    End Sub
 
     Public Sub ReloadData(Optional Shart() As String = Nothing, Optional SalDore As String = "", Optional UseAnd As Boolean = False)
         ''''''''''''''''''''''''''''''''''''''''''''''''''''

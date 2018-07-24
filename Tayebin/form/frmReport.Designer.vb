@@ -47,7 +47,8 @@ Partial Class frmReport
         Me.Controls.Add(Me.viewer)
         Me.KeyPreview = True
         Me.Name = "frmReport"
-        Me.ShowIcon = False
+        Me.Icon = AppMan.Icon
+        Me.ShowIcon = True
         Me.ResumeLayout(False)
 
     End Sub

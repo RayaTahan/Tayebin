@@ -205,6 +205,7 @@ Partial Class frmOzvha
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Panel1)
         Me.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.Icon = AppMan.Icon
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.MinimumSize = New System.Drawing.Size(596, 363)
         Me.Name = "frmOzvha"

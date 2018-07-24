@@ -1036,6 +1036,7 @@ Partial Class frmOzvView
         Me.BackColor = System.Drawing.Color.Teal
         Me.ClientSize = New System.Drawing.Size(526, 340)
         Me.Controls.Add(Me.TabControl1)
+        Me.Icon = AppMan.Icon
         Me.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)

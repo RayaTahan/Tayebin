@@ -13,7 +13,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyCompany("PurTahan")>
 <Assembly: AssemblyProduct("طیبین")>
 <Assembly: AssemblyCopyright("کپی صلواتی")>
-<Assembly: AssemblyTrademark("PurTahan")> 
+<Assembly: AssemblyTrademark("http://Tayebin.blog.ir")>
 
 <Assembly: ComVisible(False)> 
 
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("2.2")>
-<Assembly: AssemblyFileVersion("2.2")>
+<Assembly: AssemblyVersion("2.3")>
+<Assembly: AssemblyFileVersion("2.3")>

@@ -38,15 +38,15 @@ Partial Class frmTaqvim
         '
         'cal
         '
-        resources.ApplyResources(Me.cal, "cal")
         Me.cal.BackColor = System.Drawing.Color.GhostWhite
+        resources.ApplyResources(Me.cal, "cal")
         Me.cal.inNamayeshBold = ""
         Me.cal.Name = "cal"
         '
         'txtMonasebat
         '
-        resources.ApplyResources(Me.txtMonasebat, "txtMonasebat")
         Me.txtMonasebat.BackColor = System.Drawing.Color.White
+        resources.ApplyResources(Me.txtMonasebat, "txtMonasebat")
         Me.txtMonasebat.Name = "txtMonasebat"
         Me.txtMonasebat.ReadOnly = True
         '
@@ -57,7 +57,6 @@ Partial Class frmTaqvim
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Name = "frmTaqvim"
-        Me.ShowIcon = False
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel1.PerformLayout()
         Me.ResumeLayout(False)
