@@ -1155,12 +1155,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_78D02D1CC4271C8080CDDDC88FDA4BDE"
-        "OwnerKey" = "8:_9EB1B316CAA24B308604BA2CD9FC7948"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_7B78EA87BB4142461903607A68AF6D11"
         "OwnerKey" = "8:_9EB1B316CAA24B308604BA2CD9FC7948"
         "MsmSig" = "8:_UNDEFINED"
@@ -1281,6 +1275,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_8200537B344A63CA69872C46A98530DC"
+        "OwnerKey" = "8:_9EB1B316CAA24B308604BA2CD9FC7948"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_87914C195FE63B99EC21F28DFFE8B25E"
         "OwnerKey" = "8:_9BC3CEDC2AFB05488DA5288AAFA98A37"
         "MsmSig" = "8:_UNDEFINED"
@@ -1366,7 +1366,7 @@
         "Entry"
         {
         "MsmKey" = "8:_8EF17615A5375D1353CC2FBD9BFC1788"
-        "OwnerKey" = "8:_78D02D1CC4271C8080CDDDC88FDA4BDE"
+        "OwnerKey" = "8:_8200537B344A63CA69872C46A98530DC"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -2278,13 +2278,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_9EB1B316CAA24B308604BA2CD9FC7948"
+        "OwnerKey" = "8:_8200537B344A63CA69872C46A98530DC"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_78D02D1CC4271C8080CDDDC88FDA4BDE"
+        "OwnerKey" = "8:_9EB1B316CAA24B308604BA2CD9FC7948"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -3080,16 +3080,6 @@
             "ComponentsUrl" = "8:"
                 "Items"
                 {
-                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.5.2"
-                    {
-                    "Name" = "8:Microsoft .NET Framework 4.5.2 (x86 and x64)"
-                    "ProductCode" = "8:.NETFramework,Version=v4.5.2"
-                    }
-                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.SqlServer.SqlLocalDB.11.1"
-                    {
-                    "Name" = "8:SQL Server 2012 Express LocalDB"
-                    "ProductCode" = "8:Microsoft.SqlServer.SqlLocalDB.11.1"
-                    }
                 }
             }
         }
@@ -4919,37 +4909,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_78D02D1CC4271C8080CDDDC88FDA4BDE"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:PersianDate, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_78D02D1CC4271C8080CDDDC88FDA4BDE"
-                    {
-                    "Name" = "8:PersianDate.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:PersianDate.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_2663546628CA4D64B2601963FEAAFF11"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_7B78EA87BB4142461903607A68AF6D11"
             {
             "AssemblyRegister" = "3:1"
@@ -5232,6 +5191,37 @@
                     }
                 }
             "SourcePath" = "8:System.Text.RegularExpressions.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_2663546628CA4D64B2601963FEAAFF11"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_8200537B344A63CA69872C46A98530DC"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:PersianDate, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_8200537B344A63CA69872C46A98530DC"
+                    {
+                    "Name" = "8:PersianDate.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:PersianDate.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_2663546628CA4D64B2601963FEAAFF11"
