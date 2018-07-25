@@ -69,8 +69,15 @@
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
+  
     <ApplicationIcon>icon.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup> 
+    <ContentSQLiteInteropFiles>true</ContentSQLiteInteropFiles>
+    <CopySQLiteInteropFiles>false</CopySQLiteInteropFiles>
+    <CleanSQLiteInteropFiles>false</CleanSQLiteInteropFiles>
+    <CollectSQLiteInteropFiles>false</CollectSQLiteInteropFiles>
+</PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
@@ -313,12 +320,26 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="data\reports\R102.rdlc">
+    <Content Include="data\reports\R102.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="data\reports\R101.rdlc">
+    </Content>
+    <Content Include="data\reports\R101.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
+    </Content>
+    <Content Include="SqlServerTypes\Loader.cs" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <EmbeddedResource Include="form\frmKarname.resx">
       <DependentUpon>frmKarname.vb</DependentUpon>
     </EmbeddedResource>
@@ -409,93 +430,93 @@
     <None Include="DataSet.xss">
       <DependentUpon>DataSet.xsd</DependentUpon>
     </None>
-    <None Include="data\app\font\ADOBEARABIC-BOLD.OTF">
+    <Content Include="data\app\font\ADOBEARABIC-BOLD.OTF">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="data\app\font\ADOBEARABIC-BOLDITALIC.OTF">
+    </Content>
+    <Content Include="data\app\font\ADOBEARABIC-BOLDITALIC.OTF">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="data\app\font\ADOBEARABIC-ITALIC.OTF">
+    </Content>
+    <Content Include="data\app\font\ADOBEARABIC-ITALIC.OTF">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="data\app\font\ADOBEARABIC-REGULAR.OTF">
+    </Content>
+    <Content Include="data\app\font\ADOBEARABIC-REGULAR.OTF">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="data\app\font\BNAZANIN.TTF">
+    </Content>
+    <Content Include="data\app\font\BNAZANIN.TTF">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="data\app\font\BNAZNNBD.TTF">
+    </Content>
+    <Content Include="data\app\font\BNAZNNBD.TTF">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="data\app\font\BROYA.TTF">
+    </Content>
+    <Content Include="data\app\font\BROYA.TTF">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="data\app\font\BROYABD.TTF">
+    </Content>
+    <Content Include="data\app\font\BROYABD.TTF">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="data\app\font\DROID ARABIC KUFI BOLD.TTF">
+    </Content>
+    <Content Include="data\app\font\DROID ARABIC KUFI BOLD.TTF">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="data\app\font\DROID ARABIC KUFI.TTF">
+    </Content>
+    <Content Include="data\app\font\DROID ARABIC KUFI.TTF">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="data\app\font\DROIDNASKH-BOLD.TTF">
+    </Content>
+    <Content Include="data\app\font\DROIDNASKH-BOLD.TTF">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="data\app\font\DROIDNASKH-REGULAR.TTF">
+    </Content>
+    <Content Include="data\app\font\DROIDNASKH-REGULAR.TTF">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="data\app\font\IRANSans.ttf">
+    </Content>
+    <Content Include="data\app\font\IRANSans.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="data\app\font\IRANSans_Bold.ttf">
+    </Content>
+    <Content Include="data\app\font\IRANSans_Bold.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="data\app\font\IRANSans_Light.ttf">
+    </Content>
+    <Content Include="data\app\font\IRANSans_Light.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="data\app\font\IRANSans_Medium.ttf">
+    </Content>
+    <Content Include="data\app\font\IRANSans_Medium.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="data\app\font\IRANSans_UltraLight.ttf">
+    </Content>
+    <Content Include="data\app\font\IRANSans_UltraLight.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="data\app\font\SEGOEUI.TTF">
+    </Content>
+    <Content Include="data\app\font\SEGOEUI.TTF">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="data\app\font\SEGOEUIB.TTF">
+    </Content>
+    <Content Include="data\app\font\SEGOEUIB.TTF">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="data\app\font\SEGOEUII.TTF">
+    </Content>
+    <Content Include="data\app\font\SEGOEUII.TTF">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="data\app\font\SEGOEUIL.TTF">
+    </Content>
+    <Content Include="data\app\font\SEGOEUIL.TTF">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="data\app\font\SEGOEUISL.TTF">
+    </Content>
+    <Content Include="data\app\font\SEGOEUISL.TTF">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="data\app\font\SEGOEUIZ.TTF">
+    </Content>
+    <Content Include="data\app\font\SEGOEUIZ.TTF">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="data\app\font\SEGUIBL.TTF">
+    </Content>
+    <Content Include="data\app\font\SEGUIBL.TTF">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="data\app\font\SEGUIBLI.TTF">
+    </Content>
+    <Content Include="data\app\font\SEGUIBLI.TTF">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="data\app\font\SEGUILI.TTF">
+    </Content>
+    <Content Include="data\app\font\SEGUILI.TTF">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="data\app\font\SEGUISB.TTF">
+    </Content>
+    <Content Include="data\app\font\SEGUISB.TTF">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="data\app\font\SEGUISBI.TTF">
+    </Content>
+    <Content Include="data\app\font\SEGUISBI.TTF">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="data\app\font\SEGUISLI.TTF">
+    </Content>
+    <Content Include="data\app\font\SEGUISLI.TTF">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    </Content>
     <None Include="My Project\app.manifest">
       <SubType>Designer</SubType>
     </None>
@@ -817,21 +838,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="icon.ico" />
-    <Content Include="SqlServerTypes\Loader.cs" />
-    <Content Include="SqlServerTypes\readme.htm" />
-    <Content Include="SqlServerTypes\x64\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <Content Include="data\LOGO.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <None Include="data\LOGO.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">

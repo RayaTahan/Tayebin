@@ -639,7 +639,6 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -750,7 +749,6 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>ds</DataSetName>
-            <Left>0cm</Left>
             <Height>0.6cm</Height>
             <Width>19cm</Width>
             <Style>
@@ -825,7 +823,6 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Left>0cm</Left>
               <Height>0.82944cm</Height>
               <Width>8.07056cm</Width>
               <ZIndex>1</ZIndex>
@@ -1011,7 +1008,6 @@
               </Paragraphs>
               <rd:DefaultName>OverallTotalPages</rd:DefaultName>
               <Top>0.82944cm</Top>
-              <Left>0cm</Left>
               <Height>0.70584cm</Height>
               <Width>0.93528cm</Width>
               <ZIndex>6</ZIndex>
@@ -1081,7 +1077,6 @@
             </Line>
             <Line Name="Line5">
               <Top>1.53528cm</Top>
-              <Left>0cm</Left>
               <Height>0cm</Height>
               <Width>19cm</Width>
               <ZIndex>9</ZIndex>
@@ -1225,7 +1220,6 @@
             </Line>
             <Line Name="Line17">
               <Top>5.53528cm</Top>
-              <Left>0cm</Left>
               <Height>0cm</Height>
               <Width>19cm</Width>
               <ZIndex>21</ZIndex>
@@ -1719,7 +1713,6 @@
               </Paragraphs>
               <rd:DefaultName>Textbox216</rd:DefaultName>
               <Top>1.53528cm</Top>
-              <Left>0cm</Left>
               <Height>4cm</Height>
               <Width>0.775cm</Width>
               <ZIndex>35</ZIndex>
@@ -1839,7 +1832,6 @@
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Left>0cm</Left>
               <Height>1cm</Height>
               <Width>19cm</Width>
               <Style>
