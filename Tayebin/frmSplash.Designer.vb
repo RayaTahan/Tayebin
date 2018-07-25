@@ -27,13 +27,11 @@ Partial Class frmSplash
         '
         'frmSplash
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 25.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.BackgroundImage = Global.Tayebin.My.Resources.Resources.LOGO
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.ClientSize = New System.Drawing.Size(512, 512)
         Me.ControlBox = False
-        Me.DoubleBuffered = True
         Me.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(178, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -41,10 +39,9 @@ Partial Class frmSplash
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "frmSplash"
-        Me.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.ShowIcon = False
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "ورود"
         Me.TopMost = True
         Me.TransparencyKey = System.Drawing.SystemColors.Control
         Me.ResumeLayout(False)
