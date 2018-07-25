@@ -105,7 +105,7 @@ Public Class frmOzvEdit
                 If dID = -1 Then
 
 
-                    dID = SQLiter.RunCommandScaler("insert into tOzv(Nam,Famil,Pedar,Tavalod,Vafat,Zende,CodeMelli,Tel,Mob,MobPedar,MobMadar,Tahsil,MahalTahsil,Shoql,MahalKar,ShoqlPedar,ShoqlMadar,Adres,Tozih,TarikhSabt,ZamanSabt,TarikhVirayesh,ZamanVirayesh,TedadVirayesh,AxID,SalVorud) values(@0,@1,@2,@3,@4,@5,@6,@7,@8,@9,@10,@11,@12,@13,@14,@15,@16,@17,@18,@19,@20,@21,@22,@23,-1,@24) ; select scope_identity()",
+                    dID = SQLiter.RunCommandScaler("insert into tOzv(Nam,Famil,Pedar,Tavalod,Vafat,Zende,CodeMelli,Tel,Mob,MobPedar,MobMadar,Tahsil,MahalTahsil,Shoql,MahalKar,ShoqlPedar,ShoqlMadar,Adres,Tozih,TarikhSabt,ZamanSabt,TarikhVirayesh,ZamanVirayesh,TedadVirayesh,AxID,SalVorud) values(@0,@1,@2,@3,@4,@5,@6,@7,@8,@9,@10,@11,@12,@13,@14,@15,@16,@17,@18,@19,@20,@21,@22,@23,-1,@24) ; select last_insert_rowid()",
                                    {
         New SQLiteParameter("@0", txtNam.Text),
         New SQLiteParameter("@1", txtFamil.Text),

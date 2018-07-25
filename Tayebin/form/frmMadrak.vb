@@ -48,7 +48,7 @@ Public Class frmMadrak
                     FileEXT = tFile.Extension
                     FileSize = tFile.Length
 
-                    dID = SQLiter.RunCommandScaler("insert into tMadrak(IDOzv,IDNoMadrak,Onvan,FileEXT,FileSize,Tarikh,Zaman) values(@0,@1,@2,@3,@4,@5,@6) ; select scope_identity()", {New SQLiteParameter("@0", OzvID), New SQLiteParameter("@1", ComboBox1.SelectedValue), New SQLiteParameter("@2", TextBox2.Text.Trim), New SQLiteParameter("@3", FileEXT), New SQLiteParameter("@4", FileSize), New SQLiteParameter("@5", (New cTarikh).ToString), New SQLiteParameter("@6", (New cSaat).ToString)})
+                    dID = SQLiter.RunCommandScaler("insert into tMadrak(IDOzv,IDNoMadrak,Onvan,FileEXT,FileSize,Tarikh,Zaman) values(@0,@1,@2,@3,@4,@5,@6) ; select last_insert_rowid()", {New SQLiteParameter("@0", OzvID), New SQLiteParameter("@1", ComboBox1.SelectedValue), New SQLiteParameter("@2", TextBox2.Text.Trim), New SQLiteParameter("@3", FileEXT), New SQLiteParameter("@4", FileSize), New SQLiteParameter("@5", (New cTarikh).ToString), New SQLiteParameter("@6", (New cSaat).ToString)})
 
                     Try
                         Dim newFileAddress As String = String.Format("{0}\data\madarek\{1}\{1}-{2}{3}", Application.StartupPath, OzvID, dID, FileEXT)
