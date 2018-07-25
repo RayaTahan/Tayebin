@@ -142,7 +142,7 @@ Public NotInheritable Class fun
         Dim Ruz As Integer = tarikh.Ruz
 
 
-        For Each item As DataRow In SQLiter.Fill(String.Format("select * from tOzv where Tavalod like N'%/{0}/{1}'", Strings.Right("00" & Mah, 2), Strings.Right("00" & Ruz, 2))).Rows
+        For Each item As DataRow In SQLiter.Fill(String.Format("select * from tOzv where Tavalod like '%/{0}/{1}'", Strings.Right("00" & Mah, 2), Strings.Right("00" & Ruz, 2))).Rows
             Try
                 Dim _Sal As Integer = Val(item("Tavalod").ToString.Substring(0, item("Tavalod").ToString.IndexOf("/")))
                 If _Sal > Sal Then
@@ -157,7 +157,7 @@ Public NotInheritable Class fun
             End Try
         Next
 
-        For Each item As DataRow In SQLiter.Fill(String.Format("select * from tOzv where Vafat like N'%/{0}/{1}'", Strings.Right("00" & Mah, 2), Strings.Right("00" & Ruz, 2))).Rows
+        For Each item As DataRow In SQLiter.Fill(String.Format("select * from tOzv where Vafat like '%/{0}/{1}'", Strings.Right("00" & Mah, 2), Strings.Right("00" & Ruz, 2))).Rows
             Try
                 Dim _Sal As Integer = Val(item("Vafat").ToString.Substring(0, item("Vafat").ToString.IndexOf("/")))
                 Dim VafatShahadat As String = ""

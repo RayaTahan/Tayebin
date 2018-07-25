@@ -45,7 +45,7 @@
         If txtUser.TextLength > 0 AndAlso txtPass1.TextLength > 0 AndAlso txtPass2.TextLength > 0 AndAlso txtPass3.TextLength > 0 Then
             If txtUser.Text = curUser And txtPass1.Text = curPass Then
                 If txtPass2.Text = txtPass3.Text Then
-                    SQLiter.RunCommand(String.Format("update tKarbari set p=N'{0}' where u like N'{1}'", txtPass3.Text, curUser))
+                    SQLiter.RunCommand(String.Format("update tKarbari set p='{0}' where u like '{1}'", txtPass3.Text, curUser))
                 Else
                     MessageBox.Show("کلمه عبور جدید و تکرار آن با هم برابر نیست!")
                     Kamel = False

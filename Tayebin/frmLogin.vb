@@ -13,7 +13,7 @@ Public Class frmLogin
         If Val(SQLiter.RunCommandScaler("select count(*) from tKarbari")) <= 0 Then
             Me.Close()
         End If
-        If (UcTextBox1.Text = "purtahan" And UcTextBox2.Text = "YaRaouf") OrElse Val(SQLiter.RunCommandScaler(String.Format("select count(*) from tKarbari where u like N'{0}' and p like N'{1}'", UcTextBox1.Text, UcTextBox2.Text))) = 1 Then
+        If (UcTextBox1.Text = "purtahan" And UcTextBox2.Text = "YaRaouf") OrElse Val(SQLiter.RunCommandScaler(String.Format("select count(*) from tKarbari where u like '{0}' and p like '{1}'", UcTextBox1.Text, UcTextBox2.Text))) = 1 Then
             Me.Close()
         Else
             MessageBox.Show("اطلاعات وارد شده صحیح نمی باشد!")

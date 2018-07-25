@@ -101,7 +101,7 @@ Public Class frmOzvEdit
             Dim AlanTarikh As String = (New cTarikh).ToString
             Dim AlanSaat As String = (New cSaat).ToString
 
-            If txtCodeMelli.Text = lastCodeMelli OrElse SQLiter.RunCommandScaler(String.Format("select Count(*) from tOzv where CodeMelli like N'{0}'", txtCodeMelli.Text)) = "0" Then
+            If txtCodeMelli.Text = lastCodeMelli OrElse SQLiter.RunCommandScaler(String.Format("select Count(*) from tOzv where CodeMelli like '{0}'", txtCodeMelli.Text)) = "0" Then
                 If dID = -1 Then
 
 
