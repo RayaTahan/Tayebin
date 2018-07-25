@@ -6,10 +6,10 @@
         'fun.ChangeFont(Me, My.MySettings.Default.Context.Item("Font"))
 
         TreeView1.Nodes.Clear()
-        For Each tSal As DataRow In SQL.Fill("select ID,Onvan from tSal").Rows
+        For Each tSal As DataRow In SQLiter.Fill("select ID,Onvan from tSal").Rows
             Dim nSal As New TreeNode(tSal.Item("Onvan"))
             nSal.Tag = tSal.Item("ID")
-            For Each tSalDore As DataRow In SQL.Fill("select SalDoreID,DoreOnvan,MorabbiOnvan from vSalDore where SalID=" & nSal.Tag).Rows
+            For Each tSalDore As DataRow In SQLiter.Fill("select SalDoreID,DoreOnvan,MorabbiOnvan from vSalDore where SalID=" & nSal.Tag).Rows
                 Dim nSalDore As New TreeNode(String.Format("{0} [{1}]", tSalDore.Item("DoreOnvan"), tSalDore.Item("MorabbiOnvan")))
                 nSalDore.Tag = tSalDore.Item("SalDoreID")
 

@@ -44,7 +44,7 @@
         CMD += " " & where
         CMD += " order by Famil,Nam,Pedar,Tavalod"
 
-        DataGridView1.DataSource = SQL.Fill(CMD)
+        DataGridView1.DataSource = SQLiter.Fill(CMD)
         Amar()
     End Sub
 
@@ -52,7 +52,7 @@
         Dim tmp As String = String.Format("{0}", "آمار")
         Dim them As String = vbCrLf & "{0,-15} {1,15}"
         tmp += String.Format(them, "تعداد حاضر", DataGridView1.RowCount)
-        tmp += String.Format(them, "تعداد کل اعضا", SQL.RunCommandScaler("select count(*) from tOzv"))
+        tmp += String.Format(them, "تعداد کل اعضا", SQLiter.RunCommandScaler("select count(*) from tOzv"))
         lblAmar.Text = tmp
     End Sub
     Private Sub frmOzvha_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -93,15 +93,15 @@
     End Sub
 
     Private Sub حذفToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles حذفToolStripMenuItem.Click
-        Dim Count As Integer = Val(SQL.RunCommandScaler("select count(*) from tOzvSalDore where IDOzv =" & DataGridView1.SelectedRows(0).Cells("ID").Value))
+        Dim Count As Integer = Val(SQLiter.RunCommandScaler("select count(*) from tOzvSalDore where IDOzv =" & DataGridView1.SelectedRows(0).Cells("ID").Value))
 
         If Count > 0 Then
             MessageBox.Show("به این دلیل که در حال حاضر این اطلاعات در قسمتی از نرم افزار در حال استفاده است امکان حذف آن وجود ندارد.")
         Else
             Dim OzvID As Integer = DataGridView1.SelectedRows(0).Cells("ID").Value
 
-            SQL.RunCommand("delete from tOzv where ID =" & OzvID)
-            SQL.RunCommand("delete from tMadrak where IDOzv =" & OzvID)
+            SQLiter.RunCommand("delete from tOzv where ID =" & OzvID)
+            SQLiter.RunCommand("delete from tMadrak where IDOzv =" & OzvID)
 
             Dim DIR As String = Application.StartupPath & "\data\madarek\" & OzvID
             Try

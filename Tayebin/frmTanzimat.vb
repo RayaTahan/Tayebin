@@ -6,7 +6,7 @@
     Private Sub frmTanzimat_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txtKanunNam.Text = AppMan.TanzimGet("KanunNam")
 
-        Dim up As DataTable = SQL.Fill("select * from tKarbari")
+        Dim up As DataTable = SQLiter.Fill("select * from tKarbari")
         If up.Rows.Count = 0 Then
             lblKarbariTozih.Text = "هنوز اطلاعات ورودی ثبت نشده است. لطفا اطلاعات را وارد کنید."
             lblKarbariTozih.Tag = 0
@@ -45,7 +45,7 @@
         If txtUser.TextLength > 0 AndAlso txtPass1.TextLength > 0 AndAlso txtPass2.TextLength > 0 AndAlso txtPass3.TextLength > 0 Then
             If txtUser.Text = curUser And txtPass1.Text = curPass Then
                 If txtPass2.Text = txtPass3.Text Then
-                    SQL.RunCommand(String.Format("update tKarbari set p=N'{0}' where u like N'{1}'", txtPass3.Text, curUser))
+                    SQLiter.RunCommand(String.Format("update tKarbari set p=N'{0}' where u like N'{1}'", txtPass3.Text, curUser))
                 Else
                     MessageBox.Show("کلمه عبور جدید و تکرار آن با هم برابر نیست!")
                     Kamel = False

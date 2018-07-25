@@ -3,13 +3,13 @@
     Dim LastRC As DataGridView
 
     Public Sub ReloadData()
-        DataGridView1.DataSource = SQL.Fill("select * from tDore")
-        DataGridView2.DataSource = SQL.Fill("select * from tMorabbi")
-        DataGridView3.DataSource = SQL.Fill("select SalDoreID,SalOnvan,DoreOnvan,MorabbiOnvan from vSalDore")
-        DataGridView4.DataSource = SQL.Fill("select * from tSal")
+        DataGridView1.DataSource = SQLiter.Fill("select * from tDore")
+        DataGridView2.DataSource = SQLiter.Fill("select * from tMorabbi")
+        DataGridView3.DataSource = SQLiter.Fill("select SalDoreID,SalOnvan,DoreOnvan,MorabbiOnvan from vSalDore")
+        DataGridView4.DataSource = SQLiter.Fill("select * from tSal")
 
         ListView1.Items.Clear()
-        For Each row In SQL.Fill("select SalDoreID,SalOnvan,DoreOnvan,MorabbiOnvan from vSalDore").Rows()
+        For Each row In SQLiter.Fill("select SalDoreID,SalOnvan,DoreOnvan,MorabbiOnvan from vSalDore").Rows()
             Dim item As New ListViewItem()
             item.Tag = row("SalDoreID")
             item.Text = row("DoreOnvan")
@@ -131,46 +131,46 @@
                 If LastRC.SelectedRows(0).Cells(0).Value = 1 Then
                     MessageBox.Show("حذف این گزینه ممکن نیست!")
                 Else
-                    Dim Count As Integer = Val(SQL.RunCommandScaler("select count(*) from tSalDore where IDDore =" & LastRC.SelectedRows(0).Cells(0).Value))
+                    Dim Count As Integer = Val(SQLiter.RunCommandScaler("select count(*) from tSalDore where IDDore =" & LastRC.SelectedRows(0).Cells(0).Value))
 
                     If Count > 0 Then
                         MessageBox.Show("به این دلیل که در حال حاضر این اطلاعات در قسمتی از نرم افزار در حال استفاده است امکان حذف آن وجود ندارد.")
                     Else
-                        SQL.RunCommand("delete from tDore where ID =" & LastRC.SelectedRows(0).Cells(0).Value)
+                        SQLiter.RunCommand("delete from tDore where ID =" & LastRC.SelectedRows(0).Cells(0).Value)
                         ReloadData()
                         MessageBox.Show("اطلاعات مورد نظر با موفقیت حذف گردید.")
                     End If
                 End If
 
             Case "DataGridView2"
-                Dim Count As Integer = Val(SQL.RunCommandScaler("select count(*) from tSalDore where IDMorabbi =" & LastRC.SelectedRows(0).Cells(0).Value))
+                Dim Count As Integer = Val(SQLiter.RunCommandScaler("select count(*) from tSalDore where IDMorabbi =" & LastRC.SelectedRows(0).Cells(0).Value))
 
                 If Count > 0 Then
                     MessageBox.Show("به این دلیل که در حال حاضر این اطلاعات در قسمتی از نرم افزار در حال استفاده است امکان حذف آن وجود ندارد.")
                 Else
-                    SQL.RunCommand("delete from tMorabbi where ID =" & LastRC.SelectedRows(0).Cells(0).Value)
+                    SQLiter.RunCommand("delete from tMorabbi where ID =" & LastRC.SelectedRows(0).Cells(0).Value)
                     ReloadData()
                     MessageBox.Show("اطلاعات مورد نظر با موفقیت حذف گردید.")
                 End If
             Case "DataGridView3"
                 If ListView1.SelectedItems.Count = 1 Then
-                    Dim Count As Integer = Val(SQL.RunCommandScaler("select count(*) from tOzvSalDore where IDSalDore =" & ListView1.SelectedItems(0).Tag))
+                    Dim Count As Integer = Val(SQLiter.RunCommandScaler("select count(*) from tOzvSalDore where IDSalDore =" & ListView1.SelectedItems(0).Tag))
 
                     If Count > 0 Then
                         MessageBox.Show("به این دلیل که در حال حاضر این اطلاعات در قسمتی از نرم افزار در حال استفاده است امکان حذف آن وجود ندارد.")
                     Else
-                        SQL.RunCommand("delete from tSalDore where ID =" & ListView1.SelectedItems(0).Tag)
+                        SQLiter.RunCommand("delete from tSalDore where ID =" & ListView1.SelectedItems(0).Tag)
                         MessageBox.Show("اطلاعات مورد نظر با موفقیت حذف گردید.")
                         ReloadData()
                     End If
                 End If
             Case "DataGridView4"
-                Dim Count As Integer = Val(SQL.RunCommandScaler("select count(*) from tSalDore where IDSal =" & DataGridView4.SelectedRows(0).Cells(0).Value))
+                Dim Count As Integer = Val(SQLiter.RunCommandScaler("select count(*) from tSalDore where IDSal =" & DataGridView4.SelectedRows(0).Cells(0).Value))
 
                 If Count > 0 Then
                     MessageBox.Show("به این دلیل که در این سال دوره ای ثبت شده امکان حذف این سال وجود ندارد.")
                 Else
-                    SQL.RunCommand("delete from tSal where ID =" & DataGridView4.SelectedRows(0).Cells(0).Value)
+                    SQLiter.RunCommand("delete from tSal where ID =" & DataGridView4.SelectedRows(0).Cells(0).Value)
                     ReloadData()
                     MessageBox.Show("اطلاعات مورد نظر با موفقیت حذف گردید.")
                 End If

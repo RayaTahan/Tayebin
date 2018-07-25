@@ -1,4 +1,6 @@
-﻿Public Class frmOzvView
+﻿Imports System.Data.SQLite
+
+Public Class frmOzvView
 
 
     Dim dID As Integer
@@ -11,7 +13,7 @@
     End Sub
 
     Public Sub ReloadData()
-        data = SQL.Fill("select * from tOzv where ID=" & dID)
+        data = SQLiter.Fill("select * from tOzv where ID=" & dID)
         txtID.Text = dID
         txtNam.Text = data(0).Item("Nam")
         txtFamil.Text = data(0).Item("Famil")
@@ -46,17 +48,17 @@
         If data(0).Item("AxID") = -1 Then
             picAx.Image = Bitmap.FromFile(String.Format("{0}\data\app\icon\profile27.png", Application.StartupPath))
         Else
-            Dim AxData = SQL.Fill("select * from tMadrak where ID=" & data(0).Item("AxID"))
+            Dim AxData = SQLiter.Fill("select * from tMadrak where ID=" & data(0).Item("AxID"))
             picAx.Image = Bitmap.FromFile(String.Format("{0}\data\madarek\{1}\{1}-{2}{3}", Application.StartupPath, dID, AxData(0).Item("ID"), AxData(0).Item("FileEXT")))
         End If
 
-        DataGridView1.DataSource = SQL.Fill("select NoMadrakOnvan,ID,IDNoMadrak,Onvan,Tarikh,FileEXT from vMadrak where IDOzv=" & dID)
+        DataGridView1.DataSource = SQLiter.Fill("select NoMadrakOnvan,ID,IDNoMadrak,Onvan,Tarikh,FileEXT from vMadrak where IDOzv=" & dID)
 
         'DataGridView2.DataSource = SQL.Fill("select ID, SalOnvan,DoreOnvan,MorabbiOnvan from vOzvSalDore where IDOzv=" & dID)
         ListView1.Items.Clear()
 
         Dim grpList As New List(Of ListViewGroup)
-        For Each row In SQL.Fill("select ID, SalOnvan,DoreOnvan,MorabbiOnvan from vOzvSalDore where IDOzv=" & dID).Rows()
+        For Each row In SQLiter.Fill("select ID, SalOnvan,DoreOnvan,MorabbiOnvan from vOzvSalDore where IDOzv=" & dID).Rows()
             Dim item As New ListViewItem()
             item.Tag = row("ID")
             item.Text = row("DoreOnvan")
@@ -115,12 +117,12 @@
 
     Private Sub ToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem2.Click
         If ListView1.SelectedItems.Count = 1 Then
-            Dim Count As Integer = Val(SQL.RunCommandScaler("select count(*) from tKarname where IDOzvSalDore =" & ListView1.SelectedItems(0).Tag))
+            Dim Count As Integer = Val(SQLiter.RunCommandScaler("select count(*) from tKarname where IDOzvSalDore =" & ListView1.SelectedItems(0).Tag))
 
             If Count > 0 Then
                 MessageBox.Show("به این دلیل که در حال حاضر این اطلاعات در قسمتی از نرم افزار در حال استفاده است امکان حذف آن وجود ندارد.")
             Else
-                SQL.RunCommand("delete from tOzvSalDore where ID =" & ListView1.SelectedItems(0).Tag)
+                SQLiter.RunCommand("delete from tOzvSalDore where ID =" & ListView1.SelectedItems(0).Tag)
 
                 ReloadData()
                 MessageBox.Show("اطلاعات مورد نظر با موفقیت حذف گردید.")
@@ -168,17 +170,17 @@
             Dim fileEXT As String = DataGridView1.SelectedRows(0).Cells("FileEXT").Value
             Dim fileAdres As String = String.Format("{0}\data\madarek\{1}\{1}-{2}{3}", Application.StartupPath, dID, DataGridView1.SelectedRows(0).Cells("IDMadrak").Value, fileEXT)
 
-            If SQL.RunCommandScaler("select AxID from tOzv where ID=" & dID) = DataGridView1.SelectedRows(0).Cells("IDMadrak").Value Then
+            If SQLiter.RunCommandScaler("select AxID from tOzv where ID=" & dID) = DataGridView1.SelectedRows(0).Cells("IDMadrak").Value Then
                 If MessageBox.Show("این تصویر به عنوان عکس عضو انتخاب شده است. برای حذف فایل، تایید کنید.", "حذف عکس پروفایل", MessageBoxButtons.YesNo) = Windows.Forms.DialogResult.Yes Then
-                    SQL.RunCommand("update tOzv set AxID=-1 where ID=" & dID)
-                    SQL.RunCommand("delete from tMadrak where ID=" & DataGridView1.SelectedRows(0).Cells("IDMadrak").Value)
+                    SQLiter.RunCommand("update tOzv set AxID=-1 where ID=" & dID)
+                    SQLiter.RunCommand("delete from tMadrak where ID=" & DataGridView1.SelectedRows(0).Cells("IDMadrak").Value)
                     picAx.Image.Dispose()
                     FileIO.FileSystem.DeleteFile(fileAdres)
                     MessageBox.Show("فایل با موفقیت حذف شد")
                     ReloadData()
                 End If
             Else
-                SQL.RunCommand("delete from tMadrak where ID=" & DataGridView1.SelectedRows(0).Cells("IDMadrak").Value)
+                SQLiter.RunCommand("delete from tMadrak where ID=" & DataGridView1.SelectedRows(0).Cells("IDMadrak").Value)
                 FileIO.FileSystem.DeleteFile(fileAdres)
                 MessageBox.Show("فایل با موفقیت حذف شد")
                 ReloadData()
@@ -191,7 +193,7 @@
     Private Sub ثبتبهعنوانعکسToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ثبتبهعنوانعکسToolStripMenuItem.Click
         Try
             If DataGridView1.SelectedRows(0).Cells("IDNoMadrak").Value = 1 Then ' IDNoMadrak=AxPerseneli
-                SQL.RunCommand("update tOzv set AXID=@0 where ID=@1", {New SqlClient.SqlParameter("@0", DataGridView1.SelectedRows(0).Cells("IDMadrak").Value), New SqlClient.SqlParameter("@1", dID)})
+                SQLiter.RunCommand("update tOzv set AXID=@0 where ID=@1", {New SQLiteParameter("@0", DataGridView1.SelectedRows(0).Cells("IDMadrak").Value), New SQLiteParameter("@1", dID)})
                 MessageBox.Show("عکس مورد نظر با موفقیت انتخاب شد")
                 ReloadData()
             Else

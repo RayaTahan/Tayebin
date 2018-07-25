@@ -1,4 +1,6 @@
-﻿Public Class frmOzvSalDoreEdit
+﻿Imports System.Data.SQLite
+
+Public Class frmOzvSalDoreEdit
 
 
     Dim dID As Integer
@@ -17,7 +19,7 @@
 
         Try
             ListView1.Items.Clear()
-            For Each row In SQL.Fill("select SalDoreID,SalOnvan,DoreOnvan,MorabbiOnvan from vSalDore").Rows()
+            For Each row In SQLiter.Fill("select SalDoreID,SalOnvan,DoreOnvan,MorabbiOnvan from vSalDore").Rows()
                 Dim item As New ListViewItem()
                 item.Tag = row("SalDoreID")
                 item.Text = row("DoreOnvan")
@@ -27,12 +29,12 @@
                 ListView1.Items.Add(item)
             Next
 
-            If Not (Val(SQL.RunCommandScaler("select count(*) from tSalDore") > 0)) Then
+            If Not (Val(SQLiter.RunCommandScaler("select count(*) from tSalDore") > 0)) Then
                 MessageBox.Show("اطلاعات اولیه مورد نیاز شامل سال-دوره باید وجود داشته باشد!")
                 Me.Close()
             End If
 
-            Dim OData = SQL.Fill("select * from tOzv where ID=" & OzvID)
+            Dim OData = SQLiter.Fill("select * from tOzv where ID=" & OzvID)
             UcTextBox1.Text = String.Format("({0}) : {1} {2}", OzvID, OData(0).Item("Nam"), OData(0).Item("Famil"))
 
             If dID = -1 Then
@@ -40,7 +42,7 @@
                 UcTextBox2.Text = "[اکنون]"
             Else
 
-                data = SQL.Fill("select * from tOzvSalDore where ID=" & dID).Rows(0)
+                data = SQLiter.Fill("select * from tOzvSalDore where ID=" & dID).Rows(0)
                 TextBox1.Text = dID
 
                 For Each item As ListViewItem In ListView1.Items
@@ -67,9 +69,9 @@
         If ListView1.SelectedItems.Count = 1 Then
             Try
                 If dID = -1 Then
-                    SQL.RunCommand("insert into tOzvSalDore(IDOzv,IDSalDore,TarikhSabt,ZamanSabt) values(@0,@1,@2,@3)", {New SqlClient.SqlParameter("@0", OzvID), New SqlClient.SqlParameter("@1", ListView1.SelectedItems(0).Tag), New SqlClient.SqlParameter("@2", (New cTarikh).ToString), New SqlClient.SqlParameter("@3", (New cSaat).ToString)})
+                    SQLiter.RunCommand("insert into tOzvSalDore(IDOzv,IDSalDore,TarikhSabt,ZamanSabt) values(@0,@1,@2,@3)", {New SQLiteParameter("@0", OzvID), New SQLiteParameter("@1", ListView1.SelectedItems(0).Tag), New SQLiteParameter("@2", (New cTarikh).ToString), New SQLiteParameter("@3", (New cSaat).ToString)})
                 Else
-                    SQL.RunCommand("update tOzvSalDore set IDSalDore=@0 where ID=@1", {New SqlClient.SqlParameter("@0", ListView1.SelectedItems(0).Tag), New SqlClient.SqlParameter("@1", dID)})
+                    SQLiter.RunCommand("update tOzvSalDore set IDSalDore=@0 where ID=@1", {New SQLiteParameter("@0", ListView1.SelectedItems(0).Tag), New SQLiteParameter("@1", dID)})
                 End If
 
                 Dim own As frmOzvView = Me.Owner

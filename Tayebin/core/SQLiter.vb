@@ -1,37 +1,39 @@
-﻿Imports Microsoft.VisualBasic
-Imports System.Data
-Imports System.Data.SqlClient
+﻿Imports System.Data.SQLite
 
-Public NotInheritable Class SQL
-    Private Shared SQ As New SqlConnection(AppMan.ConnectionString)
-    Private Shared Cmd As New SqlCommand("", SQ)
-    Private Shared DA As New SqlDataAdapter("", SQ)
+Public NotInheritable Class SQLiter
+    Private Shared con As New SQLiteConnection(AppMan.ConnectionString)
+    Private Shared Cmd As New SQLiteCommand("", con)
+    Private Shared DA As New SQLiteDataAdapter("", con)
+
+    Public Shared Sub CreateFile(Name As String)
+        SQLiteConnection.CreateFile("data/" & Name)
+    End Sub
 
     Public Shared Function RunCommand(ByVal CommandText As String) As Integer
         Dim tmp As Integer
-        If SQ.State <> ConnectionState.Open Then SQ.Open()
+        If con.State <> ConnectionState.Open Then con.Open()
         Cmd.CommandText = CommandText
         tmp = Cmd.ExecuteNonQuery()
-        SQ.Close()
+        con.Close()
         Return tmp
     End Function
 
-    Public Shared Function RunCommand(ByVal CommandText As String, ByVal Parametrs() As SqlParameter) As Integer
+    Public Shared Function RunCommand(ByVal CommandText As String, ByVal Parametrs() As SQLiteParameter) As Integer
         Dim tmp As Integer
-        If SQ.State <> ConnectionState.Open Then SQ.Open()
-        Cmd = SQ.CreateCommand
+        If con.State <> ConnectionState.Open Then con.Open()
+        Cmd = con.CreateCommand
         Cmd.Parameters.Clear()
         Cmd.CommandText = CommandText
         Cmd.Parameters.AddRange(Parametrs)
 
         tmp = Cmd.ExecuteNonQuery()
-        SQ.Close()
+        con.Close()
         Return tmp
     End Function
 
     Public Shared Function RunCommandScaler(ByVal CommandText As String) As String
         Dim tmp As String
-        If SQ.State <> ConnectionState.Open Then SQ.Open()
+        If con.State <> ConnectionState.Open Then con.Open()
         Cmd.CommandText = CommandText
         tmp = ""
 
@@ -41,14 +43,14 @@ Public NotInheritable Class SQL
             tmp = ""
         End Try
 
-        SQ.Close()
+        con.Close()
         Return tmp
     End Function
 
-    Public Shared Function RunCommandScaler(ByVal CommandText As String, ByVal Parametrs() As SqlParameter) As String
+    Public Shared Function RunCommandScaler(ByVal CommandText As String, ByVal Parametrs() As SQLiteParameter) As String
         Dim tmp As String
-        If SQ.State <> ConnectionState.Open Then SQ.Open()
-        Cmd = SQ.CreateCommand
+        If con.State <> ConnectionState.Open Then con.Open()
+        Cmd = con.CreateCommand
         Cmd.Parameters.Clear()
         Cmd.CommandText = CommandText
         Cmd.Parameters.AddRange(Parametrs)
@@ -59,7 +61,7 @@ Public NotInheritable Class SQL
             tmp = ""
         End Try
 
-        SQ.Close()
+        con.Close()
         Return tmp
     End Function
 
@@ -70,9 +72,9 @@ Public NotInheritable Class SQL
         Return tmp
     End Function
 
-    Public Shared Function Fill(CommandText As String, ByVal Parametrs() As SqlParameter) As DataTable
+    Public Shared Function Fill(CommandText As String, ByVal Parametrs() As SQLiteParameter) As DataTable
         Dim tmp As New DataTable
-        DA.SelectCommand = SQ.CreateCommand
+        DA.SelectCommand = con.CreateCommand
         DA.SelectCommand.CommandText = CommandText
         DA.SelectCommand.Parameters.Clear()
         DA.SelectCommand.Parameters.AddRange(Parametrs)
@@ -88,8 +90,8 @@ Public NotInheritable Class SQL
         DA.Fill(DataSet, TableName)
     End Sub
 
-    Public Shared Sub Fill(ByRef DataSet As DataSet, ByVal TableName As String, ByVal CommandText As String, ByVal Parametrs() As SqlParameter)
-        DA.SelectCommand = SQ.CreateCommand
+    Public Shared Sub Fill(ByRef DataSet As DataSet, ByVal TableName As String, ByVal CommandText As String, ByVal Parametrs() As SQLiteParameter)
+        DA.SelectCommand = con.CreateCommand
         DA.SelectCommand.CommandText = CommandText
         DA.SelectCommand.Parameters.Clear()
         DA.SelectCommand.Parameters.AddRange(Parametrs)
@@ -99,14 +101,14 @@ Public NotInheritable Class SQL
         DA.Fill(DataSet, TableName)
     End Sub
 
-    Public Shared Function useStoredProcedure(ByVal Name As String, ByVal Parametrs() As SqlParameter, Optional ByVal Out As String = "") As String
+    Public Shared Function useStoredProcedure(ByVal Name As String, ByVal Parametrs() As SQLiteParameter, Optional ByVal Out As String = "") As String
         Dim ret As String
         Cmd.CommandText = Name
         Cmd.CommandType = CommandType.StoredProcedure
         Cmd.Parameters.AddRange(Parametrs)
-        If SQ.State <> ConnectionState.Open Then SQ.Open()
+        If con.State <> ConnectionState.Open Then con.Open()
         Cmd.ExecuteNonQuery()
-        SQ.Close()
+        con.Close()
         If Out = "" Then
             ret = ""
         Else

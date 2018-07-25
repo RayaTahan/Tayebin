@@ -1,4 +1,6 @@
-﻿Public Class frmOzvEdit
+﻿Imports System.Data.SQLite
+
+Public Class frmOzvEdit
     Dim lastCodeMelli As String = ""
 
     Dim dID As Integer
@@ -42,7 +44,7 @@
             txtSalVorud.Value = emsal
         Else
 
-            data = SQL.Fill(String.Format("select * from tOzv where ID={0}", dID))
+            data = SQLiter.Fill(String.Format("select * from tOzv where ID={0}", dID))
             txtID.Text = dID
             txtNam.Text = data(0).Item("Nam")
             txtFamil.Text = data(0).Item("Famil")
@@ -99,67 +101,67 @@
             Dim AlanTarikh As String = (New cTarikh).ToString
             Dim AlanSaat As String = (New cSaat).ToString
 
-            If txtCodeMelli.Text = lastCodeMelli OrElse SQL.RunCommandScaler(String.Format("select Count(*) from tOzv where CodeMelli like N'{0}'", txtCodeMelli.Text)) = "0" Then
+            If txtCodeMelli.Text = lastCodeMelli OrElse SQLiter.RunCommandScaler(String.Format("select Count(*) from tOzv where CodeMelli like N'{0}'", txtCodeMelli.Text)) = "0" Then
                 If dID = -1 Then
 
 
-                    dID = SQL.RunCommandScaler("insert into tOzv(Nam,Famil,Pedar,Tavalod,Vafat,Zende,CodeMelli,Tel,Mob,MobPedar,MobMadar,Tahsil,MahalTahsil,Shoql,MahalKar,ShoqlPedar,ShoqlMadar,Adres,Tozih,TarikhSabt,ZamanSabt,TarikhVirayesh,ZamanVirayesh,TedadVirayesh,AxID,SalVorud) values(@0,@1,@2,@3,@4,@5,@6,@7,@8,@9,@10,@11,@12,@13,@14,@15,@16,@17,@18,@19,@20,@21,@22,@23,-1,@24) ; select scope_identity()",
+                    dID = SQLiter.RunCommandScaler("insert into tOzv(Nam,Famil,Pedar,Tavalod,Vafat,Zende,CodeMelli,Tel,Mob,MobPedar,MobMadar,Tahsil,MahalTahsil,Shoql,MahalKar,ShoqlPedar,ShoqlMadar,Adres,Tozih,TarikhSabt,ZamanSabt,TarikhVirayesh,ZamanVirayesh,TedadVirayesh,AxID,SalVorud) values(@0,@1,@2,@3,@4,@5,@6,@7,@8,@9,@10,@11,@12,@13,@14,@15,@16,@17,@18,@19,@20,@21,@22,@23,-1,@24) ; select scope_identity()",
                                    {
-        New SqlClient.SqlParameter("@0", txtNam.Text),
-        New SqlClient.SqlParameter("@1", txtFamil.Text),
-        New SqlClient.SqlParameter("@2", txtPedar.Text),
-        New SqlClient.SqlParameter("@3", TarikhTavalod.Value.ToString("yyyy/MM/dd")),
-        New SqlClient.SqlParameter("@4", TaVafat),
-        New SqlClient.SqlParameter("@5", comboVaz.SelectedItem.Value),
-        New SqlClient.SqlParameter("@6", txtCodeMelli.Text),
-        New SqlClient.SqlParameter("@7", txtTel.Text),
-        New SqlClient.SqlParameter("@8", txtMob.Text),
-        New SqlClient.SqlParameter("@9", txtMobPedar.Text),
-        New SqlClient.SqlParameter("@10", txtMobMadar.Text),
-        New SqlClient.SqlParameter("@11", txtTahsil.Text),
-        New SqlClient.SqlParameter("@12", txtMahalTahsil.Text),
-        New SqlClient.SqlParameter("@13", txtShoql.Text),
-        New SqlClient.SqlParameter("@14", txtMahalKar.Text),
-        New SqlClient.SqlParameter("@15", txtShoqlPedar.Text),
-        New SqlClient.SqlParameter("@16", txtShoqlMadar.Text),
-        New SqlClient.SqlParameter("@17", txtAdres.Text),
-        New SqlClient.SqlParameter("@18", txtTozih.Text),
-        New SqlClient.SqlParameter("@19", AlanTarikh),
-        New SqlClient.SqlParameter("@20", AlanSaat),
-        New SqlClient.SqlParameter("@21", ""),
-        New SqlClient.SqlParameter("@22", ""),
-        New SqlClient.SqlParameter("@23", 0),
-        New SqlClient.SqlParameter("@24", txtSalVorud.Value)
+        New SQLiteParameter("@0", txtNam.Text),
+        New SQLiteParameter("@1", txtFamil.Text),
+        New SQLiteParameter("@2", txtPedar.Text),
+        New SQLiteParameter("@3", TarikhTavalod.Value.ToString("yyyy/MM/dd")),
+        New SQLiteParameter("@4", TaVafat),
+        New SQLiteParameter("@5", comboVaz.SelectedItem.Value),
+        New SQLiteParameter("@6", txtCodeMelli.Text),
+        New SQLiteParameter("@7", txtTel.Text),
+        New SQLiteParameter("@8", txtMob.Text),
+        New SQLiteParameter("@9", txtMobPedar.Text),
+        New SQLiteParameter("@10", txtMobMadar.Text),
+        New SQLiteParameter("@11", txtTahsil.Text),
+        New SQLiteParameter("@12", txtMahalTahsil.Text),
+        New SQLiteParameter("@13", txtShoql.Text),
+        New SQLiteParameter("@14", txtMahalKar.Text),
+        New SQLiteParameter("@15", txtShoqlPedar.Text),
+        New SQLiteParameter("@16", txtShoqlMadar.Text),
+        New SQLiteParameter("@17", txtAdres.Text),
+        New SQLiteParameter("@18", txtTozih.Text),
+        New SQLiteParameter("@19", AlanTarikh),
+        New SQLiteParameter("@20", AlanSaat),
+        New SQLiteParameter("@21", ""),
+        New SQLiteParameter("@22", ""),
+        New SQLiteParameter("@23", 0),
+        New SQLiteParameter("@24", txtSalVorud.Value)
                                    })
 
 
                 Else
-                    SQL.RunCommand("update tOzv set Nam=@0,Famil=@1,Pedar=@2,Tavalod=@3,Vafat=@4,Zende=@5,CodeMelli=@6 ,Tel=@7,Mob=@8,MobPedar=@9,MobMadar=@10,Tahsil=@11,MahalTahsil=@12 ,Shoql=@13,MahalKar=@14,ShoqlPedar=@15,ShoqlMadar=@16,Adres=@17,Tozih=@18,TarikhVirayesh=@19,ZamanVirayesh=@20,TedadVirayesh=@21, SalVorud=@23 where ID=@22",
+                    SQLiter.RunCommand("update tOzv set Nam=@0,Famil=@1,Pedar=@2,Tavalod=@3,Vafat=@4,Zende=@5,CodeMelli=@6 ,Tel=@7,Mob=@8,MobPedar=@9,MobMadar=@10,Tahsil=@11,MahalTahsil=@12 ,Shoql=@13,MahalKar=@14,ShoqlPedar=@15,ShoqlMadar=@16,Adres=@17,Tozih=@18,TarikhVirayesh=@19,ZamanVirayesh=@20,TedadVirayesh=@21, SalVorud=@23 where ID=@22",
                                   {
-       New SqlClient.SqlParameter("@0", txtNam.Text),
-       New SqlClient.SqlParameter("@1", txtFamil.Text),
-       New SqlClient.SqlParameter("@2", txtPedar.Text),
-       New SqlClient.SqlParameter("@3", TarikhTavalod.Value.ToString("yyyy/MM/dd")),
-       New SqlClient.SqlParameter("@4", TaVafat),
-       New SqlClient.SqlParameter("@5", comboVaz.SelectedItem.Value),
-       New SqlClient.SqlParameter("@6", txtCodeMelli.Text),
-       New SqlClient.SqlParameter("@7", txtTel.Text),
-       New SqlClient.SqlParameter("@8", txtMob.Text),
-       New SqlClient.SqlParameter("@9", txtMobPedar.Text),
-       New SqlClient.SqlParameter("@10", txtMobMadar.Text),
-       New SqlClient.SqlParameter("@11", txtTahsil.Text),
-       New SqlClient.SqlParameter("@12", txtMahalTahsil.Text),
-       New SqlClient.SqlParameter("@13", txtShoql.Text),
-       New SqlClient.SqlParameter("@14", txtMahalKar.Text),
-       New SqlClient.SqlParameter("@15", txtShoqlPedar.Text),
-       New SqlClient.SqlParameter("@16", txtShoqlMadar.Text),
-       New SqlClient.SqlParameter("@17", txtAdres.Text),
-       New SqlClient.SqlParameter("@18", txtTozih.Text),
-       New SqlClient.SqlParameter("@19", AlanTarikh),
-       New SqlClient.SqlParameter("@20", AlanSaat),
-       New SqlClient.SqlParameter("@21", Val(txtTedadVirayesh.Text) + 1),
-       New SqlClient.SqlParameter("@23", txtSalVorud.Value),
-       New SqlClient.SqlParameter("@22", dID)
+       New SQLiteParameter("@0", txtNam.Text),
+       New SQLiteParameter("@1", txtFamil.Text),
+       New SQLiteParameter("@2", txtPedar.Text),
+       New SQLiteParameter("@3", TarikhTavalod.Value.ToString("yyyy/MM/dd")),
+       New SQLiteParameter("@4", TaVafat),
+       New SQLiteParameter("@5", comboVaz.SelectedItem.Value),
+       New SQLiteParameter("@6", txtCodeMelli.Text),
+       New SQLiteParameter("@7", txtTel.Text),
+       New SQLiteParameter("@8", txtMob.Text),
+       New SQLiteParameter("@9", txtMobPedar.Text),
+       New SQLiteParameter("@10", txtMobMadar.Text),
+       New SQLiteParameter("@11", txtTahsil.Text),
+       New SQLiteParameter("@12", txtMahalTahsil.Text),
+       New SQLiteParameter("@13", txtShoql.Text),
+       New SQLiteParameter("@14", txtMahalKar.Text),
+       New SQLiteParameter("@15", txtShoqlPedar.Text),
+       New SQLiteParameter("@16", txtShoqlMadar.Text),
+       New SQLiteParameter("@17", txtAdres.Text),
+       New SQLiteParameter("@18", txtTozih.Text),
+       New SQLiteParameter("@19", AlanTarikh),
+       New SQLiteParameter("@20", AlanSaat),
+       New SQLiteParameter("@21", Val(txtTedadVirayesh.Text) + 1),
+       New SQLiteParameter("@23", txtSalVorud.Value),
+       New SQLiteParameter("@22", dID)
                                   })
                 End If
             Else

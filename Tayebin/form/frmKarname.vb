@@ -11,7 +11,7 @@
     End Sub
 
     Public Sub ReloadData()
-        DataGridView1.DataSource = SQL.Fill("select ID,IDRizKarname,RizKarnameOnvan,Meqdar from vKarname where IDOzvSalDore=" & dID)
+        DataGridView1.DataSource = SQLiter.Fill("select ID,IDRizKarname,RizKarnameOnvan,Meqdar from vKarname where IDOzvSalDore=" & dID)
     End Sub
 
     Private Sub DataGridView1_MouseClick(sender As Object, e As MouseEventArgs) Handles DataGridView1.MouseClick
@@ -38,9 +38,9 @@
 
         Dim KarnameID As Integer = DataGridView1.SelectedRows(0).Cells("ID").Value
 
-        SQL.RunCommand("delete from tKarname where ID =" & KarnameID)
+        SQLiter.RunCommand("delete from tKarname where ID =" & KarnameID)
 
-       
+
         ReloadData()
         MessageBox.Show("اطلاعات مورد نظر با موفقیت حذف گردید.")
 

@@ -2,10 +2,10 @@
 
     Private Sub frmGozareshHa_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TreeView1.Nodes.Clear()
-        For Each tSal As DataRow In SQL.Fill("select ID,Onvan from tSal").Rows
+        For Each tSal As DataRow In SQLiter.Fill("select ID,Onvan from tSal").Rows
             Dim nSal As New TreeNode(tSal.Item("Onvan"))
             nSal.Tag = tSal.Item("ID")
-            For Each tSalDore As DataRow In SQL.Fill("select SalDoreID,DoreOnvan,MorabbiOnvan from vSalDore where SalID=" & nSal.Tag).Rows
+            For Each tSalDore As DataRow In SQLiter.Fill("select SalDoreID,DoreOnvan,MorabbiOnvan from vSalDore where SalID=" & nSal.Tag).Rows
                 Dim nSalDore As New TreeNode(String.Format("{0} [{1}]", tSalDore.Item("DoreOnvan"), tSalDore.Item("MorabbiOnvan")))
                 nSalDore.Tag = tSalDore.Item("SalDoreID")
 
@@ -16,7 +16,7 @@
         Button2.Enabled = False
         Button7.Enabled = False
 
-        Dim salHa As DataTable = SQL.Fill("select ID,Onvan from tSal")
+        Dim salHa As DataTable = SQLiter.Fill("select ID,Onvan from tSal")
         With comboHozur
             .ValueMember = "ID"
             .DisplayMember = "Onvan"

@@ -33,27 +33,27 @@ Public Class frmReport
             Case KodumGozaresh.Kolli
                 viewer.LocalReport.ReportPath = "data\reports\R101.rdlc"
                 param.Add(New ReportParameter("rprtCode", "" & "R101"))
-                tbl = SQL.Fill("Select * from tOzv order by Famil , Nam ")
+                tbl = SQLiter.Fill("Select * from tOzv order by Famil , Nam ")
                 param.Add(New ReportParameter("Onvan", "گزارش کلی اعضا"))
 
             Case KodumGozaresh.SalDore
                 viewer.LocalReport.ReportPath = "data\reports\R101.rdlc"
                 param.Add(New ReportParameter("rprtCode", "" & "R101"))
-                tbl = SQL.Fill(String.Format("Select * from tOzv where ID in (select IDOzv from tOzvSalDore where IDSalDore={0}) order by Famil , Nam ", dID))
-                Dim data = SQL.Fill("select * from vSalDore where SalDoreID=" & dID)
+                tbl = SQLiter.Fill(String.Format("Select * from tOzv where ID in (select IDOzv from tOzvSalDore where IDSalDore={0}) order by Famil , Nam ", dID))
+                Dim data = SQLiter.Fill("select * from vSalDore where SalDoreID=" & dID)
                 param.Add(New ReportParameter("Onvan", String.Format("گزارش دوره [{3}] {0} سال {1} ، مربی : {2}", data(0).Item("DoreOnvan"), data(0).Item("SalOnvan"), data(0).Item("MorabbiOnvan"), dID)))
 
             Case KodumGozaresh.QablieSherkatNakarde
                 viewer.LocalReport.ReportPath = "data\reports\R101.rdlc"
                 param.Add(New ReportParameter("rprtCode", "" & "R101"))
-                tbl = SQL.Fill(String.Format("Select * from tOzv where ID in(select IDOzv from vOzvSalDore where SalID={0}) and ID not in(select IDOzv from vOzvSalDore where SalID={1}) order by Famil , Nam", d1, d2))
-                param.Add(New ReportParameter("Onvan", String.Format("گزارش اعضایی که در سال '{0}' حضور داشتند و در سال '{1}' حضور ندارند", SQL.RunCommandScaler(String.Format("select Onvan from tSal where ID={0}", d1)), SQL.RunCommandScaler(String.Format("select Onvan from tSal where ID={0}", d2)))))
+                tbl = SQLiter.Fill(String.Format("Select * from tOzv where ID in(select IDOzv from vOzvSalDore where SalID={0}) and ID not in(select IDOzv from vOzvSalDore where SalID={1}) order by Famil , Nam", d1, d2))
+                param.Add(New ReportParameter("Onvan", String.Format("گزارش اعضایی که در سال '{0}' حضور داشتند و در سال '{1}' حضور ندارند", SQLiter.RunCommandScaler(String.Format("select Onvan from tSal where ID={0}", d1)), SQLiter.RunCommandScaler(String.Format("select Onvan from tSal where ID={0}", d2)))))
 
             Case KodumGozaresh.HozurQiabAlef
                 viewer.LocalReport.ReportPath = "data\reports\R102.rdlc"
                 param.Add(New ReportParameter("rprtCode", "" & "R102"))
-                tbl = SQL.Fill(String.Format("Select * from tOzv where ID in (select IDOzv from tOzvSalDore where IDSalDore={0}) order by Famil , Nam ", dID))
-                Dim data = SQL.Fill("select * from vSalDore where SalDoreID=" & dID)
+                tbl = SQLiter.Fill(String.Format("Select * from tOzv where ID in (select IDOzv from tOzvSalDore where IDSalDore={0}) order by Famil , Nam ", dID))
+                Dim data = SQLiter.Fill("select * from vSalDore where SalDoreID=" & dID)
                 param.Add(New ReportParameter("Onvan", String.Format("فرم حضور و غیاب دوره [{3}] {0} سال {1} ، مربی : {2}", data(0).Item("DoreOnvan"), data(0).Item("SalOnvan"), data(0).Item("MorabbiOnvan"), dID)))
 
                 'Case KodumGozaresh.HozurQiabBe

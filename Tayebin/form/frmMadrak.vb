@@ -1,4 +1,6 @@
-﻿Public Class frmMadrak
+﻿Imports System.Data.SQLite
+
+Public Class frmMadrak
 
     Dim dID As Integer
     Dim OzvID As Integer
@@ -17,7 +19,7 @@
         Try
             ComboBox1.ValueMember = "ID"
             ComboBox1.DisplayMember = "Onvan"
-            ComboBox1.DataSource = SQL.Fill("select ID,Onvan from tNoMadrak")
+            ComboBox1.DataSource = SQLiter.Fill("select ID,Onvan from tNoMadrak")
             ComboBox1.SelectedItem = Nothing
 
             If dID = -1 Then
@@ -26,7 +28,7 @@
                 UcTextBox1.Text = "[با جفت کلیک انتخاب]"
                 UcTextBox1.Tag = ""
             Else
-                data = SQL.Fill("select * from tMadrak where ID=" & dID)
+                data = SQLiter.Fill("select * from tMadrak where ID=" & dID)
                 ComboBox1.SelectedValue = data(0).Item("IDNoMadrak")
                 UcTextBox1.Text = "[امکان تغییر فایل وجو ندارد]"
                 TextBox2.Text = data(0).Item("Onvan")
@@ -46,7 +48,7 @@
                     FileEXT = tFile.Extension
                     FileSize = tFile.Length
 
-                    dID = SQL.RunCommandScaler("insert into tMadrak(IDOzv,IDNoMadrak,Onvan,FileEXT,FileSize,Tarikh,Zaman) values(@0,@1,@2,@3,@4,@5,@6) ; select scope_identity()", {New SqlClient.SqlParameter("@0", OzvID), New SqlClient.SqlParameter("@1", ComboBox1.SelectedValue), New SqlClient.SqlParameter("@2", TextBox2.Text.Trim), New SqlClient.SqlParameter("@3", FileEXT), New SqlClient.SqlParameter("@4", FileSize), New SqlClient.SqlParameter("@5", (New cTarikh).ToString), New SqlClient.SqlParameter("@6", (New cSaat).ToString)})
+                    dID = SQLiter.RunCommandScaler("insert into tMadrak(IDOzv,IDNoMadrak,Onvan,FileEXT,FileSize,Tarikh,Zaman) values(@0,@1,@2,@3,@4,@5,@6) ; select scope_identity()", {New SQLiteParameter("@0", OzvID), New SQLiteParameter("@1", ComboBox1.SelectedValue), New SQLiteParameter("@2", TextBox2.Text.Trim), New SQLiteParameter("@3", FileEXT), New SQLiteParameter("@4", FileSize), New SQLiteParameter("@5", (New cTarikh).ToString), New SQLiteParameter("@6", (New cSaat).ToString)})
 
                     Try
                         Dim newFileAddress As String = String.Format("{0}\data\madarek\{1}\{1}-{2}{3}", Application.StartupPath, OzvID, dID, FileEXT)
@@ -67,7 +69,7 @@
                     MessageBox.Show("لطفا فایل مورد نظر را انتخاب کنید")
                 End If
             Else
-                SQL.RunCommand("update tMadrak set IDNoMadrak=@0 ,Onvan=@1 where ID=@2", {New SqlClient.SqlParameter("@0", ComboBox1.SelectedValue), New SqlClient.SqlParameter("@1", TextBox2.Text.Trim), New SqlClient.SqlParameter("@2", dID)})
+                SQLiter.RunCommand("update tMadrak set IDNoMadrak=@0 ,Onvan=@1 where ID=@2", {New SQLiteParameter("@0", ComboBox1.SelectedValue), New SQLiteParameter("@1", TextBox2.Text.Trim), New SQLiteParameter("@2", dID)})
 
                 MessageBox.Show("اطلاعات با موفقیت ذخیره شد")
 
