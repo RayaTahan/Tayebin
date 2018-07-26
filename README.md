@@ -1,7 +1,14 @@
-# Tayebin
-&#x202b;طیبین: نرم افزار مدیریت مجموعه های فرهنگی - آموزشی  
+# طیبین 
+[![Github All Releases](https://img.shields.io/github/downloads/PurTahan/Tayebin/total.svg)](https://github.com/PurTahan/Tayebin/releases/latest)
+
+&#x202b;نرم افزار مدیریت مجموعه های فرهنگی - آموزشی  
+
+![طیبین](http://bayanbox.ir/view/7829101770931111288/Tayebin23.png)
++ [بلاگ طیبین](http://Tayebin.blog.ir)
++ [دانلود آخرین نسخه منتشر شده](https://github.com/PurTahan/Tayebin/releases/latest)
+
 &#x202b;جهت Clone کردن این پروژه می‌توانید از دستور زیر استفاده کنید:
 
     git clone https://github.com/PurTahan/Tayebin.git
-&#x202b;با توجه به اینکه در این پروژه از بانک اطلاعاتی `Local SQL Server` استفاده شده، برای اجرای خروجی در دستگاه‌های هدف، باید این پیشنیاز نصب شده باشد.
-&#x202b;همچنین برای ایجاد برگه های گزارش‌گیری از `SAP Crystal Report` استفاده شده است و برای ویرایش یا افزایش برگه‌های گزارش‌گیری نیاز به نسخه متناسب با ویژوال استودیو شما است.
+
+&#x202b;از طریق ویرایش برنچ آینده Pull Request های خود را ارسال کنید.
