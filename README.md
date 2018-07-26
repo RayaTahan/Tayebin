@@ -1,4 +1,6 @@
-# طیبین
+# طیبین 
+[![Github All Releases](https://img.shields.io/github/downloads/PurTahan/Tayebin/total.svg)](https://github.com/PurTahan/Tayebin/releases/latest)
+
 &#x202b;نرم افزار مدیریت مجموعه های فرهنگی - آموزشی  
 
 ![طیبین](http://bayanbox.ir/view/7829101770931111288/Tayebin23.png)
