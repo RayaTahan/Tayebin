@@ -9,11 +9,12 @@
 
         If Not AppMan.isDbUpToDate Then
             If AppMan.UpDateDb() Then
-                MessageBox.Show("نرم افزار با موفقیت بروزرسانی شد!")
+                MessageBox.Show("پایگاه داده نرم افزار با موفقیت بروزرسانی شد!")
             Else
                 MessageBox.Show("عملیات بروزرسانی نرم افزار با خطا مواجه شد!")
             End If
         End If
+        AppMan.UpdateChecker()
 
 
         My.Settings.Save()

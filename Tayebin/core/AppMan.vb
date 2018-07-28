@@ -1,5 +1,7 @@
-﻿Public Class AppMan
-    Public Shared VersionInt As Integer = 1
+﻿Imports RestSharp
+
+Public Class AppMan
+    Public Shared VersionInt As Integer = 24
 
     Public Shared ReadOnly Property dbVer As Integer
         Get
@@ -101,6 +103,11 @@
                 SQLiter.RunCommand(String.Format(cmdIns, "dbVer", "1"))
             End If
 
+            If dbVer = 1 Then
+                SQLiter.RunCommand(String.Format(cmdUpd, "dbVer", "24"))
+
+            End If
+
             Return True
         Catch ex As Exception
             MessageBox.Show(ex.Message)
@@ -126,4 +133,44 @@
     End Sub
 
     Public Shared Icon As Icon = CType((New System.Resources.ResourceManager(GetType(frmMain))).GetObject("$this.Icon"), System.Drawing.Icon)
+
+
+    Public Shared Sub UpdateChecker()
+        Dim URL As String = "https://api.rayatahan.ir/tayebin/ver"
+
+        Dim client = New RestClient(URL)
+        Dim request = New RestRequest(Method.GET)
+        request.AddParameter("iv", VersionInt)
+
+        client.ExecuteAsync(request, Sub(res)
+                                         If res.IsSuccessful AndAlso Not IsNothing(res.Content) Then
+                                             Dim obj = Newtonsoft.Json.JsonConvert.DeserializeObject(res.Content)
+                                             If obj("LastVer") > VersionInt Then
+                                                 Dim msg As String = ""
+                                                 msg += String.Format("نسخه جدید: {0}", obj("LastVer"))
+                                                 msg += vbCrLf & String.Format("تاریخ انتشار: {0}", obj("LastVerTarikh"))
+                                                 msg += vbCrLf
+
+                                                 Dim ptrn As String = "    {0} : {1}"
+                                                 Dim type = {"", "افزودن ویژگی", "حذف ویژگی", "رفع خطا"}
+
+                                                 For Each row In obj("Data")
+                                                     msg += vbCrLf & String.Format(ptrn, type(row("Type")), row("Tozih"))
+                                                 Next
+
+                                                 msg += vbCrLf
+                                                 msg += vbCrLf & "جهت ورود به صفحه دانلود Yes را بزنید."
+
+                                                 If MessageBox.Show(text:=msg, caption:="نسخه جدید طیبین منتشر شد", buttons:=MessageBoxButtons.YesNo, icon:=MessageBoxIcon.Information, defaultButton:=MessageBoxDefaultButton.Button1, options:=MessageBoxOptions.RtlReading + MessageBoxOptions.RightAlign, displayHelpButton:=False) = DialogResult.Yes Then
+                                                     Process.Start("https://github.com/PurTahan/Tayebin/releases/latest")
+                                                 End If
+                                             End If
+                                         End If
+                                     End Sub)
+
+
+
+    End Sub
+
+
 End Class
