@@ -4,7 +4,7 @@
 
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Setup()
-        Me.Show()
+        Me.Hide()
         frmSplash.Close()
 
         If Not AppMan.isDbUpToDate Then
@@ -21,7 +21,9 @@
 
 
         Dim frm As New frmLogin
-        frm.ShowDialog()
+        frm.ShowDialog(Me)
+        Me.Show()
+        Me.Activate()
         'reLoad()
         'fun.ChangeFont(Me, My.MySettings.Default.Context.Item("Font"))
 
@@ -31,7 +33,6 @@
     Public Sub reLoad()
         Try
             lblKanunOnvan.Text = AppMan.TanzimGet("KanunNam")
-            lblVersion.Text = String.Format("نرم افزار {0} نسخه {1}", AppMan.AppName, AppMan.AppVer)
             icons()
 
             With CType(table.Controls(3), ucIcon) ' Icon Taqvim
@@ -66,8 +67,8 @@
             table.Controls.Add(New ucIcon("قفل", IMGcache.img("data\app\icon\padlock67.png"), frmLogin), 2, 1)
 
 
-            table.Controls.Add(New PictureBox With {.BorderStyle = BorderStyle.None, .Image = My.Resources.LOGO, .SizeMode = PictureBoxSizeMode.Zoom}, 2, 0)
-            'table.Controls.Add(New ucIcon(String.Format("{0} نسخه {1}", Application.ProductName, Application.ProductVersion), My.Resources.LOGO, Nothing))
+            table.Controls.Add(New ucIcon("نسخه " & Application.ProductVersion, IMGcache.img("data\logo.png"), Nothing, Color.Transparent), 1, 0)
+
 
             For Each item As Control In table.Controls
                 item.Dock = DockStyle.Fill
@@ -75,39 +76,18 @@
         End If
 
 
-        frmMain_Resize(Nothing, Nothing)
         table.Visible = True
     End Sub
 
-    Private Sub frmMain_Resize(sender As Object, e As EventArgs) Handles Me.Resize
-        Try
-            Dim sumW As Integer = lblKanunOnvan.Width + lblVersion.Width
-            Dim maxH As Integer = Math.Max(lblKanunOnvan.Height, lblVersion.Height)
-
-            lblKanunOnvan.Location = New Point(Me.Width - ((Width - sumW) / 2) - lblKanunOnvan.Width, table.Top / 2 - maxH / 2)
-
-            lblVersion.Location = New Point(lblKanunOnvan.Left - lblVersion.Width, table.Top / 2 - maxH / 2)
-
-            lblSaat.Location = New Point(table.Left, lblKanunOnvan.Top)
-            lblTarikh.Location = New Point(table.Left, lblSaat.Top + lblSaat.Height)
-            lblSaat.Size = New Size(table.Width / 3, (table.Top - lblSaat.Top) / 2)
-            lblTarikh.Size = New Size(table.Width / 3, (table.Top - lblSaat.Top) / 2)
-        Catch ex As Exception
-
-        End Try
-
-    End Sub
-
     Private Sub frmMain_GotFocus(sender As Object, e As EventArgs) Handles Me.GotFocus
-
         reLoad()
-
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         Dim Alan As New cTarikh
-        lblSaat.Text = Now.ToString("HH:mm:ss")
-        lblTarikh.Text = Alan.ToString
+        Dim Saat As New cSaat
+        lblSaat.Text = Saat.ToString(No:=cSaat.No.h12SABozorg2BiSanieh)
+        lblTarikh.Text = Alan.ToString(No:=cTarikh.No.S0D0m0YYYY)
         If TarikhQabl <> lblTarikh.Text Then
             reLoad()
         End If
@@ -115,8 +95,11 @@
     End Sub
 
     Private Sub frmMain_HandleCreated(sender As Object, e As EventArgs) Handles Me.HandleCreated
-        frmSplash.Show()
         Me.Hide()
+        frmSplash.Show()
     End Sub
 
+    Private Sub frmMain_Shown(sender As Object, e As EventArgs) Handles Me.Shown
+        Me.BringToFront()
+    End Sub
 End Class

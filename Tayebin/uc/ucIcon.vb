@@ -11,51 +11,37 @@
     Dim R As New Random
 
     Sub New()
-        Me.Size = New Size(250, 200)
-        Me.BackColor = Color.FromArgb(255, 100 + R.Next(155), 100 + R.Next(155), 100 + R.Next(155))
-
-        With pic
-            .Size = New Size(230, 150)
-            If Image Is Nothing Then
-                .Image = IMGcache.img("data\app\icon\drawing15.png")
-            Else
-                .Image = Image
-            End If
-            .SizeMode = PictureBoxSizeMode.Zoom
-            .Location = New Point(10, 10)
-        End With
-        Me.Controls.Add(pic)
-        AddHandler pic.Click, AddressOf iclick
-
-        With lbl
-            .AutoSize = False
-            .Size = New Size(230, 30)
-            .TextAlign = ContentAlignment.MiddleCenter
-            .Location = New Point(10, 165)
-            .BackColor = Color.FromArgb(100, Color.White)
-        End With
-        Me.Controls.Add(lbl)
-        AddHandler lbl.Click, AddressOf iclick
-
-        With lblHobab
-            .AutoSize = False
-            .Size = New Size(50, 50)
-            .TextAlign = ContentAlignment.MiddleCenter
-            .Text = ""
-            .Location = New Point(0, 0)
-            .BackColor = Color.Yellow
-            .Visible = False
-        End With
-        Me.Controls.Add(lblHobab)
-        AddHandler lblHobab.Click, AddressOf iclick
-
-
-        'target = TargetForm
+        NewShared()
     End Sub
 
     Sub New(Onvan As String, Image As Image, TargetForm As Object)
-        Me.Size = New Size(250, 200)
+        NewShared()
+
         Me.BackColor = Color.FromArgb(255, 100 + R.Next(155), 100 + R.Next(155), 100 + R.Next(155))
+        pic.Image = Image
+        lbl.Text = Onvan
+
+        If Not IsNothing(TargetForm) Then
+            Me.Cursor = Cursors.Hand
+        End If
+        target = TargetForm
+    End Sub
+
+    Sub New(Onvan As String, Image As Image, TargetForm As Object, Color As Color)
+        NewShared()
+
+        Me.BackColor = Color
+        pic.Image = Image
+        lbl.Text = Onvan
+
+        If Not IsNothing(TargetForm) Then
+            Me.Cursor = Cursors.Hand
+        End If
+        target = TargetForm
+    End Sub
+
+    Private Sub NewShared()
+        Me.Size = New Size(250, 200)
 
         With pic
             .Size = New Size(230, 150)
@@ -74,9 +60,7 @@
             .AutoSize = False
             .Size = New Size(230, 30)
             .TextAlign = ContentAlignment.MiddleCenter
-            .Text = Onvan
             .Location = New Point(10, 165)
-            .Font = New Font(myFontFamily, 12)
             .BackColor = Color.FromArgb(100, Color.White)
         End With
         Me.Controls.Add(lbl)
@@ -93,9 +77,6 @@
         End With
         Me.Controls.Add(lblHobab)
         AddHandler lblHobab.Click, AddressOf iclick
-
-
-        target = TargetForm
     End Sub
 
 
