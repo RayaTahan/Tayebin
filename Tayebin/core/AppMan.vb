@@ -104,6 +104,7 @@ Public Class AppMan
             End If
 
             If dbVer = 1 Then
+                'SQLiter.RunCommand(String.Format(cmdUpd, "pcID",))
                 SQLiter.RunCommand(String.Format(cmdUpd, "dbVer", "24"))
 
             End If
