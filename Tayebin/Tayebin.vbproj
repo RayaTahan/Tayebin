@@ -532,9 +532,9 @@
     <Content Include="data\app\font\SEGUISLI.TTF">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="data\ShahrHa.json">
+    <Content Include="data\ShahrHa.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    </Content>
     <None Include="My Project\app.manifest">
       <SubType>Designer</SubType>
     </None>
