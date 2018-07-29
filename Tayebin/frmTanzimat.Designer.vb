@@ -26,6 +26,7 @@ Partial Class frmTanzimat
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.comShahr = New System.Windows.Forms.ComboBox()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -54,7 +55,6 @@ Partial Class frmTanzimat
         Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.Button7 = New System.Windows.Forms.Button()
-        Me.Label11 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -113,6 +113,19 @@ Partial Class frmTanzimat
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "اطلاعات پشتیبانی"
         '
+        'Label11
+        '
+        Me.Label11.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Label11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Label11.Location = New System.Drawing.Point(3, 212)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Padding = New System.Windows.Forms.Padding(10)
+        Me.Label11.Size = New System.Drawing.Size(534, 78)
+        Me.Label11.TabIndex = 12
+        Me.Label11.Text = "شما در پر کردن اطلاعات پشتیبانی مختارید، اما می‌توانید با ثبت آن در جهت سرویس‌دهی" &
+    " بهتر و رفع ایرادات نرم‌افزار در نسخه‌های بعد ما را یاری کنید."
+        Me.Label11.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        '
         'Label10
         '
         Me.Label10.AutoSize = True
@@ -165,6 +178,7 @@ Partial Class frmTanzimat
         Me.txtKanunTel.BackColor = System.Drawing.Color.White
         Me.txtKanunTel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
         Me.txtKanunTel.Location = New System.Drawing.Point(6, 98)
+        Me.txtKanunTel.MaxLength = 15
         Me.txtKanunTel.Name = "txtKanunTel"
         Me.txtKanunTel.Size = New System.Drawing.Size(344, 29)
         Me.txtKanunTel.TabIndex = 6
@@ -183,6 +197,7 @@ Partial Class frmTanzimat
         Me.txtKarbarMob.BackColor = System.Drawing.Color.White
         Me.txtKarbarMob.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
         Me.txtKarbarMob.Location = New System.Drawing.Point(6, 63)
+        Me.txtKarbarMob.MaxLength = 15
         Me.txtKarbarMob.Name = "txtKarbarMob"
         Me.txtKarbarMob.Size = New System.Drawing.Size(344, 29)
         Me.txtKarbarMob.TabIndex = 4
@@ -201,6 +216,7 @@ Partial Class frmTanzimat
         Me.txtKarbarNam.BackColor = System.Drawing.Color.White
         Me.txtKarbarNam.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
         Me.txtKarbarNam.Location = New System.Drawing.Point(6, 28)
+        Me.txtKarbarNam.MaxLength = 100
         Me.txtKarbarNam.Name = "txtKarbarNam"
         Me.txtKarbarNam.Size = New System.Drawing.Size(344, 29)
         Me.txtKarbarNam.TabIndex = 2
@@ -219,6 +235,7 @@ Partial Class frmTanzimat
         Me.txtKanunNam.BackColor = System.Drawing.Color.White
         Me.txtKanunNam.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
         Me.txtKanunNam.Location = New System.Drawing.Point(6, 5)
+        Me.txtKanunNam.MaxLength = 100
         Me.txtKanunNam.Name = "txtKanunNam"
         Me.txtKanunNam.Size = New System.Drawing.Size(350, 29)
         Me.txtKanunNam.TabIndex = 0
@@ -404,19 +421,6 @@ Partial Class frmTanzimat
         Me.Button7.TabIndex = 4
         Me.Button7.Text = "انصراف"
         Me.Button7.UseVisualStyleBackColor = True
-        '
-        'Label11
-        '
-        Me.Label11.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Label11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Label11.Location = New System.Drawing.Point(3, 212)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Padding = New System.Windows.Forms.Padding(10)
-        Me.Label11.Size = New System.Drawing.Size(534, 78)
-        Me.Label11.TabIndex = 12
-        Me.Label11.Text = "شما در پر کردن اطلاعات پشتیبانی مختارید، اما می‌توانید با ثبت آن در جهت سرویس‌دهی" &
-    " بهتر و رفع ایرادات نرم‌افزار در نسخه‌های بعد ما را یاری کنید."
-        Me.Label11.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'frmTanzimat
         '
