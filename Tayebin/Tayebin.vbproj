@@ -159,7 +159,9 @@
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
     <Compile Include="core\AppMan.vb" />
+    <Compile Include="core\cOstan.vb" />
     <Compile Include="core\cSaat.vb" />
+    <Compile Include="core\cShahr.vb" />
     <Compile Include="core\cTarikh.vb" />
     <Compile Include="core\fun.vb" />
     <Compile Include="core\IMGcache.vb" />
@@ -530,6 +532,9 @@
     <Content Include="data\app\font\SEGUISLI.TTF">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="data\ShahrHa.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="My Project\app.manifest">
       <SubType>Designer</SubType>
     </None>

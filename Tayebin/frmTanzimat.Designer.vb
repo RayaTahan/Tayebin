@@ -25,6 +25,17 @@ Partial Class frmTanzimat
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmTanzimat))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.comShahr = New System.Windows.Forms.ComboBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.comOstan = New System.Windows.Forms.ComboBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.txtKanunTel = New Tayebin.ucTextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.txtKarbarMob = New Tayebin.ucTextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.txtKarbarNam = New Tayebin.ucTextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtKanunNam = New Tayebin.ucTextBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
@@ -43,8 +54,10 @@ Partial Class frmTanzimat
         Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.Button7 = New System.Windows.Forms.Button()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.TabPage4.SuspendLayout()
         Me.TabPage3.SuspendLayout()
@@ -69,6 +82,7 @@ Partial Class frmTanzimat
         'TabPage1
         '
         Me.TabPage1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.TabPage1.Controls.Add(Me.GroupBox1)
         Me.TabPage1.Controls.Add(Me.Label1)
         Me.TabPage1.Controls.Add(Me.txtKanunNam)
         Me.TabPage1.Location = New System.Drawing.Point(4, 35)
@@ -78,6 +92,118 @@ Partial Class frmTanzimat
         Me.TabPage1.Size = New System.Drawing.Size(552, 338)
         Me.TabPage1.TabIndex = 3
         Me.TabPage1.Text = "مشخصات کانون"
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.Label11)
+        Me.GroupBox1.Controls.Add(Me.Label10)
+        Me.GroupBox1.Controls.Add(Me.comShahr)
+        Me.GroupBox1.Controls.Add(Me.Label9)
+        Me.GroupBox1.Controls.Add(Me.comOstan)
+        Me.GroupBox1.Controls.Add(Me.Label8)
+        Me.GroupBox1.Controls.Add(Me.txtKanunTel)
+        Me.GroupBox1.Controls.Add(Me.Label7)
+        Me.GroupBox1.Controls.Add(Me.txtKarbarMob)
+        Me.GroupBox1.Controls.Add(Me.Label6)
+        Me.GroupBox1.Controls.Add(Me.txtKarbarNam)
+        Me.GroupBox1.Location = New System.Drawing.Point(6, 40)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(540, 293)
+        Me.GroupBox1.TabIndex = 2
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "اطلاعات پشتیبانی"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(356, 171)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(122, 21)
+        Me.Label10.TabIndex = 11
+        Me.Label10.Text = "شهر محل استقرار"
+        '
+        'comShahr
+        '
+        Me.comShahr.CausesValidation = False
+        Me.comShahr.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.comShahr.FormattingEnabled = True
+        Me.comShahr.Location = New System.Drawing.Point(6, 168)
+        Me.comShahr.Name = "comShahr"
+        Me.comShahr.Size = New System.Drawing.Size(344, 29)
+        Me.comShahr.TabIndex = 10
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(356, 136)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(131, 21)
+        Me.Label9.TabIndex = 9
+        Me.Label9.Text = "استان محل استقرار"
+        '
+        'comOstan
+        '
+        Me.comOstan.CausesValidation = False
+        Me.comOstan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.comOstan.FormattingEnabled = True
+        Me.comOstan.Location = New System.Drawing.Point(6, 133)
+        Me.comOstan.Name = "comOstan"
+        Me.comOstan.Size = New System.Drawing.Size(344, 29)
+        Me.comOstan.TabIndex = 8
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(356, 103)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(179, 21)
+        Me.Label8.TabIndex = 7
+        Me.Label8.Text = "شماره تماس دفتر مجموعه"
+        '
+        'txtKanunTel
+        '
+        Me.txtKanunTel.BackColor = System.Drawing.Color.White
+        Me.txtKanunTel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
+        Me.txtKanunTel.Location = New System.Drawing.Point(6, 98)
+        Me.txtKanunTel.Name = "txtKanunTel"
+        Me.txtKanunTel.Size = New System.Drawing.Size(344, 29)
+        Me.txtKanunTel.TabIndex = 6
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(356, 68)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(131, 21)
+        Me.Label7.TabIndex = 5
+        Me.Label7.Text = "شماره موبایل کاربر"
+        '
+        'txtKarbarMob
+        '
+        Me.txtKarbarMob.BackColor = System.Drawing.Color.White
+        Me.txtKarbarMob.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
+        Me.txtKarbarMob.Location = New System.Drawing.Point(6, 63)
+        Me.txtKarbarMob.Name = "txtKarbarMob"
+        Me.txtKarbarMob.Size = New System.Drawing.Size(344, 29)
+        Me.txtKarbarMob.TabIndex = 4
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(356, 33)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(160, 21)
+        Me.Label6.TabIndex = 3
+        Me.Label6.Text = "نام و نام خانوادگی کاربر"
+        '
+        'txtKarbarNam
+        '
+        Me.txtKarbarNam.BackColor = System.Drawing.Color.White
+        Me.txtKarbarNam.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
+        Me.txtKarbarNam.Location = New System.Drawing.Point(6, 28)
+        Me.txtKarbarNam.Name = "txtKarbarNam"
+        Me.txtKarbarNam.Size = New System.Drawing.Size(344, 29)
+        Me.txtKarbarNam.TabIndex = 2
         '
         'Label1
         '
@@ -279,6 +405,19 @@ Partial Class frmTanzimat
         Me.Button7.Text = "انصراف"
         Me.Button7.UseVisualStyleBackColor = True
         '
+        'Label11
+        '
+        Me.Label11.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Label11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Label11.Location = New System.Drawing.Point(3, 212)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Padding = New System.Windows.Forms.Padding(10)
+        Me.Label11.Size = New System.Drawing.Size(534, 78)
+        Me.Label11.TabIndex = 12
+        Me.Label11.Text = "شما در پر کردن اطلاعات پشتیبانی مختارید، اما می‌توانید با ثبت آن در جهت سرویس‌دهی" &
+    " بهتر و رفع ایرادات نرم‌افزار در نسخه‌های بعد ما را یاری کنید."
+        Me.Label11.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        '
         'frmTanzimat
         '
         Me.AcceptButton = Me.Button6
@@ -303,6 +442,8 @@ Partial Class frmTanzimat
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
         Me.TabPage4.ResumeLayout(False)
@@ -331,4 +472,16 @@ Partial Class frmTanzimat
     Friend WithEvents WebBrowser1 As WebBrowser
     Friend WithEvents TabPage4 As TabPage
     Friend WithEvents WebBrowser2 As WebBrowser
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents txtKanunTel As ucTextBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents txtKarbarMob As ucTextBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents txtKarbarNam As ucTextBox
+    Friend WithEvents Label10 As Label
+    Friend WithEvents comShahr As ComboBox
+    Friend WithEvents Label9 As Label
+    Friend WithEvents comOstan As ComboBox
+    Friend WithEvents Label11 As Label
 End Class
