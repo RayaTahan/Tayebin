@@ -5,9 +5,24 @@ Public Class frmTanzimat
     Dim curUser As String
     Dim curPass As String
     Dim AboutHTML As String = ""
+    Dim Shahrha() As cOstan = Newtonsoft.Json.JsonConvert.DeserializeObject(Of cOstan())(FileIO.FileSystem.ReadAllText("data\ShahrHa.json"))
+    Dim LoadNum As Integer = 0
 
     Private Sub frmTanzimat_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txtKanunNam.Text = AppMan.Tanzimat("KanunNam")
+        txtKanunTel.Text = AppMan.Tanzimat("KanunTel")
+        txtKarbarNam.Text = AppMan.Tanzimat("KarbarNam")
+        txtKarbarMob.Text = AppMan.Tanzimat("KarbarMob")
+
+        comOstan.ValueMember = "ID"
+        comShahr.ValueMember = "ID"
+        comOstan.DisplayMember = "Name"
+        comShahr.DisplayMember = "Name"
+
+        comOstan.DataSource = Shahrha
+        comOstan.SelectedValue = Integer.Parse(AppMan.Tanzimat("KanunOstanID"))
+
+
 
         Dim up As DataTable = SQLiter.Fill("select * from tKarbari")
         If up.Rows.Count = 0 Then
@@ -75,6 +90,11 @@ Public Class frmTanzimat
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
         Dim Kamel As Boolean = True
         AppMan.Tanzimat("KanunNam") = txtKanunNam.Text
+        AppMan.Tanzimat("KanunTel") = txtKanunTel.Text
+        AppMan.Tanzimat("KanunOstanID") = comOstan.SelectedValue
+        AppMan.Tanzimat("KanunShahrID") = comShahr.SelectedValue
+        AppMan.Tanzimat("KarbarNam") = txtKarbarNam.Text
+        AppMan.Tanzimat("KarbarMob") = txtKarbarMob.Text
 
         If txtUser.TextLength > 0 AndAlso txtPass1.TextLength > 0 AndAlso txtPass2.TextLength > 0 AndAlso txtPass3.TextLength > 0 Then
             If txtUser.Text = curUser And txtPass1.Text = curPass Then
@@ -104,6 +124,13 @@ Public Class frmTanzimat
         If e.Url.ToString.StartsWith("http") Then
             e.Cancel = True 'Cancel the event to avoid default behavior
             Process.Start(e.Url.ToString()) 'Open the link in the default browser
+        End If
+    End Sub
+
+    Private Sub comOstan_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comOstan.SelectedIndexChanged
+        If Not IsNothing(comOstan.SelectedItem) Then
+            comShahr.DataSource = CType(comOstan.SelectedItem, cOstan).Cities
+            comShahr.SelectedValue = Integer.Parse(AppMan.Tanzimat("KanunShahrID"))
         End If
     End Sub
 End Class

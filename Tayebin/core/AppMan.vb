@@ -165,5 +165,55 @@ Public Class AppMan
 
     End Sub
 
+    Public Shared Sub Start()
+        If Not isDbUpToDate() Then
+            If UpDateDb() Then
+                MessageBox.Show("پایگاه داده نرم افزار با موفقیت بروزرسانی شد!")
+            Else
+                MessageBox.Show("عملیات بروزرسانی نرم افزار با خطا مواجه شد!")
+            End If
+        End If
 
+        UpdateChecker()
+        sendStart()
+
+    End Sub
+
+    Public Shared Sub sendStart()
+        Dim URL As String = "https://api.rayatahan.ir/tayebin/start"
+
+        Dim client = New RestClient(URL)
+        Dim request = New RestRequest(Method.POST)
+        Dim uniqueAppID = AppMan.Tanzimat("uniqueAppID")
+        request.AddParameter("uniqueAppID", uniqueAppID)
+        request.AddParameter("InstalledVersion", VersionInt)
+
+        request.AddParameter("PCName", My.Computer.Name)
+        request.AddParameter("InstallDrive", FileIO.FileSystem.GetDriveInfo(Application.ExecutablePath).Name)
+        request.AddParameter("OSFullName", My.Computer.Info.OSFullName)
+        request.AddParameter("OSPlatform", My.Computer.Info.OSPlatform)
+        request.AddParameter("OSVersion", My.Computer.Info.OSVersion)
+        request.AddParameter("Screen", String.Format("{0}x{1}", My.Computer.Screen.Bounds.Width, My.Computer.Screen.Bounds.Height))
+
+        request.AddParameter("KanunNam", AppMan.Tanzimat("KanunNam"))
+        request.AddParameter("KanunTel", AppMan.Tanzimat("KanunTel"))
+        request.AddParameter("KanunOstanID", AppMan.Tanzimat("KanunOstanID"))
+        request.AddParameter("KanunShahrID", AppMan.Tanzimat("KanunShahrID"))
+        request.AddParameter("KarbarNam", AppMan.Tanzimat("KarbarNam"))
+        request.AddParameter("KarbarMob", AppMan.Tanzimat("KarbarMob"))
+
+
+        client.ExecuteAsync(request, Sub(res)
+                                         If res.IsSuccessful AndAlso Not IsNothing(res.Content) Then
+                                             Dim obj = Newtonsoft.Json.JsonConvert.DeserializeObject(res.Content)
+                                             If uniqueAppID = "" Then
+                                                 If obj("status") = 1 Then
+                                                     AppMan.Tanzimat("uniqueAppID") = obj("uniqueAppID")
+                                                 End If
+                                             End If
+                                         End If
+                                     End Sub)
+
+
+    End Sub
 End Class

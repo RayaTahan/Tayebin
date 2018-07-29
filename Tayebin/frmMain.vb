@@ -7,18 +7,9 @@
         Me.Hide()
         frmSplash.Close()
 
-        If Not AppMan.isDbUpToDate Then
-            If AppMan.UpDateDb() Then
-                MessageBox.Show("پایگاه داده نرم افزار با موفقیت بروزرسانی شد!")
-            Else
-                MessageBox.Show("عملیات بروزرسانی نرم افزار با خطا مواجه شد!")
-            End If
-        End If
-        AppMan.UpdateChecker()
-
+        AppMan.Start()
 
         My.Settings.Save()
-
 
         Dim frm As New frmLogin
         frm.ShowDialog(Me)

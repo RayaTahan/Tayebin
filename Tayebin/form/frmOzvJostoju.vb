@@ -1,11 +1,14 @@
 ﻿Public Class frmOzvJostoju
     Dim SelectedDores As String = ""
     Dim TreeBusy As Integer = 0
+    Dim HameDoreha As Boolean = False
 
     Private Sub frmOzvJostoju_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'fun.ChangeFont(Me, My.MySettings.Default.Context.Item("Font"))
 
         TreeView1.Nodes.Clear()
+        TreeView1.Nodes.Add(New TreeNode("همه اعضا") With {.Tag = -1})
+
         For Each tSal As DataRow In SQLiter.Fill("select ID,Onvan from tSal").Rows
             Dim nSal As New TreeNode(tSal.Item("Onvan"))
             nSal.Tag = tSal.Item("ID")
@@ -52,6 +55,20 @@
                 nd.Checked = nd.Parent.Checked
             Next
 
+            If e.Node.Tag = -1 AndAlso e.Node.Checked Then
+                For Each chn As TreeNode In TreeView1.Nodes
+                    If chn.Tag <> -1 Then
+                        chn.Checked = False
+                        For Each nd As TreeNode In chn.Nodes
+                            nd.Checked = False
+                        Next
+                    End If
+                Next
+                HameDoreha = True
+            ElseIf e.Node.Tag = -1 AndAlso e.Node.Checked = False Then
+                HameDoreha = False
+            End If
+
         End If
         TreeBusy -= 1
     End Sub
@@ -73,28 +90,32 @@
     End Sub
 
     Public Function dSalDore() As String
-        SelectedDores = ""
-        For Each nd As TreeNode In TreeView1.Nodes
-            For Each nod As TreeNode In nd.Nodes
-                Dim DoreKey As String = String.Format("[{0}]", nod.Tag)
-                If nod.Checked Then
-                    SelectedDores += DoreKey
-                Else
-                    SelectedDores = SelectedDores.Replace(DoreKey, "")
-                End If
-            Next
-        Next
-
-        Dim tmpSalDoreHa As String = SelectedDores.Replace("][", ",").Replace("[", "").Replace("]", "")
-
-        Dim SalDore As String = ""
-        If tmpSalDoreHa = "" Then
-            SalDore = ""
+        If HameDoreha Then
+            Return ""
         Else
-            SalDore = " ID in(select IDOzv from tOzvSalDore where IDSalDore in(" & tmpSalDoreHa & ")) "
-        End If
+            SelectedDores = ""
+            For Each nd As TreeNode In TreeView1.Nodes
+                For Each nod As TreeNode In nd.Nodes
+                    Dim DoreKey As String = String.Format("[{0}]", nod.Tag)
+                    If nod.Checked Then
+                        SelectedDores += DoreKey
+                    Else
+                        SelectedDores = SelectedDores.Replace(DoreKey, "")
+                    End If
+                Next
+            Next
 
-        Return SalDore
+            Dim tmpSalDoreHa As String = SelectedDores.Replace("][", ",").Replace("[", "").Replace("]", "")
+
+            Dim SalDore As String = ""
+            If tmpSalDoreHa = "" Then
+                SalDore = ""
+            Else
+                SalDore = " ID in(select IDOzv from tOzvSalDore where IDSalDore in(" & tmpSalDoreHa & ")) "
+            End If
+
+            Return SalDore
+        End If
     End Function
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
