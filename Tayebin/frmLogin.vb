@@ -15,6 +15,9 @@ Public Class frmLogin
         End If
         If (UcTextBox1.Text = "purtahan" And UcTextBox2.Text = "YaRaouf") OrElse Val(SQLiter.RunCommandScaler(String.Format("select count(*) from tKarbari where u like '{0}' and p like '{1}'", UcTextBox1.Text, UcTextBox2.Text))) = 1 Then
             Me.Close()
+            Dim frm As frmMain = My.Application.OpenForms("frmMain")
+            frm.Activate()
+            frm.Opacity = 100
         Else
             MessageBox.Show("اطلاعات وارد شده صحیح نمی باشد!")
             UcTextBox1.Clear()

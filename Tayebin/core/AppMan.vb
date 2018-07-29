@@ -1,5 +1,7 @@
-﻿Public Class AppMan
-    Public Shared VersionInt As Integer = 1
+﻿Imports RestSharp
+
+Public Class AppMan
+    Public Shared VersionInt As Integer = 24
 
     Public Shared ReadOnly Property dbVer As Integer
         Get
@@ -16,9 +18,6 @@
     Private Shared _ConnectionString As String = "Data Source=data\db.sqlite;Version=3;"
     Public Shared ReadOnly Property ConnectionString As String
         Get
-            If _ConnectionString = "" Then
-                _ConnectionString = IO.File.ReadAllText(Application.StartupPath & "\data\ConnectionString.txt")
-            End If
             Return _ConnectionString
         End Get
     End Property
@@ -101,6 +100,11 @@
                 SQLiter.RunCommand(String.Format(cmdIns, "dbVer", "1"))
             End If
 
+            If dbVer = 1 Then
+                Tanzimat("uniqueAppID") = ""
+                Tanzimat("dbVer") = 24
+            End If
+
             Return True
         Catch ex As Exception
             MessageBox.Show(ex.Message)
@@ -108,22 +112,58 @@
         End Try
     End Function
 
-    Public Shared Function TanzimGet(Onvan As String)
-        Try
-            Return SQLiter.RunCommandScaler(String.Format("select Meqdar from tTanzimat where Onvan like '{0}'", Onvan))
-        Catch ex As Exception
-            Return Nothing
-        End Try
-    End Function
-
-    Public Shared Sub TanzimatSet(Onvan As String, Meqdar As String)
-        Try
+    Public Shared Property Tanzimat(key As String) As String
+        Get
+            Return SQLiter.RunCommandScaler(String.Format("select Meqdar from tTanzimat where Onvan like '{0}'", key))
+        End Get
+        Set(value As String)
             Dim cmdUpd As String = "update tTanzimat set Meqdar='{1}' where Onvan like '{0}'"
-            SQLiter.RunCommand(String.Format(cmdUpd, Onvan, Meqdar))
-        Catch ex As Exception
-
-        End Try
-    End Sub
+            Dim cmdInst As String = "insert into tTanzimat(Onvan,Meqdar) values('{0}','{1}')"
+            If SQLiter.RunCommand(String.Format(cmdUpd, key, value)) = 0 Then
+                SQLiter.RunCommand(String.Format(cmdInst, key, value))
+            End If
+        End Set
+    End Property
 
     Public Shared Icon As Icon = CType((New System.Resources.ResourceManager(GetType(frmMain))).GetObject("$this.Icon"), System.Drawing.Icon)
+
+
+    Public Shared Sub UpdateChecker()
+        Dim URL As String = "https://api.rayatahan.ir/tayebin/ver"
+
+        Dim client = New RestClient(URL)
+        Dim request = New RestRequest(Method.GET)
+        request.AddParameter("iv", VersionInt)
+
+        client.ExecuteAsync(request, Sub(res)
+                                         If res.IsSuccessful AndAlso Not IsNothing(res.Content) Then
+                                             Dim obj = Newtonsoft.Json.JsonConvert.DeserializeObject(res.Content)
+                                             If obj("LastVer") > VersionInt Then
+                                                 Dim msg As String = ""
+                                                 msg += String.Format("نسخه جدید: {0}", obj("LastVer"))
+                                                 msg += vbCrLf & String.Format("تاریخ انتشار: {0}", obj("LastVerTarikh"))
+                                                 msg += vbCrLf
+
+                                                 Dim ptrn As String = "    {0} : {1}"
+                                                 Dim type = {"", "افزودن ویژگی", "حذف ویژگی", "رفع خطا"}
+
+                                                 For Each row In obj("Data")
+                                                     msg += vbCrLf & String.Format(ptrn, type(row("Type")), row("Tozih"))
+                                                 Next
+
+                                                 msg += vbCrLf
+                                                 msg += vbCrLf & "جهت ورود به صفحه دانلود Yes را بزنید."
+
+                                                 If MessageBox.Show(text:=msg, caption:="نسخه جدید طیبین منتشر شد", buttons:=MessageBoxButtons.YesNo, icon:=MessageBoxIcon.Information, defaultButton:=MessageBoxDefaultButton.Button1, options:=MessageBoxOptions.RtlReading + MessageBoxOptions.RightAlign, displayHelpButton:=False) = DialogResult.Yes Then
+                                                     Process.Start("https://github.com/RayaTahan/Tayebin/releases/latest")
+                                                 End If
+                                             End If
+                                         End If
+                                     End Sub)
+
+
+
+    End Sub
+
+
 End Class

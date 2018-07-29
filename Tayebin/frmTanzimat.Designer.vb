@@ -22,6 +22,7 @@ Partial Class frmTanzimat
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmTanzimat))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -36,6 +37,8 @@ Partial Class frmTanzimat
         Me.txtPass1 = New Tayebin.ucTextBox()
         Me.txtUser = New Tayebin.ucTextBox()
         Me.lblKarbariTozih = New System.Windows.Forms.Label()
+        Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.WebBrowser2 = New System.Windows.Forms.WebBrowser()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
         Me.Button6 = New System.Windows.Forms.Button()
@@ -43,6 +46,7 @@ Partial Class frmTanzimat
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
+        Me.TabPage4.SuspendLayout()
         Me.TabPage3.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -50,6 +54,7 @@ Partial Class frmTanzimat
         '
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
+        Me.TabControl1.Controls.Add(Me.TabPage4)
         Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.ItemSize = New System.Drawing.Size(80, 31)
         Me.TabControl1.Location = New System.Drawing.Point(12, 11)
@@ -201,6 +206,31 @@ Partial Class frmTanzimat
         Me.lblKarbariTozih.Text = "توضیحات"
         Me.lblKarbariTozih.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'TabPage4
+        '
+        Me.TabPage4.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.TabPage4.Controls.Add(Me.WebBrowser2)
+        Me.TabPage4.Location = New System.Drawing.Point(4, 35)
+        Me.TabPage4.Name = "TabPage4"
+        Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage4.Size = New System.Drawing.Size(552, 338)
+        Me.TabPage4.TabIndex = 6
+        Me.TabPage4.Text = "تازه ها"
+        '
+        'WebBrowser2
+        '
+        Me.WebBrowser2.AllowWebBrowserDrop = False
+        Me.WebBrowser2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.WebBrowser2.IsWebBrowserContextMenuEnabled = False
+        Me.WebBrowser2.Location = New System.Drawing.Point(3, 3)
+        Me.WebBrowser2.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.WebBrowser2.Name = "WebBrowser2"
+        Me.WebBrowser2.ScriptErrorsSuppressed = True
+        Me.WebBrowser2.ScrollBarsEnabled = False
+        Me.WebBrowser2.Size = New System.Drawing.Size(546, 332)
+        Me.WebBrowser2.TabIndex = 1
+        Me.WebBrowser2.WebBrowserShortcutsEnabled = False
+        '
         'TabPage3
         '
         Me.TabPage3.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
@@ -261,8 +291,8 @@ Partial Class frmTanzimat
         Me.Controls.Add(Me.Button7)
         Me.Controls.Add(Me.TabControl1)
         Me.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.Icon = AppMan.Icon
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
@@ -275,6 +305,7 @@ Partial Class frmTanzimat
         Me.TabPage1.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
+        Me.TabPage4.ResumeLayout(False)
         Me.TabPage3.ResumeLayout(False)
         Me.ResumeLayout(False)
 
@@ -298,4 +329,6 @@ Partial Class frmTanzimat
     Friend WithEvents txtPass2 As ucTextBox
     Friend WithEvents TabPage3 As TabPage
     Friend WithEvents WebBrowser1 As WebBrowser
+    Friend WithEvents TabPage4 As TabPage
+    Friend WithEvents WebBrowser2 As WebBrowser
 End Class

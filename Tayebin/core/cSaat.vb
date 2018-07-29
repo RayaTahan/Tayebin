@@ -8,7 +8,10 @@ Public Class cSaat
         h12Bozorg
         h12Kuchik
         h12SABozorg
+        h12SABozorgBiSanieh
+        h12SABozorg2BiSanieh
         h12SAKuchik
+        h12SAKuchikBiSanieh
     End Enum
 
     Dim localDateTime As DateTime
@@ -52,7 +55,7 @@ Public Class cSaat
         Dim s As String = "صبح"
         If Saat > 12 Then
             h = Saat - 12
-            s = "عصر"
+            s = "بعد از ظهر"
         End If
 
         Select Case No
@@ -67,8 +70,17 @@ Public Class cSaat
             Case cSaat.No.h12SABozorg
                 tmp = ToString(No.h12Bozorg)
                 tmp += " " & s
+            Case cSaat.No.h12SABozorgBiSanieh
+                tmp = Strings.Right("00" & h.ToString, 2) & ":" & Strings.Right("00" & Daqiqe.ToString, 2)
+                tmp += " " & s
+            Case cSaat.No.h12SABozorg2BiSanieh
+                tmp = h.ToString & ":" & Strings.Right("00" & Daqiqe.ToString, 2)
+                tmp += " " & s
             Case cSaat.No.h12SAKuchik
                 tmp = ToString(No.h12Kuchik)
+                tmp += " " & s
+            Case cSaat.No.h12SAKuchikBiSanieh
+                tmp = h.ToString & ":" & Daqiqe.ToString
                 tmp += " " & s
         End Select
         Return tmp
