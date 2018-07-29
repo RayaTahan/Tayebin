@@ -7,7 +7,7 @@ Public Class frmTanzimat
     Dim AboutHTML As String = ""
 
     Private Sub frmTanzimat_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        txtKanunNam.Text = AppMan.TanzimGet("KanunNam")
+        txtKanunNam.Text = AppMan.Tanzimat("KanunNam")
 
         Dim up As DataTable = SQLiter.Fill("select * from tKarbari")
         If up.Rows.Count = 0 Then
@@ -74,7 +74,7 @@ Public Class frmTanzimat
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
         Dim Kamel As Boolean = True
-        AppMan.TanzimatSet("KanunNam", txtKanunNam.Text)
+        AppMan.Tanzimat("KanunNam") = txtKanunNam.Text
 
         If txtUser.TextLength > 0 AndAlso txtPass1.TextLength > 0 AndAlso txtPass2.TextLength > 0 AndAlso txtPass3.TextLength > 0 Then
             If txtUser.Text = curUser And txtPass1.Text = curPass Then

@@ -104,9 +104,8 @@ Public Class AppMan
             End If
 
             If dbVer = 1 Then
-                'SQLiter.RunCommand(String.Format(cmdUpd, "pcID",))
-                SQLiter.RunCommand(String.Format(cmdUpd, "dbVer", "24"))
-
+                Tanzimat("uniqueAppID") = ""
+                Tanzimat("dbVer") = 24
             End If
 
             Return True
@@ -116,22 +115,18 @@ Public Class AppMan
         End Try
     End Function
 
-    Public Shared Function TanzimGet(Onvan As String)
-        Try
-            Return SQLiter.RunCommandScaler(String.Format("select Meqdar from tTanzimat where Onvan like '{0}'", Onvan))
-        Catch ex As Exception
-            Return Nothing
-        End Try
-    End Function
-
-    Public Shared Sub TanzimatSet(Onvan As String, Meqdar As String)
-        Try
+    Public Shared Property Tanzimat(key As String) As String
+        Get
+            Return SQLiter.RunCommandScaler(String.Format("select Meqdar from tTanzimat where Onvan like '{0}'", key))
+        End Get
+        Set(value As String)
             Dim cmdUpd As String = "update tTanzimat set Meqdar='{1}' where Onvan like '{0}'"
-            SQLiter.RunCommand(String.Format(cmdUpd, Onvan, Meqdar))
-        Catch ex As Exception
-
-        End Try
-    End Sub
+            Dim cmdInst As String = "insert into tTanzimat(Onvan,Meqdar) values('{0}','{1}')"
+            If SQLiter.RunCommand(String.Format(cmdUpd, key, value)) = 0 Then
+                SQLiter.RunCommand(String.Format(cmdInst, key, value))
+            End If
+        End Set
+    End Property
 
     Public Shared Icon As Icon = CType((New System.Resources.ResourceManager(GetType(frmMain))).GetObject("$this.Icon"), System.Drawing.Icon)
 

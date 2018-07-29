@@ -32,7 +32,7 @@
 
     Public Sub reLoad()
         Try
-            lblKanunOnvan.Text = AppMan.TanzimGet("KanunNam")
+            lblKanunOnvan.Text = AppMan.Tanzimat("KanunNam")
             icons()
 
             With CType(table.Controls(3), ucIcon) ' Icon Taqvim

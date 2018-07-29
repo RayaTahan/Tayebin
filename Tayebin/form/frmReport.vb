@@ -23,7 +23,7 @@ Public Class frmReport
         Dim tbl As New DataTable
         Dim param As New List(Of ReportParameter)
 
-        param.Add(New ReportParameter("Kanun", AppMan.TanzimGet("KanunNam").ToString))
+        param.Add(New ReportParameter("Kanun", AppMan.Tanzimat("KanunNam").ToString))
         param.Add(New ReportParameter("Zaman", String.Format("{0} - {1} :{2}", (New cTarikh).ToString, (New cSaat).ToString, "زمان ایجاد")))
         param.Add(New ReportParameter("Emza", String.Format("{0} | نرم افزار {1} نسخه {2}", AppMan.AppURL, AppMan.AppName, AppMan.AppVer)))
 
