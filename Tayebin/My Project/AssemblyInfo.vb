@@ -10,7 +10,7 @@ Imports System.Runtime.InteropServices
 
 <Assembly: AssemblyTitle("Tayebin")>
 <Assembly: AssemblyDescription("Tayebin")>
-<Assembly: AssemblyCompany("PurTahan")>
+<Assembly: AssemblyCompany("RayaTahan")>
 <Assembly: AssemblyProduct("طیبین")>
 <Assembly: AssemblyCopyright("کپی صلواتی")>
 <Assembly: AssemblyTrademark("http://Tayebin.blog.ir")>

@@ -18,9 +18,6 @@ Public Class AppMan
     Private Shared _ConnectionString As String = "Data Source=data\db.sqlite;Version=3;"
     Public Shared ReadOnly Property ConnectionString As String
         Get
-            If _ConnectionString = "" Then
-                _ConnectionString = IO.File.ReadAllText(Application.StartupPath & "\data\ConnectionString.txt")
-            End If
             Return _ConnectionString
         End Get
     End Property
@@ -158,7 +155,7 @@ Public Class AppMan
                                                  msg += vbCrLf & "جهت ورود به صفحه دانلود Yes را بزنید."
 
                                                  If MessageBox.Show(text:=msg, caption:="نسخه جدید طیبین منتشر شد", buttons:=MessageBoxButtons.YesNo, icon:=MessageBoxIcon.Information, defaultButton:=MessageBoxDefaultButton.Button1, options:=MessageBoxOptions.RtlReading + MessageBoxOptions.RightAlign, displayHelpButton:=False) = DialogResult.Yes Then
-                                                     Process.Start("https://github.com/PurTahan/Tayebin/releases/latest")
+                                                     Process.Start("https://github.com/RayaTahan/Tayebin/releases/latest")
                                                  End If
                                              End If
                                          End If

@@ -29,7 +29,7 @@ Public Class frmTanzimat
 
         AboutHTML += "<p>" & "بسم الله الرحمن الرحیم" & "</p>"
         AboutHTML += "<p>" & "پروژه طیبین یک پروژه منبع باز است. شما نیز جهت مشارکت در پروژه می‌توانید به آدرس گیت هاب پروژه رجوع کنید." & "</p>"
-        AboutHTML += "<p><a href=""https://github.com/PurTahan/Tayebin"" >https://github.com/PurTahan/Tayebin</a></p>"
+        AboutHTML += "<p><a href=""https://github.com/RayaTahan/Tayebin"" >https://github.com/RayaTahan/Tayebin</a></p>"
         AboutHTML += "<p>" & "جهت تعجیل در امر فرج حضرت صاحب الزمان صلوات!" & "</p>"
         AboutHTML += "<p>" & "اللهم صل علی محمد و آل محمد و عجل فرجهم" & "</p>"
         AboutHTML += "<hr /><p style='text-align:center;'><a href=""" & AppMan.AppURL & """>" & String.Format("نرم افزار {1} نسخه {2} | {0}", AppMan.AppURL, AppMan.AppName, AppMan.AppVer) & "</a></p>"
