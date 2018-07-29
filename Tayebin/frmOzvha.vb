@@ -25,15 +25,15 @@
 
         If Shart IsNot Nothing Then
             For Each item In Shart
-                where += String.Format(" {0}    {1} ", AndOr, item)
+                where += String.Format(" {0} {1} ", AndOr, item)
             Next
         End If
 
         If where <> "" Then
             If SalDore <> "" Then
-                where = "where " & "(" & where.Substring(6) & ") and  " & SalDore
+                where = "where " & "(" & where.Substring(3) & ") and  " & SalDore
             Else
-                where = "where " & where.Substring(6)
+                where = "where " & where.Substring(3)
             End If
         Else
             If SalDore <> "" Then
@@ -43,6 +43,8 @@
 
         CMD += " " & where
         CMD += " order by Famil,Nam,Pedar,Tavalod"
+
+        CMD = CMD.Replace("%%", "%")
 
         DataGridView1.DataSource = SQLiter.Fill(CMD)
         Amar()
