@@ -20,8 +20,9 @@ Public Class frmTanzimat
         comShahr.DisplayMember = "Name"
 
         comOstan.DataSource = Shahrha
-        comOstan.SelectedValue = Integer.Parse(AppMan.Tanzimat("KanunOstanID"))
-
+        Integer.TryParse(AppMan.Tanzimat("KanunOstanID"), comOstan.SelectedValue)
+        comOstan.DisplayMember = "Name"
+        comOstan.ValueMember = "ID"
 
 
         Dim up As DataTable = SQLiter.Fill("select * from tKarbari")
@@ -52,6 +53,14 @@ Public Class frmTanzimat
 
         WebBrowser1.DocumentText = AboutHTML
 
+
+        Dim th As New Threading.Thread(AddressOf ReadRSS)
+        th.Start()
+
+    End Sub
+
+    Public Sub ReadRSS()
+        Dim prov As New Globalization.CultureInfo("en-US")
         Dim feedHTML As String = ""
         feedHTML = "<html><head>"
         feedHTML += "<meta charset=""UTF-8""><style>"
@@ -60,27 +69,12 @@ Public Class frmTanzimat
         feedHTML += "</style></head><body>"
         WebBrowser2.DocumentText = feedHTML & "<p>در حال لود...</p></body></html>"
 
-        Dim client = New RestClient("http://tayebin.blog.ir/rss/")
-        Dim request = New RestRequest(Method.GET)
-        client.ExecuteAsync(request, Sub(res)
-                                         If res.IsSuccessful AndAlso Not IsNothing(res.Content) Then
-                                             Dim feed = FeedReader.ReadFromString(res.Content)
-                                             feedHTML += String.Format("<p><b>{0}:</b></p>", feed.Title)
-                                             Dim prov As New Globalization.CultureInfo("en-US")
-                                             For Each row In feed.Items
-                                                 feedHTML += String.Format("<p>[{2}] :<a href=""{0}"" > <b>{1}</b></a></p>", row.Link, row.Title, New cTarikh(DateTime.Parse(row.PublishingDateString, prov)))
-                                             Next
-
-                                         Else
-                                             AboutHTML += "<p>خطا</p>"
-                                         End If
-                                         AboutHTML += "</body></html>"
-                                         Try
-                                             WebBrowser2.DocumentText = feedHTML
-                                         Catch ex As Exception
-
-                                         End Try
-                                     End Sub)
+        Dim rss = FeedReader.Read("http://tayebin.blog.ir/rss/")
+        For Each row In rss.Items
+            feedHTML += String.Format("<p>[{2}] :<a href=""{0}"" > <b>{1}</b></a></p>", row.Link, row.Title, New cTarikh(DateTime.Parse(row.PublishingDateString, prov)))
+        Next
+        AboutHTML += "</body></html>"
+        WebBrowser2.DocumentText = feedHTML
     End Sub
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
@@ -130,7 +124,7 @@ Public Class frmTanzimat
     Private Sub comOstan_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comOstan.SelectedIndexChanged
         If Not IsNothing(comOstan.SelectedItem) Then
             comShahr.DataSource = CType(comOstan.SelectedItem, cOstan).Cities
-            comShahr.SelectedValue = Integer.Parse(AppMan.Tanzimat("KanunShahrID"))
+            Integer.TryParse(AppMan.Tanzimat("KanunShahrID"), comShahr.SelectedValue)
         End If
     End Sub
 End Class
