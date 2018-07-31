@@ -29,6 +29,7 @@ Partial Class ucCal
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.DoubleBuffered = True
         Me.Name = "ucCal"
         Me.Size = New System.Drawing.Size(400, 300)
         Me.ResumeLayout(False)

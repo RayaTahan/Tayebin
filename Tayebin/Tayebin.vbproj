@@ -323,6 +323,9 @@
     <Compile Include="uc\ucCalCel.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="uc\ucCalEvent.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="uc\ucFun.vb" />
     <Compile Include="uc\ucIcon.vb">
       <SubType>Component</SubType>
@@ -427,6 +430,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="uc\ucCalCel.resx">
       <DependentUpon>ucCalCel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uc\ucCalEvent.resx">
+      <DependentUpon>ucCalEvent.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="uc\ucTextBox.resx">
       <DependentUpon>ucTextBox.vb</DependentUpon>

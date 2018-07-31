@@ -45,6 +45,7 @@ Partial Class ucCalCel
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Controls.Add(Me.lbl)
+        Me.DoubleBuffered = True
         Me.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.Margin = New System.Windows.Forms.Padding(0)
         Me.Name = "ucCalCel"

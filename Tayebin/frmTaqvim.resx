@@ -153,37 +153,28 @@
   <data name="&gt;&gt;cal.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="txtMonasebat.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="events.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="txtMonasebat.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 14pt</value>
-  </data>
-  <data name="txtMonasebat.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="events.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 353</value>
   </data>
-  <data name="txtMonasebat.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="txtMonasebat.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
-    <value>Vertical</value>
-  </data>
-  <data name="txtMonasebat.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="events.Size" type="System.Drawing.Size, System.Drawing">
     <value>911, 123</value>
   </data>
-  <data name="txtMonasebat.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="events.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
   </data>
-  <data name="&gt;&gt;txtMonasebat.Name" xml:space="preserve">
-    <value>txtMonasebat</value>
+  <data name="&gt;&gt;events.Name" xml:space="preserve">
+    <value>events</value>
   </data>
-  <data name="&gt;&gt;txtMonasebat.Type" xml:space="preserve">
-    <value>Tayebin.ucTextBox, Tayebin, Version=2.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="&gt;&gt;events.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;txtMonasebat.Parent" xml:space="preserve">
+  <data name="&gt;&gt;events.Parent" xml:space="preserve">
     <value>TableLayoutPanel1</value>
   </data>
-  <data name="&gt;&gt;txtMonasebat.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;events.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="TableLayoutPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -214,7 +205,7 @@
     <value>0</value>
   </data>
   <data name="TableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="cal" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtMonasebat" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="Absolute,350,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="cal" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="events" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="Absolute,350,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

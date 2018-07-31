@@ -23,6 +23,7 @@ Partial Class frmOzvha
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmOzvha))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.lblAmar = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -204,8 +205,9 @@ Partial Class frmOzvha
         Me.ClientSize = New System.Drawing.Size(580, 324)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Panel1)
+        Me.DoubleBuffered = True
         Me.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.Icon = AppMan.Icon
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.MinimumSize = New System.Drawing.Size(596, 363)
         Me.Name = "frmOzvha"

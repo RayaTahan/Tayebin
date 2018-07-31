@@ -129,6 +129,7 @@ Partial Class frmLogin
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.UcTextBox2)
         Me.Controls.Add(Me.UcTextBox1)
+        Me.DoubleBuffered = True
         Me.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(178, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)

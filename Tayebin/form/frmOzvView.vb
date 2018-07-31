@@ -46,10 +46,10 @@ Public Class frmOzvView
         txtTedadVirayesh.Text = data(0).Item("TedadVirayesh")
 
         If data(0).Item("AxID") = -1 Then
-            picAx.Image = Bitmap.FromFile(String.Format("{0}\data\app\icon\profile27.png", Application.StartupPath))
+            picAx.Image = IMGcache.img(String.Format("{0}\data\app\icon\profile27.png", Application.StartupPath))
         Else
             Dim AxData = SQLiter.Fill("select * from tMadrak where ID=" & data(0).Item("AxID"))
-            picAx.Image = Bitmap.FromFile(String.Format("{0}\data\madarek\{1}\{1}-{2}{3}", Application.StartupPath, dID, AxData(0).Item("ID"), AxData(0).Item("FileEXT")))
+            picAx.Image = IMGcache.img(String.Format("{0}\data\madarek\{1}\{1}-{2}{3}", Application.StartupPath, dID, AxData(0).Item("ID"), AxData(0).Item("FileEXT")))
         End If
 
         DataGridView1.DataSource = SQLiter.Fill("select NoMadrakOnvan,ID,IDNoMadrak,Onvan,Tarikh,FileEXT from vMadrak where IDOzv=" & dID)

@@ -735,9 +735,10 @@ Partial Class frmOzvEdit
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Button2)
-        Me.Icon = AppMan.Icon
+        Me.DoubleBuffered = True
         Me.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "frmOzvEdit"
         Me.RightToLeft = System.Windows.Forms.RightToLeft.Yes

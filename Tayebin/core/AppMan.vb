@@ -15,7 +15,7 @@ Public Class AppMan
         End Get
     End Property
 
-    Private Shared _ConnectionString As String = "Data Source=data\db.sqlite;Version=3;"
+    Private Shared _ConnectionString As String = String.Format("Data Source={0}\data\db.sqlite;Version=3;", Application.StartupPath)
     Public Shared ReadOnly Property ConnectionString As String
         Get
             Return _ConnectionString

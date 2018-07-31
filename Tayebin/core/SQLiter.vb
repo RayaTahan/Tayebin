@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SQLite
 
 Public NotInheritable Class SQLiter
-    Private Shared con As New SQLiteConnection(AppMan.ConnectionString)
+    Private Shared con As New SQLiteConnection(AppMan.ConnectionString, True)
     Private Shared Cmd As New SQLiteCommand("", con)
     Private Shared DA As New SQLiteDataAdapter("", con)
 
@@ -49,6 +49,11 @@ Public NotInheritable Class SQLiter
 
     Public Shared Function RunCommandScaler(ByVal CommandText As String, ByVal Parametrs() As SQLiteParameter) As String
         Dim tmp As String
+        Try
+            con.Close()
+        Catch ex As Exception
+
+        End Try
         If con.State <> ConnectionState.Open Then con.Open()
         Cmd = con.CreateCommand
         Cmd.Parameters.Clear()
