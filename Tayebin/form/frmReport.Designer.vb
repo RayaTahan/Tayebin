@@ -22,6 +22,7 @@ Partial Class frmReport
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmReport))
         Me.viewer = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.SuspendLayout()
         '
@@ -45,10 +46,10 @@ Partial Class frmReport
         '
         Me.ClientSize = New System.Drawing.Size(651, 418)
         Me.Controls.Add(Me.viewer)
+        Me.DoubleBuffered = True
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
         Me.Name = "frmReport"
-        Me.Icon = AppMan.Icon
-        Me.ShowIcon = True
         Me.ResumeLayout(False)
 
     End Sub

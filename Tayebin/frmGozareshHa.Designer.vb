@@ -31,9 +31,9 @@ Partial Class frmGozareshHa
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.Button7 = New System.Windows.Forms.Button()
         Me.TreeView1 = New System.Windows.Forms.TreeView()
         Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button7 = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -134,6 +134,15 @@ Partial Class frmGozareshHa
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "گزارش دوره"
         '
+        'Button7
+        '
+        Me.Button7.Location = New System.Drawing.Point(8, 263)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(402, 50)
+        Me.Button7.TabIndex = 36
+        Me.Button7.Text = "فرم حضور و غیاب | R102"
+        Me.Button7.UseVisualStyleBackColor = True
+        '
         'TreeView1
         '
         Me.TreeView1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
@@ -153,15 +162,6 @@ Partial Class frmGozareshHa
         Me.Button2.Text = "گزارش اعضا | R101"
         Me.Button2.UseVisualStyleBackColor = True
         '
-        'Button7
-        '
-        Me.Button7.Location = New System.Drawing.Point(8, 263)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(402, 50)
-        Me.Button7.TabIndex = 36
-        Me.Button7.Text = "فرم حضور و غیاب | R102"
-        Me.Button7.UseVisualStyleBackColor = True
-        '
         'frmGozareshHa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 21.0!)
@@ -169,6 +169,7 @@ Partial Class frmGozareshHa
         Me.BackColor = System.Drawing.Color.Teal
         Me.ClientSize = New System.Drawing.Size(426, 355)
         Me.Controls.Add(Me.TabControl1)
+        Me.DoubleBuffered = True
         Me.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)

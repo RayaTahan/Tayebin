@@ -23,6 +23,7 @@ Partial Class frmKarname
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmKarname))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -145,18 +146,18 @@ Partial Class frmKarname
         Me.menu1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ویرایشToolStripMenuItem, Me.حذفToolStripMenuItem})
         Me.menu1.Name = "menu1"
         Me.menu1.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.menu1.Size = New System.Drawing.Size(153, 78)
+        Me.menu1.Size = New System.Drawing.Size(129, 56)
         '
         'ویرایشToolStripMenuItem
         '
         Me.ویرایشToolStripMenuItem.Name = "ویرایشToolStripMenuItem"
-        Me.ویرایشToolStripMenuItem.Size = New System.Drawing.Size(152, 26)
+        Me.ویرایشToolStripMenuItem.Size = New System.Drawing.Size(128, 26)
         Me.ویرایشToolStripMenuItem.Text = "ویرایش"
         '
         'حذفToolStripMenuItem
         '
         Me.حذفToolStripMenuItem.Name = "حذفToolStripMenuItem"
-        Me.حذفToolStripMenuItem.Size = New System.Drawing.Size(152, 26)
+        Me.حذفToolStripMenuItem.Size = New System.Drawing.Size(128, 26)
         Me.حذفToolStripMenuItem.Text = "حذف"
         '
         'frmKarname
@@ -167,9 +168,10 @@ Partial Class frmKarname
         Me.ClientSize = New System.Drawing.Size(580, 324)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Panel1)
-        Me.Icon = AppMan.Icon
+        Me.DoubleBuffered = True
         Me.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.MaximizeBox = False
         Me.MinimizeBox = False

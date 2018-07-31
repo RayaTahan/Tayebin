@@ -31,6 +31,8 @@ Partial Class frmOzvJostoju
         Me.Button4 = New System.Windows.Forms.Button()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.txtSalVorud = New Tayebin.ucTextBox()
         Me.chHayat = New System.Windows.Forms.CheckBox()
         Me.chVafat = New System.Windows.Forms.CheckBox()
         Me.chTavalod = New System.Windows.Forms.CheckBox()
@@ -74,8 +76,6 @@ Partial Class frmOzvJostoju
         Me.txtCodeMelli = New Tayebin.ucTextBox()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.Label19 = New System.Windows.Forms.Label()
-        Me.txtSalVorud = New Tayebin.ucTextBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -217,6 +217,27 @@ Partial Class frmOzvJostoju
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(322, 206)
         Me.Panel1.TabIndex = 7
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Location = New System.Drawing.Point(182, 229)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(72, 21)
+        Me.Label19.TabIndex = 64
+        Me.Label19.Text = "سال ورود"
+        '
+        'txtSalVorud
+        '
+        Me.txtSalVorud.BackColor = System.Drawing.Color.White
+        Me.txtSalVorud.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.txtSalVorud.Location = New System.Drawing.Point(3, 227)
+        Me.txtSalVorud.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtSalVorud.MaxLength = 10
+        Me.txtSalVorud.Name = "txtSalVorud"
+        Me.txtSalVorud.Size = New System.Drawing.Size(174, 29)
+        Me.txtSalVorud.TabIndex = 63
+        Me.txtSalVorud.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'chHayat
         '
@@ -676,27 +697,6 @@ Partial Class frmOzvJostoju
         Me.Button1.Text = "جستجو"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'Label19
-        '
-        Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(182, 229)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(72, 21)
-        Me.Label19.TabIndex = 64
-        Me.Label19.Text = "سال ورود"
-        '
-        'txtSalVorud
-        '
-        Me.txtSalVorud.BackColor = System.Drawing.Color.White
-        Me.txtSalVorud.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.txtSalVorud.Location = New System.Drawing.Point(3, 227)
-        Me.txtSalVorud.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.txtSalVorud.MaxLength = 10
-        Me.txtSalVorud.Name = "txtSalVorud"
-        Me.txtSalVorud.Size = New System.Drawing.Size(174, 29)
-        Me.txtSalVorud.TabIndex = 63
-        Me.txtSalVorud.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
         'frmOzvJostoju
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 21.0!)
@@ -706,9 +706,10 @@ Partial Class frmOzvJostoju
         Me.ControlBox = False
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.TreeView1)
-        Me.Icon = AppMan.Icon
+        Me.DoubleBuffered = True
         Me.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "frmOzvJostoju"
         Me.RightToLeft = System.Windows.Forms.RightToLeft.Yes

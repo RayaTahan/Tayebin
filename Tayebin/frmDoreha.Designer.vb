@@ -23,6 +23,7 @@ Partial Class frmDoreha
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmDoreha))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.DataGridView3 = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -375,13 +376,13 @@ Partial Class frmDoreha
         Me.ClientSize = New System.Drawing.Size(580, 324)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Controls.Add(Me.Panel1)
-        Me.Icon = AppMan.Icon
+        Me.DoubleBuffered = True
         Me.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.MinimumSize = New System.Drawing.Size(596, 363)
         Me.Name = "frmDoreha"
         Me.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.ShowIcon = True
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "مدیریت دوره ها"
         Me.Panel1.ResumeLayout(False)
