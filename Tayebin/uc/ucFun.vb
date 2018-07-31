@@ -11,23 +11,25 @@
             If IsNumeric(str) Then
                 If str.StartsWith("09") Then
                     'Return Regex.Replace(str, "", "$1 $2 $3")
-                    Return String.Format("0{0:### ### ####}", Long.Parse(str))
+                    Return String.Format("{0:0000 000 0000}", Long.Parse(str))
                 Else
                     Select Case str.Length
                         Case 11
-                            Return String.Format("0{0:## ## ## ## ##}", Long.Parse(str))
+                            Return String.Format("{0:000 00 00 00 00}", Long.Parse(str))
                         Case 10
-                            Return String.Format("0{0:## ## ## ###}", Long.Parse(str))
+                            Return String.Format("{0:00 00 00 00 00}", Long.Parse(str))
                         Case 9
-                            Return String.Format("0{0:## ## ## ##}", Long.Parse(str))
+                            Return String.Format("{0:00 00 00 000}", Long.Parse(str))
                         Case 8
-                            Return String.Format("0{0:## ## ###}", Long.Parse(str))
+                            Return String.Format("{0:00 00 00 00}", Long.Parse(str))
                         Case 7
-                            Return String.Format("0{0:## ## ##}", Long.Parse(str))
+                            Return String.Format("{0:00 00 000}", Long.Parse(str))
                         Case 6
-                            Return String.Format("0{0:## ###}", Long.Parse(str))
+                            Return String.Format("{0:00 00 00}", Long.Parse(str))
                         Case 5
-                            Return String.Format("{0:## ##}", Long.Parse(str))
+                            Return String.Format("{0:00 000}", Long.Parse(str))
+                        Case 4
+                            Return String.Format("{0:00 00}", Long.Parse(str))
                         Case Else
                             Return str
                     End Select

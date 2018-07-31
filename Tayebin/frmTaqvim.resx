@@ -145,13 +145,16 @@
     <value>cal</value>
   </data>
   <data name="&gt;&gt;cal.Type" xml:space="preserve">
-    <value>Tayebin.ucCal, Tayebin, Version=2.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Tayebin.ucCal, Tayebin, Version=2.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;cal.Parent" xml:space="preserve">
     <value>TableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;cal.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="events.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="events.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>

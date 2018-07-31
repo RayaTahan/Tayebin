@@ -2,7 +2,8 @@
 
 Public Class ucTextBox
     Inherits TextBox
-
+    Private OrgText, EditedText As String
+    Private isEdited As Boolean = False
     Sub New()
         Me.Font = New Font("Segeo UI", 14)
         Me.BackColor = Color.White
@@ -10,6 +11,10 @@ Public Class ucTextBox
 
     Protected Overrides Sub OnGotFocus(ByVal e As System.EventArgs)
         Me.BackColor = Color.Yellow
+        If isEdited Then
+            Text = OrgText
+            isEdited = False
+        End If
         Me.SelectAll()
         MyBase.OnGotFocus(e)
     End Sub
@@ -17,6 +22,14 @@ Public Class ucTextBox
     Protected Overrides Sub OnLostFocus(ByVal e As System.EventArgs)
         Me.BackColor = Color.White
         Me.SelectionLength = 0
+        OrgText = Text
+        EditedText = ucFun.str2Phone(OrgText)
+        If _isPhoneNumber Then
+            Text = EditedText
+            isEdited = True
+        Else
+            isEdited = False
+        End If
         MyBase.OnLostFocus(e)
     End Sub
 
@@ -52,13 +65,6 @@ Public Class ucTextBox
     'Public OrginalText As String = Me.Text
     Protected Overrides Sub OnTextChanged(e As EventArgs)
         If _isPhoneNumber And Me.ReadOnly Then
-            'Dim tmp = ucFun.str2Phone(Me.Text)
-            'If tmp = Me.Text Then
-            '    'OrginalText = Me.Text
-            'Else
-            '    OrginalText = Me.Text
-            '    Me.Text = tmp
-            'End If
             Me.Text = ucFun.str2Phone(Me.Text)
             Me.SelectionStart = Me.TextLength
             Me.SelectionLength = 0
