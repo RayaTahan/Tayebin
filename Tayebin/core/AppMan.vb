@@ -105,7 +105,7 @@ Public Class AppMan
                 Tanzimat("dbVer") = 24
             End If
 
-            If dbVer = 1 Then
+            If dbVer = 24 Then
                 Tanzimat("uniqueAppID") = ""
                 Tanzimat("dbVer") = 25
             End If
