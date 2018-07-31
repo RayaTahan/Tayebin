@@ -18,14 +18,19 @@ Public Class cTarikh
     Public Enum NoTaqvim
         Miladi
         Shamsi
-        'Qamari
+        Qamari
     End Enum
     Public Sub New(ByVal Tarikh As String, NoTaqvim As NoTaqvim)
+        Dim tt() As String = Tarikh.Split("/")
         Select Case NoTaqvim
             Case NoTaqvim.Miladi
-                SourceDate = Date.ParseExact(Tarikh, "yyyy/MM/dd", CultureInfo.GetCultureInfo("en-US"))
+                Dim gc As New Globalization.GregorianCalendar
+                SourceDate = gc.ToDateTime(tt(0), tt(1), tt(2), 0, 0, 0, 0)'Date.ParseExact(Tarikh, "yyyy/MM/dd", CultureInfo.GetCultureInfo("en-US"))
             Case NoTaqvim.Shamsi
-                SourceDate = Date.ParseExact(Tarikh, "yyyy/MM/dd", CultureInfo.GetCultureInfo("fa-IR"))
+                SourceDate = PC.ToDateTime(tt(0), tt(1), tt(2), 0, 0, 0, 0) ' Date.ParseExact(Tarikh, "yyyy/MM/dd", PC)
+            Case NoTaqvim.Qamari
+                Dim hc As New Globalization.HijriCalendar
+                SourceDate = hc.ToDateTime(tt(0), tt(1), tt(2), 0, 0, 0, 0)
         End Select
     End Sub
 
