@@ -20,8 +20,9 @@ Public Class frmTanzimat
         comShahr.DisplayMember = "Name"
 
         comOstan.DataSource = Shahrha
-        comOstan.SelectedValue = Integer.Parse(AppMan.Tanzimat("KanunOstanID"))
-
+        Integer.TryParse(AppMan.Tanzimat("KanunOstanID"), comOstan.SelectedValue)
+        comOstan.DisplayMember = "Name"
+        comOstan.ValueMember = "ID"
 
 
         Dim up As DataTable = SQLiter.Fill("select * from tKarbari")
@@ -130,7 +131,7 @@ Public Class frmTanzimat
     Private Sub comOstan_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comOstan.SelectedIndexChanged
         If Not IsNothing(comOstan.SelectedItem) Then
             comShahr.DataSource = CType(comOstan.SelectedItem, cOstan).Cities
-            comShahr.SelectedValue = Integer.Parse(AppMan.Tanzimat("KanunShahrID"))
+            Integer.TryParse(AppMan.Tanzimat("KanunShahrID"), comShahr.SelectedValue)
         End If
     End Sub
 End Class
