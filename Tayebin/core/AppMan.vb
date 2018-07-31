@@ -1,7 +1,7 @@
 ﻿Imports RestSharp
 
 Public Class AppMan
-    Public Shared VersionInt As Integer = 24
+    Public Shared VersionInt As Integer = 25
 
     Public Shared ReadOnly Property dbVer As Integer
         Get
@@ -103,6 +103,11 @@ Public Class AppMan
             If dbVer = 1 Then
                 Tanzimat("uniqueAppID") = ""
                 Tanzimat("dbVer") = 24
+            End If
+
+            If dbVer = 1 Then
+                Tanzimat("uniqueAppID") = ""
+                Tanzimat("dbVer") = 25
             End If
 
             Return True
