@@ -25,7 +25,7 @@ Partial Class frmTaqvim
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmTaqvim))
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.cal = New Tayebin.ucCal()
-        Me.txtMonasebat = New Tayebin.ucTextBox()
+        Me.events = New System.Windows.Forms.FlowLayoutPanel()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -33,7 +33,7 @@ Partial Class frmTaqvim
         '
         resources.ApplyResources(Me.TableLayoutPanel1, "TableLayoutPanel1")
         Me.TableLayoutPanel1.Controls.Add(Me.cal, 0, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.txtMonasebat, 0, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.events, 0, 1)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         '
         'cal
@@ -43,12 +43,10 @@ Partial Class frmTaqvim
         Me.cal.inNamayeshBold = ""
         Me.cal.Name = "cal"
         '
-        'txtMonasebat
+        'events
         '
-        Me.txtMonasebat.BackColor = System.Drawing.Color.White
-        resources.ApplyResources(Me.txtMonasebat, "txtMonasebat")
-        Me.txtMonasebat.Name = "txtMonasebat"
-        Me.txtMonasebat.ReadOnly = True
+        resources.ApplyResources(Me.events, "events")
+        Me.events.Name = "events"
         '
         'frmTaqvim
         '
@@ -58,12 +56,11 @@ Partial Class frmTaqvim
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Name = "frmTaqvim"
         Me.TableLayoutPanel1.ResumeLayout(False)
-        Me.TableLayoutPanel1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents cal As ucCal
-    Friend WithEvents txtMonasebat As ucTextBox
+    Friend WithEvents events As FlowLayoutPanel
 End Class

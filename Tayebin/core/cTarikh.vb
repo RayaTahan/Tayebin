@@ -15,6 +15,20 @@ Public Class cTarikh
         SourceDate = Miladi
     End Sub
 
+    Public Enum NoTaqvim
+        Miladi
+        Shamsi
+        'Qamari
+    End Enum
+    Public Sub New(ByVal Tarikh As String, NoTaqvim As NoTaqvim)
+        Select Case NoTaqvim
+            Case NoTaqvim.Miladi
+                SourceDate = Date.ParseExact(Tarikh, "yyyy/MM/dd", CultureInfo.GetCultureInfo("en-US"))
+            Case NoTaqvim.Shamsi
+                SourceDate = Date.ParseExact(Tarikh, "yyyy/MM/dd", CultureInfo.GetCultureInfo("fa-IR"))
+        End Select
+    End Sub
+
     Public EsmeRuzHa() As String = {"یک شنبه", "دو شنبه", "سه شنبه", "چهار شنبه", "پنج شنبه", "جمعه", "شنبه"}
     Public ReadOnly Property EsmeRuz() As String
         Get
