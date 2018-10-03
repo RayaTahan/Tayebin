@@ -26,7 +26,7 @@
             lblKanunOnvan.Text = AppMan.Tanzimat("KanunNam")
             icons()
 
-            With CType(table.Controls(3), ucIcon) ' Icon Taqvim
+            With CType(table.Controls(4), ucIcon) ' Icon Taqvim
                 .TedadHobab = fun.TedadRuydadEmruz
             End With
         Catch ex As Exception
@@ -50,15 +50,19 @@
         'table.Visible = False
         'table.Controls.Clear()
         If table.Controls.Count < 2 Then
-            table.Controls.Add(New ucIcon("مدیریت دوره ها", IMGcache.img("data\app\icon\briefcase61.png"), frmDoreha), 0, 2)
-            table.Controls.Add(New ucIcon("مدیریت اعضا", IMGcache.img("data\app\icon\add199.png"), frmOzvha), 0, 1)
-            table.Controls.Add(New ucIcon("تهیه گزارش", IMGcache.img("data\app\icon\sheet.png"), frmGozareshHa), 1, 2)
-            table.Controls.Add(New ucIcon("تقویم", IMGcache.img("data\app\icon\cake19.png"), frmTaqvim), 1, 1)
-            table.Controls.Add(New ucIcon("تنظیمات", IMGcache.img("data\app\icon\settings60.png"), frmTanzimat), 2, 2)
-            table.Controls.Add(New ucIcon("قفل", IMGcache.img("data\app\icon\padlock67.png"), frmLogin), 2, 1)
 
+            '0,0
 
             table.Controls.Add(New ucIcon("نسخه " & Application.ProductVersion, IMGcache.img("data\logo.png"), Nothing, Color.Transparent), 1, 0)
+            table.Controls.Add(New ucIcon("قفل", IMGcache.img("data\app\icon\padlock67.png"), frmLogin), 2, 0)
+
+            table.Controls.Add(New ucIcon("مدیریت اعضا", IMGcache.img("data\app\icon\add199.png"), frmOzvha), 0, 1)
+            table.Controls.Add(New ucIcon("پیامک", IMGcache.img("data\app\icon\message27.png"), frmSMS), 1, 1)
+            table.Controls.Add(New ucIcon("تقویم", IMGcache.img("data\app\icon\cake19.png"), frmTaqvim), 2, 1)
+
+            table.Controls.Add(New ucIcon("مدیریت دوره ها", IMGcache.img("data\app\icon\briefcase61.png"), frmDoreha), 0, 2)
+            table.Controls.Add(New ucIcon("تهیه گزارش", IMGcache.img("data\app\icon\sheet.png"), frmGozareshHa), 1, 2)
+            table.Controls.Add(New ucIcon("تنظیمات", IMGcache.img("data\app\icon\settings60.png"), frmTanzimat), 2, 2)
 
 
             For Each item As Control In table.Controls

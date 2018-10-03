@@ -1,7 +1,7 @@
 ﻿Imports RestSharp
 
 Public Class AppMan
-    Public Shared VersionInt As Integer = 25
+    Public Shared VersionInt As Integer = Val(AppVer.Replace(".", "").Replace(",", ""))
 
     Public Shared ReadOnly Property dbVer As Integer
         Get
@@ -108,6 +108,12 @@ Public Class AppMan
             If dbVer = 24 Then
                 Tanzimat("uniqueAppID") = ""
                 Tanzimat("dbVer") = 25
+            End If
+
+            If dbVer = 25 Then
+                SQLiter.RunCommand("create table IF NOT EXISTS tSentSMS(ID INTEGER PRIMARY KEY AUTOINCREMENT, User int, TT text, SS text, Matn text, Girandegan int)")
+
+                Tanzimat("dbVer") = 26
             End If
 
             Return True

@@ -158,14 +158,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="core\AdadHa.vb" />
     <Compile Include="core\AppMan.vb" />
     <Compile Include="core\cOstan.vb" />
     <Compile Include="core\cSaat.vb" />
     <Compile Include="core\cShahr.vb" />
+    <Compile Include="core\cSMSCoreLine.vb" />
     <Compile Include="core\cTarikh.vb" />
     <Compile Include="core\fun.vb" />
     <Compile Include="core\IMGcache.vb" />
     <Compile Include="core\Numbertools.vb" />
+    <Compile Include="core\sms.vb" />
     <Compile Include="core\SQLiter.vb" />
     <Compile Include="DataSet.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -200,6 +203,12 @@
       <DependentUpon>frmOzvEdit.vb</DependentUpon>
     </Compile>
     <Compile Include="form\frmOzvEdit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\frmSMS.Designer.vb">
+      <DependentUpon>frmSMS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="form\frmSMS.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="form\frmOzvJostoju.Designer.vb">
@@ -372,6 +381,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="form\frmOzvEdit.resx">
       <DependentUpon>frmOzvEdit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\frmSMS.resx">
+      <DependentUpon>frmSMS.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\frmOzvJostoju.resx">
       <DependentUpon>frmOzvJostoju.vb</DependentUpon>

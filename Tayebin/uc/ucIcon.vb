@@ -154,6 +154,9 @@
                     Case "frmLogin"
                         frm = New frmLogin
                         frm.ShowDialog(My.Application.OpenForms("frmMain"))
+                    Case "frmSMS"
+                        frm = New frmSMS
+                        frm.Show(My.Application.OpenForms("frmSMS"))
                     Case Else
                         MessageBox.Show(target.Name)
                 End Select
