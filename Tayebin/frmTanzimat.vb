@@ -68,13 +68,21 @@ Public Class frmTanzimat
         feedHTML += "a{text-decoration: none;}"
         feedHTML += "</style></head><body>"
         WebBrowser2.DocumentText = feedHTML & "<p>در حال لود...</p></body></html>"
-
-        Dim rss = FeedReader.Read("http://tayebin.blog.ir/rss/")
-        For Each row In rss.Items
-            feedHTML += String.Format("<p>[{2}] :<a href=""{0}"" > <b>{1}</b></a></p>", row.Link, row.Title, New cTarikh(DateTime.Parse(row.PublishingDateString, prov)))
-        Next
-        AboutHTML += "</body></html>"
-        WebBrowser2.DocumentText = feedHTML
+        Dim hasError As Boolean = False
+        Try
+            Dim rss = FeedReader.Read("http://tayebin.blog.ir/rss/")
+            For Each row In rss.Items
+                feedHTML += String.Format("<p>[{2}] :<a href=""{0}"" > <b>{1}</b></a></p>", row.Link, row.Title, New cTarikh(DateTime.Parse(row.PublishingDateString, prov)))
+            Next
+        Catch ex As Exception
+        hasError = True
+        End Try
+        feedHTML += "</body></html>"
+        If hasError Then
+            WebBrowser2.DocumentText = feedHTML & "<p>اتصال به سرور امکانپذیر نیست!</p></body></html>"
+        Else
+            WebBrowser2.DocumentText = feedHTML
+        End If
     End Sub
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
