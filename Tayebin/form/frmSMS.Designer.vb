@@ -508,7 +508,8 @@ Partial Class frmSMS
         Me.Name = "frmSMS"
         Me.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
-        Me.Text = "ارسال پیامک"
+        Me.Text = "پیامک (آزمایشی: جهت حصول اطمینان پس از ارسال در سایت irSMS.net نتیجه را بررسی کنی" &
+    "د.)"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.GroupBox3.ResumeLayout(False)
