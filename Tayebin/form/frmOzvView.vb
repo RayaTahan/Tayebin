@@ -153,7 +153,7 @@ Public Class frmOzvView
     End Sub
 
     Private Sub نمایشToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles نمایشToolStripMenuItem.Click
-        DataGridView1_MouseDoubleClick(sender, e)
+        DataGridView1_MouseDoubleClick(Nothing, Nothing)
     End Sub
 
     Private Sub ویرایشToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ویرایشToolStripMenuItem.Click
