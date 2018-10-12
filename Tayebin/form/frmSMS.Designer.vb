@@ -63,6 +63,12 @@ Partial Class frmSMS
         Me.UcTextBox3 = New Tayebin.ucTextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
+        Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.GroupBox8 = New System.Windows.Forms.GroupBox()
+        Me.UcTextBox4 = New Tayebin.ucTextBox()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.CheckBox4 = New System.Windows.Forms.CheckBox()
+        Me.Button5 = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -75,6 +81,8 @@ Partial Class frmSMS
         Me.GroupBox4.SuspendLayout()
         Me.TabPage3.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage4.SuspendLayout()
+        Me.GroupBox8.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -82,6 +90,7 @@ Partial Class frmSMS
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPage3)
+        Me.TabControl1.Controls.Add(Me.TabPage4)
         Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TabControl1.Location = New System.Drawing.Point(0, 0)
         Me.TabControl1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
@@ -308,6 +317,7 @@ Partial Class frmSMS
         '
         'GroupBox6
         '
+        Me.GroupBox6.Controls.Add(Me.CheckBox4)
         Me.GroupBox6.Controls.Add(Me.UcTextBox3)
         Me.GroupBox6.Location = New System.Drawing.Point(8, 78)
         Me.GroupBox6.Name = "GroupBox6"
@@ -492,7 +502,7 @@ Partial Class frmSMS
         Me.UcTextBox3.MaxLength = 396
         Me.UcTextBox3.Multiline = True
         Me.UcTextBox3.Name = "UcTextBox3"
-        Me.UcTextBox3.Size = New System.Drawing.Size(397, 193)
+        Me.UcTextBox3.Size = New System.Drawing.Size(397, 162)
         Me.UcTextBox3.TabIndex = 0
         '
         'Label8
@@ -513,6 +523,70 @@ Partial Class frmSMS
         Me.Label9.Size = New System.Drawing.Size(150, 21)
         Me.Label9.TabIndex = 5
         Me.Label9.Text = "باقی مانده این صفحه:"
+        '
+        'TabPage4
+        '
+        Me.TabPage4.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.TabPage4.Controls.Add(Me.GroupBox8)
+        Me.TabPage4.Location = New System.Drawing.Point(4, 30)
+        Me.TabPage4.Name = "TabPage4"
+        Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage4.Size = New System.Drawing.Size(660, 411)
+        Me.TabPage4.TabIndex = 3
+        Me.TabPage4.Text = "تنظیمات"
+        '
+        'GroupBox8
+        '
+        Me.GroupBox8.Controls.Add(Me.Button5)
+        Me.GroupBox8.Controls.Add(Me.Button4)
+        Me.GroupBox8.Controls.Add(Me.UcTextBox4)
+        Me.GroupBox8.Location = New System.Drawing.Point(8, 6)
+        Me.GroupBox8.Name = "GroupBox8"
+        Me.GroupBox8.Size = New System.Drawing.Size(644, 151)
+        Me.GroupBox8.TabIndex = 0
+        Me.GroupBox8.TabStop = False
+        Me.GroupBox8.Text = "امضای پیامک‌های ارسالی"
+        '
+        'UcTextBox4
+        '
+        Me.UcTextBox4.BackColor = System.Drawing.Color.White
+        Me.UcTextBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
+        Me.UcTextBox4.Location = New System.Drawing.Point(161, 28)
+        Me.UcTextBox4.MaxLength = 100
+        Me.UcTextBox4.Multiline = True
+        Me.UcTextBox4.Name = "UcTextBox4"
+        Me.UcTextBox4.Size = New System.Drawing.Size(477, 116)
+        Me.UcTextBox4.TabIndex = 1
+        '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(6, 28)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(149, 55)
+        Me.Button4.TabIndex = 5
+        Me.Button4.Text = "ذخیره"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'CheckBox4
+        '
+        Me.CheckBox4.AutoSize = True
+        Me.CheckBox4.Checked = True
+        Me.CheckBox4.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.CheckBox4.Location = New System.Drawing.Point(224, 196)
+        Me.CheckBox4.Name = "CheckBox4"
+        Me.CheckBox4.Size = New System.Drawing.Size(179, 25)
+        Me.CheckBox4.TabIndex = 1
+        Me.CheckBox4.Text = "درج امضا به انتهای متن"
+        Me.CheckBox4.UseVisualStyleBackColor = True
+        '
+        'Button5
+        '
+        Me.Button5.Location = New System.Drawing.Point(6, 89)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(149, 55)
+        Me.Button5.TabIndex = 6
+        Me.Button5.Text = "حذف"
+        Me.Button5.UseVisualStyleBackColor = True
         '
         'frmSMS
         '
@@ -549,6 +623,9 @@ Partial Class frmSMS
         Me.GroupBox4.PerformLayout()
         Me.TabPage3.ResumeLayout(False)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage4.ResumeLayout(False)
+        Me.GroupBox8.ResumeLayout(False)
+        Me.GroupBox8.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -592,4 +669,10 @@ Partial Class frmSMS
     Friend WithEvents Girandegancc As DataGridViewTextBoxColumn
     Friend WithEvents Label8 As Label
     Friend WithEvents Label9 As Label
+    Friend WithEvents TabPage4 As TabPage
+    Friend WithEvents GroupBox8 As GroupBox
+    Friend WithEvents UcTextBox4 As ucTextBox
+    Friend WithEvents CheckBox4 As CheckBox
+    Friend WithEvents Button4 As Button
+    Friend WithEvents Button5 As Button
 End Class

@@ -53,6 +53,8 @@ Public Class frmSMS
             End If
         End If
         UcTextBox1.Text = AppMan.Tanzimat("smsUser")
+        UcTextBox4.Text = AppMan.Tanzimat("smsEmza")
+
 
         UcTextBox1.Focus()
         UcTextBox1.Select()
@@ -193,7 +195,20 @@ Public Class frmSMS
     End Sub
 
     Private Sub taqir()
-        Dim le = UcTextBox3.TextLength
+        Dim maxLen As Integer = 66 * 6
+        Dim matn = UcTextBox3.Text
+        Dim le As Integer
+        If CheckBox4.Checked Then
+            Dim emza = vbCrLf & AppMan.Tanzimat("smsEmza")
+            UcTextBox3.Text = UcTextBox3.Text.Substring(0, Math.Min(UcTextBox3.TextLength, maxLen - emza.Length))
+            matn = UcTextBox3.Text
+            UcTextBox3.MaxLength = maxLen - emza.Length
+            matn += emza
+        Else
+            UcTextBox3.MaxLength = maxLen
+        End If
+        le = matn.Length
+
         Dim sf As Integer = 0
         Dim baqi As Integer = 0
         If le <= 70 Then
@@ -261,13 +276,18 @@ Public Class frmSMS
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        Dim natijeh = sms.Ersal(ComboBox1.Items(ComboBox1.SelectedIndex).ToString, UcTextBox3.Text, GirandeganBiTekrar)
+        Dim matn = UcTextBox3.Text
+        If CheckBox4.Checked Then
+            Dim emza = vbCrLf & AppMan.Tanzimat("smsEmza")
+            Matn += emza
+        End If
+        Dim natijeh = sms.Ersal(ComboBox1.Items(ComboBox1.SelectedIndex).ToString, matn, GirandeganBiTekrar)
         If natijeh = 0 Then
             SQLiter.RunCommand("insert into tSentSMS(User, TT, SS, Matn, Girandegan) values(@0,@1,@2,@3,@4)", {
         New SQLiteParameter("@0", 1),
         New SQLiteParameter("@1", (New cTarikh).ToString),
         New SQLiteParameter("@2", (New cSaat).ToString),
-        New SQLiteParameter("@3", UcTextBox3.Text),
+        New SQLiteParameter("@3", matn),
         New SQLiteParameter("@4", GirandeganBiTekrar.Length)
                                    })
             UcTextBox3.Text = ""
@@ -283,5 +303,20 @@ Public Class frmSMS
 
     Private Sub BeRuz()
         DataGridView1.DataSource = SQLiter.Fill("select ID,TT,SS,Matn,Girandegan from tSentSMS order by ID desc LIMIT 20")
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        AppMan.Tanzimat("smsEmza") = UcTextBox4.Text
+        taqir()
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        AppMan.Tanzimat("smsEmza") = ""
+        UcTextBox4.Text = ""
+        taqir()
+    End Sub
+
+    Private Sub CheckBox4_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox4.CheckedChanged
+        taqir()
     End Sub
 End Class
