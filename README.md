@@ -3,7 +3,8 @@
 
 &#x202b;نرم افزار مدیریت مجموعه های فرهنگی - آموزشی  
 
-![طیبین](http://bayanbox.ir/view/3186983011977257606/v25.png)
+![طیبین](http://bayanbox.ir/view/6977873731931325501/Tayebin26-1.png)
+![طیبین](http://bayanbox.ir/view/3880608415745664164/Tayebin26-2.png)
 ![طیبین](http://bayanbox.ir/view/1336964173515622616/2.png)
 ![طیبین](http://bayanbox.ir/view/7829101770931111288/Tayebin23.png)
 + [بلاگ طیبین](http://Tayebin.blog.ir)
