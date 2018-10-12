@@ -61,6 +61,8 @@ Partial Class frmSMS
         Me.UcTextBox2 = New Tayebin.ucTextBox()
         Me.UcTextBox1 = New Tayebin.ucTextBox()
         Me.UcTextBox3 = New Tayebin.ucTextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -242,6 +244,8 @@ Partial Class frmSMS
         '
         'GroupBox7
         '
+        Me.GroupBox7.Controls.Add(Me.Label8)
+        Me.GroupBox7.Controls.Add(Me.Label9)
         Me.GroupBox7.Controls.Add(Me.Button3)
         Me.GroupBox7.Controls.Add(Me.Label6)
         Me.GroupBox7.Controls.Add(Me.Label7)
@@ -267,7 +271,7 @@ Partial Class frmSMS
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(213, 53)
+        Me.Label6.Location = New System.Drawing.Point(213, 43)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(17, 21)
         Me.Label6.TabIndex = 3
@@ -277,7 +281,7 @@ Partial Class frmSMS
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(213, 25)
+        Me.Label7.Location = New System.Drawing.Point(213, 20)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(17, 21)
         Me.Label7.TabIndex = 2
@@ -287,7 +291,7 @@ Partial Class frmSMS
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(311, 53)
+        Me.Label5.Location = New System.Drawing.Point(311, 43)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(92, 21)
         Me.Label5.TabIndex = 1
@@ -296,7 +300,7 @@ Partial Class frmSMS
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(297, 25)
+        Me.Label4.Location = New System.Drawing.Point(297, 20)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(106, 21)
         Me.Label4.TabIndex = 0
@@ -491,6 +495,25 @@ Partial Class frmSMS
         Me.UcTextBox3.Size = New System.Drawing.Size(397, 193)
         Me.UcTextBox3.TabIndex = 0
         '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(213, 65)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(17, 21)
+        Me.Label8.TabIndex = 6
+        Me.Label8.Text = "0"
+        Me.Label8.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(253, 65)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(150, 21)
+        Me.Label9.TabIndex = 5
+        Me.Label9.Text = "باقی مانده این صفحه:"
+        '
         'frmSMS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 21.0!)
@@ -567,4 +590,6 @@ Partial Class frmSMS
     Friend WithEvents SS As DataGridViewTextBoxColumn
     Friend WithEvents Matn As DataGridViewTextBoxColumn
     Friend WithEvents Girandegancc As DataGridViewTextBoxColumn
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label9 As Label
 End Class

@@ -169,6 +169,9 @@ Public Class frmSMS
         UcTextBox1.Text = ""
         UcTextBox2.Text = ""
         sms.Khoruj()
+        ListBox1.Items.Clear()
+        ComboBox1.Items.Clear()
+
     End Sub
 
     Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
@@ -192,12 +195,16 @@ Public Class frmSMS
     Private Sub taqir()
         Dim le = UcTextBox3.TextLength
         Dim sf As Integer = 0
+        Dim baqi As Integer = 0
         If le <= 70 Then
             sf = 1
+            baqi = 70 - le
         Else
             sf = Math.Ceiling(le / 66)
+            baqi = sf * 66 - le
         End If
         Label6.Text = sf
+        Label8.Text = baqi
 
         Dim nafar = 0
         Dim sl = ""
@@ -233,7 +240,7 @@ Public Class frmSMS
 
         End If
 
-        If Label6.Text = "0" Or Label7.Text = "0" Then
+        If Label6.Text = "0" Or Label7.Text = "0" Or ComboBox1.Items.Count < 1 Or ComboBox1.SelectedIndex = -1 Then
             Button3.Enabled = False
         Else
             Button3.Enabled = True
