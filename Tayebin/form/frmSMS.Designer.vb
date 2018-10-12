@@ -34,9 +34,7 @@ Partial Class frmSMS
         Me.Button2 = New System.Windows.Forms.Button()
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.UcTextBox2 = New Tayebin.ucTextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.UcTextBox1 = New Tayebin.ucTextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
@@ -46,7 +44,6 @@ Partial Class frmSMS
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
-        Me.UcTextBox3 = New Tayebin.ucTextBox()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
@@ -61,6 +58,9 @@ Partial Class frmSMS
         Me.SS = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Matn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Girandegancc = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UcTextBox2 = New Tayebin.ucTextBox()
+        Me.UcTextBox1 = New Tayebin.ucTextBox()
+        Me.UcTextBox3 = New Tayebin.ucTextBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -114,8 +114,8 @@ Partial Class frmSMS
         Me.LinkLabel2.Size = New System.Drawing.Size(315, 170)
         Me.LinkLabel2.TabIndex = 15
         Me.LinkLabel2.TabStop = True
-        Me.LinkLabel2.Text = "جهت هرگونه تغییر در اطلاعات کاربری، افزایش اعتبار و خرید خط لطفا به سایت" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "irSMS.n" &
-    "et" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "رجوع کنید"
+        Me.LinkLabel2.Text = "جهت هرگونه تغییر در اطلاعات کاربری، افزایش اعتبار و یا خرید خط اختصاصی لطفا به سا" &
+    "یت" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "irSMS.net" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "رجوع کنید"
         Me.LinkLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.LinkLabel2.VisitedLinkColor = System.Drawing.Color.Yellow
         '
@@ -174,7 +174,7 @@ Partial Class frmSMS
         Me.GroupBox1.Size = New System.Drawing.Size(644, 119)
         Me.GroupBox1.TabIndex = 11
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "اطلاعات ورود به پنل پیامک"
+        Me.GroupBox1.Text = "اطلاعات ورود به پنل پیامک irSMS.net"
         '
         'Button2
         '
@@ -208,18 +208,6 @@ Partial Class frmSMS
         Me.Button1.Text = "پاک کردن اطلاعات"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'UcTextBox2
-        '
-        Me.UcTextBox2.BackColor = System.Drawing.Color.White
-        Me.UcTextBox2.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.UcTextBox2.Location = New System.Drawing.Point(272, 27)
-        Me.UcTextBox2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.UcTextBox2.Name = "UcTextBox2"
-        Me.UcTextBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(8226)
-        Me.UcTextBox2.Size = New System.Drawing.Size(121, 29)
-        Me.UcTextBox2.TabIndex = 11
-        Me.UcTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
         'Label2
         '
         Me.Label2.AutoSize = True
@@ -228,17 +216,6 @@ Partial Class frmSMS
         Me.Label2.Size = New System.Drawing.Size(32, 21)
         Me.Label2.TabIndex = 12
         Me.Label2.Text = "رمز"
-        '
-        'UcTextBox1
-        '
-        Me.UcTextBox1.BackColor = System.Drawing.Color.White
-        Me.UcTextBox1.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.UcTextBox1.Location = New System.Drawing.Point(437, 27)
-        Me.UcTextBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.UcTextBox1.Name = "UcTextBox1"
-        Me.UcTextBox1.Size = New System.Drawing.Size(121, 29)
-        Me.UcTextBox1.TabIndex = 9
-        Me.UcTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label1
         '
@@ -334,17 +311,6 @@ Partial Class frmSMS
         Me.GroupBox6.TabIndex = 9
         Me.GroupBox6.TabStop = False
         Me.GroupBox6.Text = "متن پیام"
-        '
-        'UcTextBox3
-        '
-        Me.UcTextBox3.BackColor = System.Drawing.Color.White
-        Me.UcTextBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.UcTextBox3.Location = New System.Drawing.Point(6, 28)
-        Me.UcTextBox3.MaxLength = 330
-        Me.UcTextBox3.Multiline = True
-        Me.UcTextBox3.Name = "UcTextBox3"
-        Me.UcTextBox3.Size = New System.Drawing.Size(397, 193)
-        Me.UcTextBox3.TabIndex = 0
         '
         'GroupBox5
         '
@@ -490,6 +456,40 @@ Partial Class frmSMS
         Me.Girandegancc.HeaderText = "گیرندگان"
         Me.Girandegancc.Name = "Girandegancc"
         Me.Girandegancc.ReadOnly = True
+        '
+        'UcTextBox2
+        '
+        Me.UcTextBox2.BackColor = System.Drawing.Color.White
+        Me.UcTextBox2.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.UcTextBox2.Location = New System.Drawing.Point(272, 27)
+        Me.UcTextBox2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.UcTextBox2.Name = "UcTextBox2"
+        Me.UcTextBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(8226)
+        Me.UcTextBox2.Size = New System.Drawing.Size(121, 29)
+        Me.UcTextBox2.TabIndex = 11
+        Me.UcTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'UcTextBox1
+        '
+        Me.UcTextBox1.BackColor = System.Drawing.Color.White
+        Me.UcTextBox1.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.UcTextBox1.Location = New System.Drawing.Point(437, 27)
+        Me.UcTextBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.UcTextBox1.Name = "UcTextBox1"
+        Me.UcTextBox1.Size = New System.Drawing.Size(121, 29)
+        Me.UcTextBox1.TabIndex = 9
+        Me.UcTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'UcTextBox3
+        '
+        Me.UcTextBox3.BackColor = System.Drawing.Color.White
+        Me.UcTextBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
+        Me.UcTextBox3.Location = New System.Drawing.Point(6, 28)
+        Me.UcTextBox3.MaxLength = 396
+        Me.UcTextBox3.Multiline = True
+        Me.UcTextBox3.Name = "UcTextBox3"
+        Me.UcTextBox3.Size = New System.Drawing.Size(397, 193)
+        Me.UcTextBox3.TabIndex = 0
         '
         'frmSMS
         '

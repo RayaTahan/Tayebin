@@ -29,7 +29,17 @@ Public Class frmSMS
             TreeView1.Nodes.Add(nSal)
         Next
 
-        If Not sms.ayaVaredShodeh Then
+        If sms.ayaVaredShodeh Then
+            ListBox1.Items.Clear()
+            ListBox1.Items.AddRange(sms.ListShomareh)
+            ComboBox1.Items.Clear()
+            ComboBox1.Items.AddRange(sms.ListShomareh)
+            Try
+                ComboBox1.SelectedIndex = 0
+            Catch ex As Exception
+
+            End Try
+        Else
             If sms.Vorud(AppMan.Tanzimat("smsUser"), AppMan.Tanzimat("smsPass")) Then
                 ListBox1.Items.Clear()
                 ListBox1.Items.AddRange(sms.ListShomareh)
