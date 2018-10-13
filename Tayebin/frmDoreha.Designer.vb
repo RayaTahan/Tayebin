@@ -71,10 +71,10 @@ Partial Class frmDoreha
         Me.Panel1.Controls.Add(Me.Button5)
         Me.Panel1.Controls.Add(Me.Button2)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel1.Location = New System.Drawing.Point(382, 0)
+        Me.Panel1.Location = New System.Drawing.Point(566, 0)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(198, 324)
+        Me.Panel1.Size = New System.Drawing.Size(198, 461)
         Me.Panel1.TabIndex = 1
         '
         'DataGridView3
@@ -92,7 +92,7 @@ Partial Class frmDoreha
         Me.DataGridView3.RowHeadersVisible = False
         Me.DataGridView3.RowTemplate.Height = 30
         Me.DataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView3.Size = New System.Drawing.Size(198, 84)
+        Me.DataGridView3.Size = New System.Drawing.Size(198, 221)
         Me.DataGridView3.TabIndex = 6
         Me.DataGridView3.Visible = False
         '
@@ -221,7 +221,7 @@ Partial Class frmDoreha
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(382, 324)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(566, 461)
         Me.TableLayoutPanel1.TabIndex = 2
         '
         'ListView1
@@ -231,11 +231,11 @@ Partial Class frmDoreha
         Me.ListView1.ContextMenuStrip = Me.menu1
         Me.ListView1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ListView1.FullRowSelect = True
-        Me.ListView1.Location = New System.Drawing.Point(3, 165)
+        Me.ListView1.Location = New System.Drawing.Point(3, 233)
         Me.ListView1.MultiSelect = False
         Me.ListView1.Name = "ListView1"
         Me.ListView1.RightToLeftLayout = True
-        Me.ListView1.Size = New System.Drawing.Size(185, 156)
+        Me.ListView1.Size = New System.Drawing.Size(277, 225)
         Me.ListView1.Sorting = System.Windows.Forms.SortOrder.Ascending
         Me.ListView1.TabIndex = 6
         Me.ListView1.UseCompatibleStateImageBehavior = False
@@ -259,14 +259,14 @@ Partial Class frmDoreha
         Me.DataGridView4.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn6, Me.TarikhShoru})
         Me.DataGridView4.ContextMenuStrip = Me.menu1
         Me.DataGridView4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridView4.Location = New System.Drawing.Point(194, 2)
+        Me.DataGridView4.Location = New System.Drawing.Point(286, 2)
         Me.DataGridView4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.DataGridView4.Name = "DataGridView4"
         Me.DataGridView4.ReadOnly = True
         Me.DataGridView4.RowHeadersVisible = False
         Me.DataGridView4.RowTemplate.Height = 30
         Me.DataGridView4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView4.Size = New System.Drawing.Size(185, 158)
+        Me.DataGridView4.Size = New System.Drawing.Size(277, 226)
         Me.DataGridView4.TabIndex = 9
         '
         'DataGridViewTextBoxColumn3
@@ -304,14 +304,14 @@ Partial Class frmDoreha
         Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5})
         Me.DataGridView2.ContextMenuStrip = Me.menu1
         Me.DataGridView2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridView2.Location = New System.Drawing.Point(194, 164)
+        Me.DataGridView2.Location = New System.Drawing.Point(286, 232)
         Me.DataGridView2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.DataGridView2.Name = "DataGridView2"
         Me.DataGridView2.ReadOnly = True
         Me.DataGridView2.RowHeadersVisible = False
         Me.DataGridView2.RowTemplate.Height = 30
         Me.DataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView2.Size = New System.Drawing.Size(185, 158)
+        Me.DataGridView2.Size = New System.Drawing.Size(277, 227)
         Me.DataGridView2.TabIndex = 8
         '
         'DataGridViewTextBoxColumn4
@@ -347,7 +347,7 @@ Partial Class frmDoreha
         Me.DataGridView1.RowHeadersVisible = False
         Me.DataGridView1.RowTemplate.Height = 30
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(185, 158)
+        Me.DataGridView1.Size = New System.Drawing.Size(277, 226)
         Me.DataGridView1.TabIndex = 5
         '
         'ID
@@ -373,7 +373,7 @@ Partial Class frmDoreha
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 21.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(580, 324)
+        Me.ClientSize = New System.Drawing.Size(764, 461)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Controls.Add(Me.Panel1)
         Me.DoubleBuffered = True

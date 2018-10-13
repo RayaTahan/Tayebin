@@ -118,7 +118,7 @@ Public Class AppMan
 
             If dbVer = 26 Then
                 SQLiter.RunCommand("drop view IF EXISTS vSalDore")
-                SQLiter.RunCommand("CREATE VIEW IF NOT EXISTS vSalDore AS SELECT tSal.ID as SalID, tSal.Onvan as SalOnvan, tDore.ID as DoreID, tDore.Onvan as DoreOnvan, tMorabbi.ID as MorabbiID, tMorabbi.Onvan as MorabbiOnvan, tSalDore.ID as SalDoreID FROM tSalDore, tSal, tDore, tMorabbi where tSalDore.IDDore=tDore.ID and tSalDore.IDMorabbi=tMorabbi.ID and tSalDore.IDSal=tSal.ID order by tSal.TarikhShoru desc")
+                SQLiter.RunCommand("CREATE VIEW IF NOT EXISTS vSalDore AS SELECT tSal.ID as SalID, tSal.Onvan as SalOnvan, tDore.ID as DoreID, tDore.Onvan as DoreOnvan, tMorabbi.ID as MorabbiID, tMorabbi.Onvan as MorabbiOnvan, tSalDore.ID as SalDoreID FROM tSalDore, tSal, tDore, tMorabbi where tSalDore.IDDore=tDore.ID and tSalDore.IDMorabbi=tMorabbi.ID and tSalDore.IDSal=tSal.ID order by tSal.TarikhShoru desc,DoreOnvan,MorabbiOnvan")
 
                 Tanzimat("dbVer") = 27
             End If
