@@ -14,7 +14,7 @@ Public Class frmSMS
         TreeView1.Nodes.Clear()
         TreeView1.Nodes.Add(New TreeNode("همه اعضا") With {.Tag = -1})
 
-        For Each tSal As DataRow In SQLiter.Fill("select ID,Onvan from tSal").Rows
+        For Each tSal As DataRow In SQLiter.Fill("select ID,Onvan from tSal order by TarikhShoru desc").Rows
             Dim nSal As New TreeNode(tSal.Item("Onvan"))
             nSal.Tag = tSal.Item("ID")
             For Each tSalDore As DataRow In SQLiter.Fill("select SalDoreID,DoreOnvan,MorabbiOnvan from vSalDore where SalID=" & nSal.Tag).Rows

@@ -6,7 +6,7 @@
         DataGridView1.DataSource = SQLiter.Fill("select * from tDore")
         DataGridView2.DataSource = SQLiter.Fill("select * from tMorabbi")
         DataGridView3.DataSource = SQLiter.Fill("select SalDoreID,SalOnvan,DoreOnvan,MorabbiOnvan from vSalDore")
-        DataGridView4.DataSource = SQLiter.Fill("select * from tSal")
+        DataGridView4.DataSource = SQLiter.Fill("select * from tSal order by TarikhShoru desc")
 
         ListView1.Items.Clear()
         For Each row In SQLiter.Fill("select SalDoreID,SalOnvan,DoreOnvan,MorabbiOnvan from vSalDore").Rows()
