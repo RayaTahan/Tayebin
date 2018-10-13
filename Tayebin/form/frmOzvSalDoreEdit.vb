@@ -69,7 +69,11 @@ Public Class frmOzvSalDoreEdit
         If ListView1.SelectedItems.Count = 1 Then
             Try
                 If dID = -1 Then
-                    SQLiter.RunCommand("insert into tOzvSalDore(IDOzv,IDSalDore,TarikhSabt,ZamanSabt) values(@0,@1,@2,@3)", {New SQLiteParameter("@0", OzvID), New SQLiteParameter("@1", ListView1.SelectedItems(0).Tag), New SQLiteParameter("@2", (New cTarikh).ToString), New SQLiteParameter("@3", (New cSaat).ToString)})
+                    If SQLiter.RunCommandScaler($"select count (*) from tOzvSalDore where IDOzv={OzvID} and IDSalDore={ListView1.SelectedItems(0).Tag}") = "0" Then
+                        SQLiter.RunCommand("insert into tOzvSalDore(IDOzv,IDSalDore,TarikhSabt,ZamanSabt) values(@0,@1,@2,@3)", {New SQLiteParameter("@0", OzvID), New SQLiteParameter("@1", ListView1.SelectedItems(0).Tag), New SQLiteParameter("@2", (New cTarikh).ToString), New SQLiteParameter("@3", (New cSaat).ToString)})
+                    Else
+                        MessageBox.Show("این عضو قبلا در این دوره قرار گرفته است.")
+                    End If
                 Else
                     SQLiter.RunCommand("update tOzvSalDore set IDSalDore=@0 where ID=@1", {New SQLiteParameter("@0", ListView1.SelectedItems(0).Tag), New SQLiteParameter("@1", dID)})
                 End If
