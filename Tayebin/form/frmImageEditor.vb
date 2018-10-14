@@ -1,4 +1,5 @@
 ﻿Imports System.Drawing.Drawing2D
+Imports Kaliko.ImageLibrary
 
 Public Class frmImageEditor
     Dim fileAddress As String
@@ -130,7 +131,7 @@ Public Class frmImageEditor
                 isStart = False
 
                 Dim rect As Rectangle = New Rectangle(Math.Min(cropX, e.X), Math.Min(cropY, e.Y), cropWidth, cropHeight)
-                'Dim bit As Bitmap = New Bitmap(pic.Image, pic.Width, pic.Height)
+                Dim bit As Bitmap = New Bitmap(pic.Image, pic.Width, pic.Height)
 
                 'cropBitmap = New Bitmap(cropWidth, cropHeight)
                 'Dim g As Graphics = Graphics.FromImage(cropBitmap)
@@ -142,10 +143,11 @@ Public Class frmImageEditor
                 'preview.Image = cropBitmap
 
 
-                'Dim imgp As New ImageProcessor.ImageFactory
-                'imgp.Load(pic.Image)
+                Dim img As New ImageProcessor.ImageFactory()
+                img.Quality(100)
+                img.Load(bit)
+                preview.Image = img.Crop(rect).Image
 
-                'preview.Image = imgp.Crop(rect).Image
             Catch exc As Exception
             End Try
         Catch exc As Exception
