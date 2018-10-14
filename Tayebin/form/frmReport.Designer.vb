@@ -50,6 +50,7 @@ Partial Class frmReport
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
         Me.Name = "frmReport"
+        Me.Text = "گزارش"
         Me.ResumeLayout(False)
 
     End Sub

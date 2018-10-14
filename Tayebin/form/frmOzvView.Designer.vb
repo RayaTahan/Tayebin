@@ -105,6 +105,7 @@ Partial Class frmOzvView
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
+        Me.ویراستارتصویرToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.picAx, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -950,10 +951,10 @@ Partial Class frmOzvView
         'menu1
         '
         Me.menu1.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.menu1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.نمایشToolStripMenuItem, Me.ویرایشToolStripMenuItem, Me.حذفToolStripMenuItem, Me.ToolStripMenuItem3, Me.ثبتبهعنوانعکسToolStripMenuItem})
+        Me.menu1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.نمایشToolStripMenuItem, Me.ویرایشToolStripMenuItem, Me.حذفToolStripMenuItem, Me.ویراستارتصویرToolStripMenuItem, Me.ToolStripMenuItem3, Me.ثبتبهعنوانعکسToolStripMenuItem})
         Me.menu1.Name = "menu1"
         Me.menu1.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.menu1.Size = New System.Drawing.Size(204, 114)
+        Me.menu1.Size = New System.Drawing.Size(204, 162)
         '
         'نمایشToolStripMenuItem
         '
@@ -1029,6 +1030,12 @@ Partial Class frmOzvView
         Me.Button4.TabIndex = 1
         Me.Button4.Text = "تازه سازی داده ها"
         Me.Button4.UseVisualStyleBackColor = True
+        '
+        'ویراستارتصویرToolStripMenuItem
+        '
+        Me.ویراستارتصویرToolStripMenuItem.Name = "ویراستارتصویرToolStripMenuItem"
+        Me.ویراستارتصویرToolStripMenuItem.Size = New System.Drawing.Size(203, 26)
+        Me.ویراستارتصویرToolStripMenuItem.Text = "ویراستار تصویر"
         '
         'frmOzvView
         '
@@ -1149,4 +1156,5 @@ Partial Class frmOzvView
     Friend WithEvents ListView1 As ListView
     Friend WithEvents ColumnHeader1 As ColumnHeader
     Friend WithEvents ColumnHeader2 As ColumnHeader
+    Friend WithEvents ویراستارتصویرToolStripMenuItem As ToolStripMenuItem
 End Class

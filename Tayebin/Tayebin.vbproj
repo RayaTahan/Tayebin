@@ -205,6 +205,12 @@
     <Compile Include="form\frmOzvEdit.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="form\frmImageEditor.Designer.vb">
+      <DependentUpon>frmImageEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="form\frmImageEditor.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="form\frmSMS.Designer.vb">
       <DependentUpon>frmSMS.vb</DependentUpon>
     </Compile>
@@ -381,6 +387,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="form\frmOzvEdit.resx">
       <DependentUpon>frmOzvEdit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\frmImageEditor.resx">
+      <DependentUpon>frmImageEditor.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\frmSMS.resx">
       <DependentUpon>frmSMS.vb</DependentUpon>

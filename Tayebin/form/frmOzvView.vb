@@ -227,4 +227,9 @@ Public Class frmOzvView
 
         End Try
     End Sub
+
+    Private Sub ویراستارتصویرToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ویراستارتصویرToolStripMenuItem.Click
+        Dim frm As New frmImageEditor
+        frm.ShowDialog(Me)
+    End Sub
 End Class
