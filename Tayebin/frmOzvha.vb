@@ -142,7 +142,7 @@
             Dim frm As New frmOzvView(DataGridView1.SelectedRows(0).Cells("ID").Value)
             frm.ShowDialog(Me)
         Catch ex As Exception
-            'MsgBox(ex.Message & vbCrLf & ex.StackTrace)
+            ' MsgBox(ex.Message & vbCrLf & ex.StackTrace)
         End Try
     End Sub
 End Class

@@ -229,7 +229,13 @@ Public Class frmOzvView
     End Sub
 
     Private Sub ویراستارتصویرToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ویراستارتصویرToolStripMenuItem.Click
-        Dim frm As New frmImageEditor
-        frm.ShowDialog(Me)
+        Try
+            Dim fileAdres As String = $"{ Application.StartupPath}\data\madarek\{dID}\{dID}-{DataGridView1.SelectedRows(0).Cells("IDMadrak").Value}{DataGridView1.SelectedRows(0).Cells("FileEXT").Value}"
+            Dim frm As New frmImageEditor(fileAdres)
+            frm.ShowDialog(Me)
+        Catch ex As Exception
+            'MessageBox.Show(ex.Message & vbCrLf & ex.StackTrace)
+        End Try
+
     End Sub
 End Class

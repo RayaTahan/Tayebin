@@ -25,12 +25,16 @@ Partial Class frmImageEditor
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmImageEditor))
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.panel = New System.Windows.Forms.Panel()
-        Me.pic = New System.Windows.Forms.PictureBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.btnEnseraf = New System.Windows.Forms.Button()
+        Me.preview = New System.Windows.Forms.PictureBox()
         Me.btnTaeed = New System.Windows.Forms.Button()
+        Me.btnEnseraf = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.picPanel = New System.Windows.Forms.Panel()
+        Me.pic = New System.Windows.Forms.PictureBox()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.panel.SuspendLayout()
+        CType(Me.preview, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.picPanel.SuspendLayout()
         CType(Me.pic, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -40,7 +44,7 @@ Partial Class frmImageEditor
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120.0!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.panel, 0, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.pic, 1, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.picPanel, 1, 0)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
@@ -51,6 +55,7 @@ Partial Class frmImageEditor
         '
         'panel
         '
+        Me.panel.Controls.Add(Me.preview)
         Me.panel.Controls.Add(Me.btnTaeed)
         Me.panel.Controls.Add(Me.btnEnseraf)
         Me.panel.Controls.Add(Me.Button1)
@@ -61,25 +66,29 @@ Partial Class frmImageEditor
         Me.panel.Size = New System.Drawing.Size(114, 465)
         Me.panel.TabIndex = 0
         '
-        'pic
+        'preview
         '
-        Me.pic.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.pic.Location = New System.Drawing.Point(3, 3)
-        Me.pic.Name = "pic"
-        Me.pic.Size = New System.Drawing.Size(601, 465)
-        Me.pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pic.TabIndex = 1
-        Me.pic.TabStop = False
+        Me.preview.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.preview.Location = New System.Drawing.Point(7, 278)
+        Me.preview.Name = "preview"
+        Me.preview.Size = New System.Drawing.Size(100, 100)
+        Me.preview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.preview.TabIndex = 3
+        Me.preview.TabStop = False
         '
-        'Button1
+        'btnTaeed
         '
-        Me.Button1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Button1.Location = New System.Drawing.Point(7, 7)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(100, 40)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "برش"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnTaeed.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnTaeed.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.btnTaeed.Enabled = False
+        Me.btnTaeed.FlatAppearance.BorderColor = System.Drawing.Color.Green
+        Me.btnTaeed.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnTaeed.Location = New System.Drawing.Point(7, 378)
+        Me.btnTaeed.Name = "btnTaeed"
+        Me.btnTaeed.Size = New System.Drawing.Size(100, 40)
+        Me.btnTaeed.TabIndex = 2
+        Me.btnTaeed.Text = "تایید"
+        Me.btnTaeed.UseVisualStyleBackColor = False
         '
         'btnEnseraf
         '
@@ -96,19 +105,35 @@ Partial Class frmImageEditor
         Me.btnEnseraf.Text = "انصراف"
         Me.btnEnseraf.UseVisualStyleBackColor = False
         '
-        'btnTaeed
+        'Button1
         '
-        Me.btnTaeed.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnTaeed.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.btnTaeed.Enabled = False
-        Me.btnTaeed.FlatAppearance.BorderColor = System.Drawing.Color.Green
-        Me.btnTaeed.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnTaeed.Location = New System.Drawing.Point(7, 378)
-        Me.btnTaeed.Name = "btnTaeed"
-        Me.btnTaeed.Size = New System.Drawing.Size(100, 40)
-        Me.btnTaeed.TabIndex = 2
-        Me.btnTaeed.Text = "تایید"
-        Me.btnTaeed.UseVisualStyleBackColor = False
+        Me.Button1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Button1.Location = New System.Drawing.Point(7, 7)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(100, 40)
+        Me.Button1.TabIndex = 0
+        Me.Button1.Text = "برش"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'picPanel
+        '
+        Me.picPanel.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.picPanel.Controls.Add(Me.pic)
+        Me.picPanel.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.picPanel.Location = New System.Drawing.Point(3, 3)
+        Me.picPanel.Name = "picPanel"
+        Me.picPanel.Size = New System.Drawing.Size(601, 465)
+        Me.picPanel.TabIndex = 1
+        '
+        'pic
+        '
+        Me.pic.BackColor = System.Drawing.Color.Transparent
+        Me.pic.Location = New System.Drawing.Point(114, 72)
+        Me.pic.Name = "pic"
+        Me.pic.Size = New System.Drawing.Size(368, 291)
+        Me.pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pic.TabIndex = 4
+        Me.pic.TabStop = False
         '
         'frmImageEditor
         '
@@ -125,6 +150,8 @@ Partial Class frmImageEditor
         Me.Text = "ویراستار تصویر"
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.panel.ResumeLayout(False)
+        CType(Me.preview, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.picPanel.ResumeLayout(False)
         CType(Me.pic, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -132,8 +159,10 @@ Partial Class frmImageEditor
 
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents panel As Panel
-    Friend WithEvents pic As PictureBox
     Friend WithEvents Button1 As Button
     Friend WithEvents btnTaeed As Button
     Friend WithEvents btnEnseraf As Button
+    Friend WithEvents preview As PictureBox
+    Friend WithEvents picPanel As Panel
+    Friend WithEvents pic As PictureBox
 End Class
