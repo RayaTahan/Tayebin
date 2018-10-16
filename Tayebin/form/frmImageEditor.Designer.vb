@@ -28,7 +28,7 @@ Partial Class frmImageEditor
         Me.panel = New System.Windows.Forms.Panel()
         Me.Abzar = New System.Windows.Forms.GroupBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.btnContrast = New System.Windows.Forms.Button()
         Me.btnFilipH = New System.Windows.Forms.Button()
         Me.btnFilipV = New System.Windows.Forms.Button()
         Me.btnRotateAC = New System.Windows.Forms.Button()
@@ -36,6 +36,7 @@ Partial Class frmImageEditor
         Me.btnCrop = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.lblTaqir = New System.Windows.Forms.Label()
+        Me.trackContrast = New System.Windows.Forms.TrackBar()
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.btnOK = New System.Windows.Forms.Button()
         Me.preview = New System.Windows.Forms.PictureBox()
@@ -45,16 +46,18 @@ Partial Class frmImageEditor
         Me.picPanel = New System.Windows.Forms.Panel()
         Me.pic = New System.Windows.Forms.PictureBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.tlpRotates = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.panel.SuspendLayout()
         Me.Abzar.SuspendLayout()
         Me.Panel1.SuspendLayout()
-        Me.Panel2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.trackContrast, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.preview, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.picPanel.SuspendLayout()
         CType(Me.pic, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tlpRotates.SuspendLayout()
         Me.SuspendLayout()
         '
         'TableLayoutPanel1
@@ -88,9 +91,9 @@ Partial Class frmImageEditor
         '
         Me.Abzar.Controls.Add(Me.Panel1)
         Me.Abzar.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Abzar.Location = New System.Drawing.Point(7, 189)
+        Me.Abzar.Location = New System.Drawing.Point(7, 208)
         Me.Abzar.Name = "Abzar"
-        Me.Abzar.Size = New System.Drawing.Size(180, 159)
+        Me.Abzar.Size = New System.Drawing.Size(180, 140)
         Me.Abzar.TabIndex = 5
         Me.Abzar.TabStop = False
         Me.Abzar.Text = "ابزار"
@@ -98,33 +101,33 @@ Partial Class frmImageEditor
         'Panel1
         '
         Me.Panel1.AutoScroll = True
-        Me.Panel1.Controls.Add(Me.Panel2)
+        Me.Panel1.Controls.Add(Me.btnContrast)
+        Me.Panel1.Controls.Add(Me.tlpRotates)
         Me.Panel1.Controls.Add(Me.btnCrop)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(3, 25)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(174, 131)
+        Me.Panel1.Size = New System.Drawing.Size(174, 112)
         Me.Panel1.TabIndex = 2
         '
-        'Panel2
+        'btnContrast
         '
-        Me.Panel2.Controls.Add(Me.btnFilipH)
-        Me.Panel2.Controls.Add(Me.btnFilipV)
-        Me.Panel2.Controls.Add(Me.btnRotateAC)
-        Me.Panel2.Controls.Add(Me.btnRotateC)
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel2.Location = New System.Drawing.Point(0, 40)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(174, 42)
-        Me.Panel2.TabIndex = 7
+        Me.btnContrast.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnContrast.Location = New System.Drawing.Point(0, 81)
+        Me.btnContrast.Name = "btnContrast"
+        Me.btnContrast.Size = New System.Drawing.Size(157, 40)
+        Me.btnContrast.TabIndex = 10
+        Me.btnContrast.Text = "تنظیم روشنایی"
+        Me.btnContrast.UseVisualStyleBackColor = True
         '
         'btnFilipH
         '
         Me.btnFilipH.Font = New System.Drawing.Font("Segoe UI", 25.0!)
-        Me.btnFilipH.Location = New System.Drawing.Point(3, 1)
+        Me.btnFilipH.Location = New System.Drawing.Point(80, 1)
+        Me.btnFilipH.Margin = New System.Windows.Forms.Padding(1)
         Me.btnFilipH.Name = "btnFilipH"
-        Me.btnFilipH.Size = New System.Drawing.Size(40, 40)
+        Me.btnFilipH.Size = New System.Drawing.Size(37, 39)
         Me.btnFilipH.TabIndex = 10
         Me.btnFilipH.Text = "⇆"
         Me.btnFilipH.UseCompatibleTextRendering = True
@@ -133,9 +136,10 @@ Partial Class frmImageEditor
         'btnFilipV
         '
         Me.btnFilipV.Font = New System.Drawing.Font("Segoe UI", 25.0!)
-        Me.btnFilipV.Location = New System.Drawing.Point(45, 1)
+        Me.btnFilipV.Location = New System.Drawing.Point(119, 1)
+        Me.btnFilipV.Margin = New System.Windows.Forms.Padding(1)
         Me.btnFilipV.Name = "btnFilipV"
-        Me.btnFilipV.Size = New System.Drawing.Size(40, 40)
+        Me.btnFilipV.Size = New System.Drawing.Size(37, 39)
         Me.btnFilipV.TabIndex = 9
         Me.btnFilipV.Text = "⇅"
         Me.btnFilipV.UseCompatibleTextRendering = True
@@ -144,9 +148,10 @@ Partial Class frmImageEditor
         'btnRotateAC
         '
         Me.btnRotateAC.Font = New System.Drawing.Font("Segoe UI", 25.0!)
-        Me.btnRotateAC.Location = New System.Drawing.Point(89, 1)
+        Me.btnRotateAC.Location = New System.Drawing.Point(1, 1)
+        Me.btnRotateAC.Margin = New System.Windows.Forms.Padding(1)
         Me.btnRotateAC.Name = "btnRotateAC"
-        Me.btnRotateAC.Size = New System.Drawing.Size(40, 40)
+        Me.btnRotateAC.Size = New System.Drawing.Size(38, 39)
         Me.btnRotateAC.TabIndex = 8
         Me.btnRotateAC.Text = "⟲"
         Me.btnRotateAC.UseCompatibleTextRendering = True
@@ -155,9 +160,10 @@ Partial Class frmImageEditor
         'btnRotateC
         '
         Me.btnRotateC.Font = New System.Drawing.Font("Segoe UI", 25.0!)
-        Me.btnRotateC.Location = New System.Drawing.Point(131, 1)
+        Me.btnRotateC.Location = New System.Drawing.Point(41, 1)
+        Me.btnRotateC.Margin = New System.Windows.Forms.Padding(1)
         Me.btnRotateC.Name = "btnRotateC"
-        Me.btnRotateC.Size = New System.Drawing.Size(40, 40)
+        Me.btnRotateC.Size = New System.Drawing.Size(37, 39)
         Me.btnRotateC.TabIndex = 7
         Me.btnRotateC.Text = "⟳"
         Me.btnRotateC.UseCompatibleTextRendering = True
@@ -168,7 +174,7 @@ Partial Class frmImageEditor
         Me.btnCrop.Dock = System.Windows.Forms.DockStyle.Top
         Me.btnCrop.Location = New System.Drawing.Point(0, 0)
         Me.btnCrop.Name = "btnCrop"
-        Me.btnCrop.Size = New System.Drawing.Size(174, 40)
+        Me.btnCrop.Size = New System.Drawing.Size(157, 40)
         Me.btnCrop.TabIndex = 2
         Me.btnCrop.Text = "برش"
         Me.btnCrop.UseVisualStyleBackColor = True
@@ -176,26 +182,44 @@ Partial Class frmImageEditor
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.lblTaqir)
+        Me.GroupBox1.Controls.Add(Me.trackContrast)
         Me.GroupBox1.Controls.Add(Me.btnCancel)
         Me.GroupBox1.Controls.Add(Me.btnOK)
         Me.GroupBox1.Controls.Add(Me.preview)
         Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Top
         Me.GroupBox1.Location = New System.Drawing.Point(7, 7)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(180, 182)
+        Me.GroupBox1.Size = New System.Drawing.Size(180, 201)
         Me.GroupBox1.TabIndex = 4
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "تغییرات"
+        Me.GroupBox1.Visible = False
         '
         'lblTaqir
         '
         Me.lblTaqir.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.lblTaqir.Location = New System.Drawing.Point(3, 26)
+        Me.lblTaqir.Location = New System.Drawing.Point(3, 27)
         Me.lblTaqir.Name = "lblTaqir"
         Me.lblTaqir.Size = New System.Drawing.Size(174, 29)
         Me.lblTaqir.TabIndex = 7
         Me.lblTaqir.Text = "lblTaqir"
         Me.lblTaqir.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'trackContrast
+        '
+        Me.trackContrast.AutoSize = False
+        Me.trackContrast.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.trackContrast.LargeChange = 20
+        Me.trackContrast.Location = New System.Drawing.Point(3, 56)
+        Me.trackContrast.Maximum = 100
+        Me.trackContrast.Minimum = -100
+        Me.trackContrast.Name = "trackContrast"
+        Me.trackContrast.Size = New System.Drawing.Size(174, 18)
+        Me.trackContrast.SmallChange = 5
+        Me.trackContrast.TabIndex = 10
+        Me.trackContrast.TickFrequency = 10
+        Me.trackContrast.TickStyle = System.Windows.Forms.TickStyle.None
+        Me.trackContrast.Visible = False
         '
         'btnCancel
         '
@@ -228,7 +252,7 @@ Partial Class frmImageEditor
         'preview
         '
         Me.preview.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.preview.Location = New System.Drawing.Point(3, 55)
+        Me.preview.Location = New System.Drawing.Point(3, 74)
         Me.preview.Name = "preview"
         Me.preview.Size = New System.Drawing.Size(174, 124)
         Me.preview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -301,6 +325,27 @@ Partial Class frmImageEditor
         Me.Timer1.Enabled = True
         Me.Timer1.Interval = 500
         '
+        'tlpRotates
+        '
+        Me.tlpRotates.ColumnCount = 4
+        Me.tlpRotates.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.tlpRotates.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.tlpRotates.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.tlpRotates.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.tlpRotates.Controls.Add(Me.btnRotateC, 0, 0)
+        Me.tlpRotates.Controls.Add(Me.btnRotateAC, 0, 0)
+        Me.tlpRotates.Controls.Add(Me.btnFilipV, 0, 0)
+        Me.tlpRotates.Controls.Add(Me.btnFilipH, 0, 0)
+        Me.tlpRotates.Dock = System.Windows.Forms.DockStyle.Top
+        Me.tlpRotates.Location = New System.Drawing.Point(0, 40)
+        Me.tlpRotates.Margin = New System.Windows.Forms.Padding(0)
+        Me.tlpRotates.Name = "tlpRotates"
+        Me.tlpRotates.RowCount = 1
+        Me.tlpRotates.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.tlpRotates.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.tlpRotates.Size = New System.Drawing.Size(157, 41)
+        Me.tlpRotates.TabIndex = 7
+        '
         'frmImageEditor
         '
         Me.AcceptButton = Me.btnTaeed
@@ -319,12 +364,13 @@ Partial Class frmImageEditor
         Me.panel.ResumeLayout(False)
         Me.Abzar.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
-        Me.Panel2.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
+        CType(Me.trackContrast, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.preview, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.picPanel.ResumeLayout(False)
         CType(Me.pic, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tlpRotates.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -345,9 +391,11 @@ Partial Class frmImageEditor
     Friend WithEvents btnCrop As Button
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents Timer1 As Timer
-    Friend WithEvents Panel2 As Panel
     Friend WithEvents btnFilipH As Button
     Friend WithEvents btnFilipV As Button
     Friend WithEvents btnRotateAC As Button
     Friend WithEvents btnRotateC As Button
+    Friend WithEvents btnContrast As Button
+    Friend WithEvents trackContrast As TrackBar
+    Friend WithEvents tlpRotates As TableLayoutPanel
 End Class

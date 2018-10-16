@@ -3,7 +3,7 @@ Imports System.IO
 
 Public Class frmImageEditor
     Dim fileAddress As String
-    Dim Job As Integer = 0 ' 1:crop 
+    Dim Job As Integer = 0 ' 1:crop  2:contrast
     Dim timerTik As Boolean = False
 
     Dim img As New ImageProcessor.ImageFactory
@@ -185,6 +185,7 @@ Public Class frmImageEditor
 
             Job = 0
             lblTaqir.Text = ""
+            trackContrast.Visible = False
             resizer()
             pic.Refresh()
             preview.Image = Nothing
@@ -194,6 +195,7 @@ Public Class frmImageEditor
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         Job = 0
         lblTaqir.Text = ""
+        trackContrast.Visible = False
         resizer()
         pic.Refresh()
         preview.Image = Nothing
@@ -238,7 +240,7 @@ Public Class frmImageEditor
 
     Private Sub btnRotateC_Click(sender As Object, e As EventArgs) Handles btnRotateC.Click
         img = New ImageProcessor.ImageFactory
-        img.Load(pic.Image)
+        img.Load(New Bitmap(pic.Image))
         pic.Image = img.Rotate(90).Image
         resizer()
         btnTaeed.Enabled = True
@@ -246,7 +248,7 @@ Public Class frmImageEditor
 
     Private Sub btnRotateAC_Click(sender As Object, e As EventArgs) Handles btnRotateAC.Click
         img = New ImageProcessor.ImageFactory
-        img.Load(pic.Image)
+        img.Load(New Bitmap(pic.Image))
         pic.Image = img.Rotate(-90).Image
         resizer()
         btnTaeed.Enabled = True
@@ -254,7 +256,7 @@ Public Class frmImageEditor
 
     Private Sub btnFilipV_Click(sender As Object, e As EventArgs) Handles btnFilipV.Click
         img = New ImageProcessor.ImageFactory
-        img.Load(pic.Image)
+        img.Load(New Bitmap(pic.Image))
         pic.Image = img.Flip(True, False).Image
         resizer()
         btnTaeed.Enabled = True
@@ -262,9 +264,32 @@ Public Class frmImageEditor
 
     Private Sub btnFilipH_Click(sender As Object, e As EventArgs) Handles btnFilipH.Click
         img = New ImageProcessor.ImageFactory
-        img.Load(pic.Image)
+        img.Load(New Bitmap(pic.Image))
         pic.Image = img.Flip(False, False).Image
         resizer()
         btnTaeed.Enabled = True
+    End Sub
+
+    Private Sub btnContrast_Click(sender As Object, e As EventArgs) Handles btnContrast.Click
+        Job = 2
+        lblTaqir.Tag = 0
+        lblTaqir.Text = $"میزان روشنایی : {lblTaqir.Tag}%"
+        preview.Image = pic.Image
+        img = New ImageProcessor.ImageFactory
+        img.Load(pic.Image)
+
+        trackContrast.Value = 0
+        trackContrast.Visible = True
+        Abzar.Enabled = False
+        btnOK.Visible = True
+        btnCancel.Visible = True
+        btnTaeed.Enabled = False
+    End Sub
+
+    Private Sub trackContrast_Scroll(sender As Object, e As EventArgs) Handles trackContrast.Scroll
+        img.Reset()
+        preview.Image = img.Contrast(trackContrast.Value).Image
+        lblTaqir.Tag = trackContrast.Value
+        lblTaqir.Text = $"میزان روشنایی : {lblTaqir.Tag}%"
     End Sub
 End Class
