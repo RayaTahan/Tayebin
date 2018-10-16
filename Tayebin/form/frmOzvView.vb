@@ -6,6 +6,8 @@ Public Class frmOzvView
     Dim dID As Integer
     Dim data As DataTable
 
+    Dim AxAddress As String
+
     Sub New(ID As Integer)
         InitializeComponent()
 
@@ -46,11 +48,12 @@ Public Class frmOzvView
         txtTedadVirayesh.Text = data(0).Item("TedadVirayesh")
 
         If data(0).Item("AxID") = -1 Then
-            picAx.Image = IMGcache.img(String.Format("{0}\data\app\icon\profile27.png", Application.StartupPath))
+            AxAddress = $"{Application.StartupPath}\data\app\icon\profile27.png"
         Else
             Dim AxData = SQLiter.Fill("select * from tMadrak where ID=" & data(0).Item("AxID"))
-            picAx.Image = IMGcache.img(String.Format("{0}\data\madarek\{1}\{1}-{2}{3}", Application.StartupPath, dID, AxData(0).Item("ID"), AxData(0).Item("FileEXT")))
+            AxAddress = $"{Application.StartupPath}\data\madarek\{dID}\{dID}-{AxData(0).Item("ID")}{AxData(0).Item("FileEXT")}"
         End If
+        picAx.Image = IMGcache.img(AxAddress)
 
         DataGridView1.DataSource = SQLiter.Fill("select NoMadrakOnvan,ID,IDNoMadrak,Onvan,Tarikh,FileEXT from vMadrak where IDOzv=" & dID)
 
@@ -232,7 +235,9 @@ Public Class frmOzvView
         Try
             Dim fileAdres As String = $"{ Application.StartupPath}\data\madarek\{dID}\{dID}-{DataGridView1.SelectedRows(0).Cells("IDMadrak").Value}{DataGridView1.SelectedRows(0).Cells("FileEXT").Value}"
             Dim frm As New frmImageEditor(fileAdres)
-            frm.ShowDialog(Me)
+            If frm.ShowDialog(Me) = DialogResult.OK Then
+                picAx.Image = IMGcache.img(AxAddress)
+            End If
         Catch ex As Exception
             'MessageBox.Show(ex.Message & vbCrLf & ex.StackTrace)
         End Try

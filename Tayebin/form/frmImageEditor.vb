@@ -1,4 +1,5 @@
 ﻿Imports System.Drawing.Drawing2D
+Imports System.IO
 
 Public Class frmImageEditor
     Dim fileAddress As String
@@ -35,10 +36,16 @@ Public Class frmImageEditor
         ' Add any initialization after the InitializeComponent() call.
         Me.fileAddress = FileAddress
         Try
-            pic.Load(FileAddress)
+            Dim xx As Image
+            Using str As Stream = File.OpenRead(FileAddress)
+                xx = Image.FromStream(str)
+            End Using
+            pic.Image = xx
             resizer()
+            lblTaqir.Text = ""
         Catch ex As Exception
             MessageBox.Show(ex.Message)
+            Me.Close()
         End Try
     End Sub
 
@@ -195,6 +202,26 @@ Public Class frmImageEditor
     End Sub
 
     Private Sub btnTaeed_Click(sender As Object, e As EventArgs) Handles btnTaeed.Click
+        Try
+            pic.Image.Save(fileAddress)
+            IMGcache.Remove(fileAddress)
+            'FileIO.FileSystem.CopyFile(UcTextBox1.Tag, newFileAddress, showUI:=FileIO.UIOption.AllDialogs, onUserCancel:=FileIO.UICancelOption.ThrowException)
+            'Dim ms = New MemoryStream()
+            'pic.Image.Save(ms) ' Use appropriate format here
+            'Dim bytes = ms.ToArray()
+            'FileIO.FileSystem.WriteAllBytes(fileAddress, pic.Image, False)
 
+            'pic.Image.Dispose()
+            'FileIO.FileSystem.DeleteFile(fileAddress)
+            'FileIO.FileSystem.RenameFile(fileAddress & "-w8", FileIO.FileSystem.GetName(fileAddress))
+
+
+
+            MessageBox.Show("تصویر با موفقیت ویرایش و ذخیره شد")
+
+            Me.Close()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
     End Sub
 End Class

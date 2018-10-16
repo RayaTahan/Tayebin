@@ -173,6 +173,7 @@ Partial Class frmImageEditor
         'btnTaeed
         '
         Me.btnTaeed.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnTaeed.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.btnTaeed.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.btnTaeed.Enabled = False
         Me.btnTaeed.FlatAppearance.BorderColor = System.Drawing.Color.Green
@@ -232,6 +233,7 @@ Partial Class frmImageEditor
         '
         'frmImageEditor
         '
+        Me.AcceptButton = Me.btnTaeed
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.CancelButton = Me.btnEnseraf
         Me.ClientSize = New System.Drawing.Size(727, 471)

@@ -25,7 +25,7 @@ Public Class frmMadrak
             If dID = -1 Then
                 ComboBox1.SelectedItem = ComboBox1.Items(0)
                 TextBox1.Text = "[جدید]"
-                UcTextBox1.Text = "[با جفت کلیک انتخاب]"
+                UcTextBox1.Text = "[انتخاب با جفت کلیک]"
                 UcTextBox1.Tag = ""
             Else
                 data = SQLiter.Fill("select * from tMadrak where ID=" & dID)
