@@ -250,7 +250,7 @@ Public Class frmOzvView
 
             Dim fname As String
             With data(0)
-                fname = $"{ .Item("Nam")} { .Item("Famil")} {DataGridView1.SelectedRows(0).Cells("NoMadrakOnvan").Value} {DataGridView1.SelectedRows(0).Cells("Onvan").Value}".Replace("  ", " ")
+                fname = $"{ .Item("Nam")} { .Item("Famil")} {DataGridView1.SelectedRows(0).Cells("NoMadrakOnvan").Value} {DataGridView1.SelectedRows(0).Cells("Onvan").Value}".Replace("  ", " ").Replace("  ", " ").Replace("  ", " ").Replace("  ", " ")
             End With
 
             With SaveFileDialog1

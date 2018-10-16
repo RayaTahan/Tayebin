@@ -4,6 +4,9 @@ Imports System.IO
 Public Class frmImageEditor
     Dim fileAddress As String
     Dim Job As Integer = 0 ' 1:crop 
+    Dim timerTik As Boolean = False
+
+    Dim img As New ImageProcessor.ImageFactory
 
     Dim tempCnt As Boolean         'check weather the roller is used or not
 
@@ -83,7 +86,7 @@ Public Class frmImageEditor
         Me.Close()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub btnCrop_Click(sender As Object, e As EventArgs) Handles btnCrop.Click
         Job = 1
         lblTaqir.Text = "برش"
         Abzar.Enabled = False
@@ -155,7 +158,7 @@ Public Class frmImageEditor
                     'g.DrawImage(bit, 0, 0, rect, GraphicsUnit.Pixel)
                     'preview.Image = cropBitmap
 
-                    Dim img As New ImageProcessor.ImageFactory()
+                    img = New ImageProcessor.ImageFactory
                     img.Quality(100)
                     img.Load(bit)
                     preview.Image = img.Crop(rect).Image
@@ -211,5 +214,57 @@ Public Class frmImageEditor
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        If timerTik Then
+            '    btnOK.BackColor = Color.FromArgb(100, Color.Green)
+            '    btnCancel.BackColor = Color.FromArgb(255, Color.Orange)
+            GroupBox1.ForeColor = Color.White
+        Else
+            '    btnOK.BackColor = Color.FromArgb(255, Color.Orange)
+            '    btnCancel.BackColor = Color.FromArgb(100, Color.Red)
+            GroupBox1.ForeColor = Color.Black
+        End If
+
+        If Job > 0 Then
+            timerTik = Not timerTik
+            GroupBox1.Visible = True
+        Else
+            'GroupBox1.ForeColor = Color.Black
+            GroupBox1.Visible = False
+        End If
+    End Sub
+
+    Private Sub btnRotateC_Click(sender As Object, e As EventArgs) Handles btnRotateC.Click
+        img = New ImageProcessor.ImageFactory
+        img.Load(pic.Image)
+        pic.Image = img.Rotate(90).Image
+        resizer()
+        btnTaeed.Enabled = True
+    End Sub
+
+    Private Sub btnRotateAC_Click(sender As Object, e As EventArgs) Handles btnRotateAC.Click
+        img = New ImageProcessor.ImageFactory
+        img.Load(pic.Image)
+        pic.Image = img.Rotate(-90).Image
+        resizer()
+        btnTaeed.Enabled = True
+    End Sub
+
+    Private Sub btnFilipV_Click(sender As Object, e As EventArgs) Handles btnFilipV.Click
+        img = New ImageProcessor.ImageFactory
+        img.Load(pic.Image)
+        pic.Image = img.Flip(True, False).Image
+        resizer()
+        btnTaeed.Enabled = True
+    End Sub
+
+    Private Sub btnFilipH_Click(sender As Object, e As EventArgs) Handles btnFilipH.Click
+        img = New ImageProcessor.ImageFactory
+        img.Load(pic.Image)
+        pic.Image = img.Flip(False, False).Image
+        resizer()
+        btnTaeed.Enabled = True
     End Sub
 End Class
