@@ -205,20 +205,8 @@ Public Class frmImageEditor
         Try
             pic.Image.Save(fileAddress)
             IMGcache.Remove(fileAddress)
-            'FileIO.FileSystem.CopyFile(UcTextBox1.Tag, newFileAddress, showUI:=FileIO.UIOption.AllDialogs, onUserCancel:=FileIO.UICancelOption.ThrowException)
-            'Dim ms = New MemoryStream()
-            'pic.Image.Save(ms) ' Use appropriate format here
-            'Dim bytes = ms.ToArray()
-            'FileIO.FileSystem.WriteAllBytes(fileAddress, pic.Image, False)
-
-            'pic.Image.Dispose()
-            'FileIO.FileSystem.DeleteFile(fileAddress)
-            'FileIO.FileSystem.RenameFile(fileAddress & "-w8", FileIO.FileSystem.GetName(fileAddress))
-
-
 
             MessageBox.Show("تصویر با موفقیت ویرایش و ذخیره شد")
-
             Me.Close()
         Catch ex As Exception
             MessageBox.Show(ex.Message)

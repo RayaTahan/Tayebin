@@ -243,4 +243,29 @@ Public Class frmOzvView
         End Try
 
     End Sub
+
+    Private Sub استخراجToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles استخراجToolStripMenuItem.Click
+        Try
+            Dim fileAdres As String = $"{ Application.StartupPath}\data\madarek\{dID}\{dID}-{DataGridView1.SelectedRows(0).Cells("IDMadrak").Value}{DataGridView1.SelectedRows(0).Cells("FileEXT").Value}"
+
+            Dim fname As String
+            With data(0)
+                fname = $"{ .Item("Nam")} { .Item("Famil")} {DataGridView1.SelectedRows(0).Cells("NoMadrakOnvan").Value} {DataGridView1.SelectedRows(0).Cells("Onvan").Value}".Replace("  ", " ")
+            End With
+
+            With SaveFileDialog1
+                .InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop)
+                .FileName = fname
+                .DefaultExt = DataGridView1.SelectedRows(0).Cells("FileEXT").Value
+                If .ShowDialog(Me) = DialogResult.OK Then
+                    If .FileName <> "" Then
+                        FileIO.FileSystem.CopyFile(fileAdres, .FileName, showUI:=FileIO.UIOption.AllDialogs, onUserCancel:=FileIO.UICancelOption.ThrowException)
+                        MessageBox.Show("فایل مورد نظر با موفقیت استخراج شد.")
+                    End If
+                End If
+            End With
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+    End Sub
 End Class

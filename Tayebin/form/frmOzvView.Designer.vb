@@ -99,13 +99,16 @@ Partial Class frmOzvView
         Me.نمایشToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ویرایشToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.حذفToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ویراستارتصویرToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripSeparator()
         Me.ثبتبهعنوانعکسToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
-        Me.ویراستارتصویرToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.استخراجToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.picAx, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -951,10 +954,10 @@ Partial Class frmOzvView
         'menu1
         '
         Me.menu1.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.menu1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.نمایشToolStripMenuItem, Me.ویرایشToolStripMenuItem, Me.حذفToolStripMenuItem, Me.ویراستارتصویرToolStripMenuItem, Me.ToolStripMenuItem3, Me.ثبتبهعنوانعکسToolStripMenuItem})
+        Me.menu1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.نمایشToolStripMenuItem, Me.ویرایشToolStripMenuItem, Me.حذفToolStripMenuItem, Me.ویراستارتصویرToolStripMenuItem, Me.ToolStripMenuItem3, Me.ثبتبهعنوانعکسToolStripMenuItem, Me.ToolStripSeparator1, Me.استخراجToolStripMenuItem})
         Me.menu1.Name = "menu1"
         Me.menu1.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.menu1.Size = New System.Drawing.Size(204, 162)
+        Me.menu1.Size = New System.Drawing.Size(204, 172)
         '
         'نمایشToolStripMenuItem
         '
@@ -973,6 +976,12 @@ Partial Class frmOzvView
         Me.حذفToolStripMenuItem.Name = "حذفToolStripMenuItem"
         Me.حذفToolStripMenuItem.Size = New System.Drawing.Size(203, 26)
         Me.حذفToolStripMenuItem.Text = "حذف"
+        '
+        'ویراستارتصویرToolStripMenuItem
+        '
+        Me.ویراستارتصویرToolStripMenuItem.Name = "ویراستارتصویرToolStripMenuItem"
+        Me.ویراستارتصویرToolStripMenuItem.Size = New System.Drawing.Size(203, 26)
+        Me.ویراستارتصویرToolStripMenuItem.Text = "ویراستار تصویر"
         '
         'ToolStripMenuItem3
         '
@@ -1031,11 +1040,20 @@ Partial Class frmOzvView
         Me.Button4.Text = "تازه سازی داده ها"
         Me.Button4.UseVisualStyleBackColor = True
         '
-        'ویراستارتصویرToolStripMenuItem
+        'ToolStripSeparator1
         '
-        Me.ویراستارتصویرToolStripMenuItem.Name = "ویراستارتصویرToolStripMenuItem"
-        Me.ویراستارتصویرToolStripMenuItem.Size = New System.Drawing.Size(203, 26)
-        Me.ویراستارتصویرToolStripMenuItem.Text = "ویراستار تصویر"
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(200, 6)
+        '
+        'استخراجToolStripMenuItem
+        '
+        Me.استخراجToolStripMenuItem.Name = "استخراجToolStripMenuItem"
+        Me.استخراجToolStripMenuItem.Size = New System.Drawing.Size(203, 26)
+        Me.استخراجToolStripMenuItem.Text = "استخراج"
+        '
+        'SaveFileDialog1
+        '
+        Me.SaveFileDialog1.AddExtension = False
         '
         'frmOzvView
         '
@@ -1157,4 +1175,7 @@ Partial Class frmOzvView
     Friend WithEvents ColumnHeader1 As ColumnHeader
     Friend WithEvents ColumnHeader2 As ColumnHeader
     Friend WithEvents ویراستارتصویرToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
+    Friend WithEvents استخراجToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SaveFileDialog1 As SaveFileDialog
 End Class
