@@ -22,6 +22,7 @@ Partial Class frmSMS
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmSMS))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
@@ -34,16 +35,22 @@ Partial Class frmSMS
         Me.Button2 = New System.Windows.Forms.Button()
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.UcTextBox2 = New Tayebin.ucTextBox()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.UcTextBox1 = New Tayebin.ucTextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
+        Me.CheckBox4 = New System.Windows.Forms.CheckBox()
+        Me.UcTextBox3 = New Tayebin.ucTextBox()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
@@ -58,17 +65,11 @@ Partial Class frmSMS
         Me.SS = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Matn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Girandegancc = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.UcTextBox2 = New Tayebin.ucTextBox()
-        Me.UcTextBox1 = New Tayebin.ucTextBox()
-        Me.UcTextBox3 = New Tayebin.ucTextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.GroupBox8 = New System.Windows.Forms.GroupBox()
-        Me.UcTextBox4 = New Tayebin.ucTextBox()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.CheckBox4 = New System.Windows.Forms.CheckBox()
         Me.Button5 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.UcTextBox4 = New Tayebin.ucTextBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -219,6 +220,18 @@ Partial Class frmSMS
         Me.Button1.Text = "پاک کردن اطلاعات"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'UcTextBox2
+        '
+        Me.UcTextBox2.BackColor = System.Drawing.Color.White
+        Me.UcTextBox2.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.UcTextBox2.Location = New System.Drawing.Point(272, 27)
+        Me.UcTextBox2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.UcTextBox2.Name = "UcTextBox2"
+        Me.UcTextBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(8226)
+        Me.UcTextBox2.Size = New System.Drawing.Size(121, 29)
+        Me.UcTextBox2.TabIndex = 11
+        Me.UcTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
         'Label2
         '
         Me.Label2.AutoSize = True
@@ -227,6 +240,17 @@ Partial Class frmSMS
         Me.Label2.Size = New System.Drawing.Size(32, 21)
         Me.Label2.TabIndex = 12
         Me.Label2.Text = "رمز"
+        '
+        'UcTextBox1
+        '
+        Me.UcTextBox1.BackColor = System.Drawing.Color.White
+        Me.UcTextBox1.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.UcTextBox1.Location = New System.Drawing.Point(437, 27)
+        Me.UcTextBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.UcTextBox1.Name = "UcTextBox1"
+        Me.UcTextBox1.Size = New System.Drawing.Size(121, 29)
+        Me.UcTextBox1.TabIndex = 9
+        Me.UcTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label1
         '
@@ -266,6 +290,25 @@ Partial Class frmSMS
         Me.GroupBox7.TabIndex = 10
         Me.GroupBox7.TabStop = False
         Me.GroupBox7.Text = "امکانات"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(213, 65)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(17, 21)
+        Me.Label8.TabIndex = 6
+        Me.Label8.Text = "0"
+        Me.Label8.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(253, 65)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(150, 21)
+        Me.Label9.TabIndex = 5
+        Me.Label9.Text = "باقی مانده این صفحه:"
         '
         'Button3
         '
@@ -325,6 +368,29 @@ Partial Class frmSMS
         Me.GroupBox6.TabIndex = 9
         Me.GroupBox6.TabStop = False
         Me.GroupBox6.Text = "متن پیام"
+        '
+        'CheckBox4
+        '
+        Me.CheckBox4.AutoSize = True
+        Me.CheckBox4.Checked = True
+        Me.CheckBox4.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.CheckBox4.Location = New System.Drawing.Point(224, 196)
+        Me.CheckBox4.Name = "CheckBox4"
+        Me.CheckBox4.Size = New System.Drawing.Size(179, 25)
+        Me.CheckBox4.TabIndex = 1
+        Me.CheckBox4.Text = "درج امضا به انتهای متن"
+        Me.CheckBox4.UseVisualStyleBackColor = True
+        '
+        'UcTextBox3
+        '
+        Me.UcTextBox3.BackColor = System.Drawing.Color.White
+        Me.UcTextBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
+        Me.UcTextBox3.Location = New System.Drawing.Point(6, 28)
+        Me.UcTextBox3.MaxLength = 396
+        Me.UcTextBox3.Multiline = True
+        Me.UcTextBox3.Name = "UcTextBox3"
+        Me.UcTextBox3.Size = New System.Drawing.Size(397, 162)
+        Me.UcTextBox3.TabIndex = 0
         '
         'GroupBox5
         '
@@ -415,6 +481,8 @@ Partial Class frmSMS
         '
         Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.AllowUserToDeleteRows = False
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro
+        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.TT, Me.SS, Me.Matn, Me.Girandegancc})
         Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -471,59 +539,6 @@ Partial Class frmSMS
         Me.Girandegancc.Name = "Girandegancc"
         Me.Girandegancc.ReadOnly = True
         '
-        'UcTextBox2
-        '
-        Me.UcTextBox2.BackColor = System.Drawing.Color.White
-        Me.UcTextBox2.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.UcTextBox2.Location = New System.Drawing.Point(272, 27)
-        Me.UcTextBox2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.UcTextBox2.Name = "UcTextBox2"
-        Me.UcTextBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(8226)
-        Me.UcTextBox2.Size = New System.Drawing.Size(121, 29)
-        Me.UcTextBox2.TabIndex = 11
-        Me.UcTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'UcTextBox1
-        '
-        Me.UcTextBox1.BackColor = System.Drawing.Color.White
-        Me.UcTextBox1.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.UcTextBox1.Location = New System.Drawing.Point(437, 27)
-        Me.UcTextBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.UcTextBox1.Name = "UcTextBox1"
-        Me.UcTextBox1.Size = New System.Drawing.Size(121, 29)
-        Me.UcTextBox1.TabIndex = 9
-        Me.UcTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'UcTextBox3
-        '
-        Me.UcTextBox3.BackColor = System.Drawing.Color.White
-        Me.UcTextBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.UcTextBox3.Location = New System.Drawing.Point(6, 28)
-        Me.UcTextBox3.MaxLength = 396
-        Me.UcTextBox3.Multiline = True
-        Me.UcTextBox3.Name = "UcTextBox3"
-        Me.UcTextBox3.Size = New System.Drawing.Size(397, 162)
-        Me.UcTextBox3.TabIndex = 0
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(213, 65)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(17, 21)
-        Me.Label8.TabIndex = 6
-        Me.Label8.Text = "0"
-        Me.Label8.TextAlign = System.Drawing.ContentAlignment.TopRight
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(253, 65)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(150, 21)
-        Me.Label9.TabIndex = 5
-        Me.Label9.Text = "باقی مانده این صفحه:"
-        '
         'TabPage4
         '
         Me.TabPage4.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
@@ -547,16 +562,14 @@ Partial Class frmSMS
         Me.GroupBox8.TabStop = False
         Me.GroupBox8.Text = "امضای پیامک‌های ارسالی"
         '
-        'UcTextBox4
+        'Button5
         '
-        Me.UcTextBox4.BackColor = System.Drawing.Color.White
-        Me.UcTextBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.UcTextBox4.Location = New System.Drawing.Point(161, 28)
-        Me.UcTextBox4.MaxLength = 100
-        Me.UcTextBox4.Multiline = True
-        Me.UcTextBox4.Name = "UcTextBox4"
-        Me.UcTextBox4.Size = New System.Drawing.Size(477, 116)
-        Me.UcTextBox4.TabIndex = 1
+        Me.Button5.Location = New System.Drawing.Point(6, 89)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(149, 55)
+        Me.Button5.TabIndex = 6
+        Me.Button5.Text = "حذف"
+        Me.Button5.UseVisualStyleBackColor = True
         '
         'Button4
         '
@@ -567,26 +580,16 @@ Partial Class frmSMS
         Me.Button4.Text = "ذخیره"
         Me.Button4.UseVisualStyleBackColor = True
         '
-        'CheckBox4
+        'UcTextBox4
         '
-        Me.CheckBox4.AutoSize = True
-        Me.CheckBox4.Checked = True
-        Me.CheckBox4.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox4.Location = New System.Drawing.Point(224, 196)
-        Me.CheckBox4.Name = "CheckBox4"
-        Me.CheckBox4.Size = New System.Drawing.Size(179, 25)
-        Me.CheckBox4.TabIndex = 1
-        Me.CheckBox4.Text = "درج امضا به انتهای متن"
-        Me.CheckBox4.UseVisualStyleBackColor = True
-        '
-        'Button5
-        '
-        Me.Button5.Location = New System.Drawing.Point(6, 89)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(149, 55)
-        Me.Button5.TabIndex = 6
-        Me.Button5.Text = "حذف"
-        Me.Button5.UseVisualStyleBackColor = True
+        Me.UcTextBox4.BackColor = System.Drawing.Color.White
+        Me.UcTextBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
+        Me.UcTextBox4.Location = New System.Drawing.Point(161, 28)
+        Me.UcTextBox4.MaxLength = 100
+        Me.UcTextBox4.Multiline = True
+        Me.UcTextBox4.Name = "UcTextBox4"
+        Me.UcTextBox4.Size = New System.Drawing.Size(477, 116)
+        Me.UcTextBox4.TabIndex = 1
         '
         'frmSMS
         '
